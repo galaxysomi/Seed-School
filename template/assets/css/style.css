@@ -21132,4 +21132,9 @@ div.tagsinput {
   -webkit-flex-grow: 1;
   flex-grow: 1; }
 
+  #anhDiemDanh{
+    position: relative;
+    width: 35%;
+  }
+
 /*# sourceMappingURL=maps/style.css.map */
