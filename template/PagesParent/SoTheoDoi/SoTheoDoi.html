@@ -270,14 +270,12 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Basic Tables </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-                </ol>
-              </nav>
+            <div class="page-header">             
+              <form action="" method="post">
+                <label for="">Chọn ngày : </label>
+                <input style="border-radius: 7px;" type="date" id="" name="">
+                <button style="border-radius: 5px;" type="button" class="btn btn-primary">Submit</button>
+              </form>                                             
             </div>
             <div class="row" id="information">
               <div class="col-lg-7 grid-margin stretch-card">
@@ -367,7 +365,7 @@
           name : 'Tung tran'  ,
           studentID : "123456" ,
           date : "Sep 15 , 2022",
-          status : "Di hoc",
+          status : "Nghỉ học",
           anhDiemDanh : "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/51574639_2002558206715933_3318347992666210304_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=G8rbellI_JQAX89HqdD&_nc_ht=scontent.fhan3-1.fna&oh=00_AT-C1udkDwF5DkOTGdQHxU_6ZOsSmrne5QRY18t_OGo2BQ&oe=62070BF2"
         }
       ]    
@@ -403,7 +401,7 @@
                           </tr>                         
                           <tr>
                             <td>Trạng thái</td>
-                            <td><label class="badge badge-success">${value.status}</label></td>
+                            <td><label class="badge badge-success" id="statusText">${value.status}</label></td>
                           </tr>                                                                                                           
                         </tbody>
                       </table>
@@ -414,8 +412,7 @@
               <div class="col-lg-5 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Ảnh điểm danh</h4>
-                    
+                    <h4 class="card-title">Ảnh điểm danh</h4>                  
                     </p>
                     <div class="table-responsive" style="position: absolute;">
                       <img id="anhDiemDanh" src="${value.anhDiemDanh}" alt="">                                           
@@ -424,10 +421,18 @@
                 </div>
               </div>         
                  `
-              });
+                 
+              });         
               $('#information').html(info);
           //   });
           // }
+          if (document.getElementById("statusText").innerHTML == "Nghỉ học") {
+                  document.getElementById("statusText").classList.remove("badge-success");
+                  document.getElementById("statusText").classList.add("badge-danger");
+                  document.getElementById("statusText").innerHTML = "New text!";              
+                }
+          
+
       </script>
     </body>
   </body>
