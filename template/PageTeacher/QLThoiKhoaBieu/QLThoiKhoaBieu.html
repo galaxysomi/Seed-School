@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container-scroller">
@@ -36,7 +40,7 @@
                 </div>
                 <div class="profile-name">
                   <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Admin</span>
+                  <span>Phụ huynh</span>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -80,33 +84,37 @@
             <span class="nav-link">Chức năng</span>
           </li>
           <li class="nav-item menu-items">
-            
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pagesAdmin/teacher/teacherManagement.html">
+            <a class="nav-link" href="../QLHocPhi/QLHocPhi.html">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Giáo viên</span>
+              <span class="menu-title">Quản lý học phí</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pagesAdmin/menu/menuManagement.html">
+            <a class="nav-link" href="../QLHocSinh/QLHocSinh.html">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
-              <span class="menu-title">Menu</span>
+              <span class="menu-title">Quản lý học sinh</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="../../pagesAdmin/activity/activityManagement.html">
+            <a class="nav-link" href="../QLSoTheoDoi/QLSoTheoDoi.html">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Hoạt động</span>
+              <span class="menu-title">Quản lý sổ theo dõi</span>
             </a>
           </li>
-        
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../QLThoiKhoaBieu/QLThoiKhoaBieu.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Quản lý TKB</span>
+            </a>
+          </li>
         
         
       </nav>
@@ -261,118 +269,103 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-                </ol>
-              </nav>
+            <div class="page-header">             
+              <form action="" method="post">
+                <label for="">Chọn ngày : </label>
+                <input style="border-radius: 7px;" type="date" id="" name="">
+                <button style="border-radius: 5px;" type="button" class="btn btn-primary">Submit</button>
+              </form>                                             
             </div>
-            <div class="row">                         
-              
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Hoạt động</h4>
-                    <button style="margin-bottom: 20px; margin-left: 10px;" type="button" class="btn btn-primary">Thêm mới</button>
-                    <div class="table-responsive">
-                      <table class="table table-bordered">
-                        <colgroup>
-                          <col width="80" span="1">
-                          <col width="150" span="1">
-                          <col width="150" span="1">
-                          <col width="150" span="1">
-                          <col width="200" span="1">
-                          <col width="150" span="1">
-                          <col width="auto" span="1">
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th> ID </th>
-                            <th> Ngày </th>
-                            <th> Giờ </th>
-                            <th> Nội dung </th>
-                            <th> Địa điểm </th>
-                            <th> Ghi chú</th>
-                            <th> Chức năng </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td> 1 </td>
-                            <td> Herman Beck </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>                       
-                            <td> $ 77.99 </td>
-                            <td> 123 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> Messsy Adam </td>
-                            <td> 1/1/2001  </td>  
-                            <td> Nam  </td>                                                                           
-                            <td> $245.30 </td>
-                            <td> 123445579 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> John Richards </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $138.00 </td>
-                            <td> 123445579 </td>
-                            <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                          </tr>
-                          <tr>
-                            <td> 4 </td>
-                            <td> Peter Meggik </td>
-                            <td> 1/1/2001  </td>     
-                            <td> Nam  </td>                     
-                            <td> $ 77.99 </td>
-                            <td> 123445579 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          </tr>
-                          <tr>
-                            <td> 5 </td>
-                            <td> Edward </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $ 160.25 </td>
-                            <td> 123445579 </td>
-                            <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                          </tr>
-                          <tr>
-                            <td> 6 </td>
-                            <td> John Doe </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $ 123.21 </td>
-                            <td> 123445579 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          </tr>
-                          <tr>
-                            <td> 7 </td>
-                            <td> Henry Tom </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $ 150.00 </td>
-                            <td> 123445579 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>                          
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Thời khóa biểu</h4>
+                  <button style="margin-bottom: 20px; margin-left: 10px;" type="button" class="btn btn-primary">Thêm mới</button>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <colgroup>
+                        <col width="60" span="1">
+                        <col width="50" span="1">
+                        <col width="450" span="1">
+                        <col width="200" span="1">
+                        <col width="auto" span="1">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th> Thời gian </th>                          
+                          <th> Hoạt động</th>                     
+                          <th> Nội dung chính </th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>                         
+                          <td> 7h15 - 7h30 </td>
+                          <td> Tùng máy dập </td>                        
+                          <td> Love hotel </td>                      
+                        </tr>
+                        
+
+                                                                                    
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-              </div>     
+              </div>
             </div>
-          </div>
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Các hoạt động</h4>
+                  <button style="margin-bottom: 20px; margin-left: 10px;" type="button" class="btn btn-primary">Thêm mới</button>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <colgroup>
+                        <col width="60" span="1">
+                        <col width="50" span="1">
+                        <col width="450" span="1">
+                        <col width="200" span="1">
+                        <col width="auto" span="1">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th> Ngày </th>
+                          <th> Giờ</th>  
+                          <th> Hoạt động</th>                     
+                          <th> Địa điểm </th>
+                          <th> Chức năng </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> 1 </td>
+                          <td> 13H30 </td>
+                          <td> Tùng máy dập </td>                        
+                          <td> Love hotel </td>
+                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
+                        </tr>
+                        <tr>
+                          <td> 2 </td>
+                          <td> 13H30 </td>                        
+                          <td> Chửi tùng </td>                         
+                          <td> Sân </td>
+                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
+                        </tr>
+                                                                                    
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            
           <!-- content-wrapper ends -->
-          
+        
           <!-- partial -->
         </div>
         <!-- main-panel ends -->
@@ -394,5 +387,88 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
+    <script> 
+      var x = [
+        {         
+          name : 'Tung tran'  ,
+          studentID : "123456" ,
+          date : "Sep 15 , 2022",
+          status : "Di hoc",
+          anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
+        },
+        {
+          name : 'Tung tran'  ,
+          studentID : "123456" ,
+          date : "Sep 15 , 2022",
+          status : "Nghỉ học",
+          anhDiemDanh : "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/51574639_2002558206715933_3318347992666210304_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=G8rbellI_JQAX89HqdD&_nc_ht=scontent.fhan3-1.fna&oh=00_AT-C1udkDwF5DkOTGdQHxU_6ZOsSmrne5QRY18t_OGo2BQ&oe=62070BF2"
+        }
+      ]    
+        // function findSoTheoDoi() {
+        //   axios.post()  // dien link api vao
+        //     .then((x) => {
+              console.log(x);
+              let info = " ";
+              $.each(x, function (index, value) {
+                info += `
+                <div class="col-lg-7 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Sổ theo dõi</h4>                  
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Tên học sinh</th>
+                            <th>${value.name}</th>                       
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Mã học sinh</td>
+                            <td>${value.studentID}</td>
+                            
+                          </tr>
+                          <tr>
+                            <td>Ngày</td>
+                            <td>${value.date}</td>                                                     
+                          </tr>                         
+                          <tr>
+                            <td>Trạng thái</td>
+                            <td><label class="badge badge-success" id="statusText">${value.status}</label></td>
+                          </tr>                                                                                                           
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Ảnh điểm danh</h4>                  
+                    </p>
+                    <div class="table-responsive" style="position: absolute;">
+                      <img id="anhDiemDanh" src="${value.anhDiemDanh}" alt="">                                           
+                    </div>
+                  </div>
+                </div>
+              </div>         
+                 `
+                 
+              });         
+              $('#information').html(info);
+          //   });
+          // }
+          if (document.getElementById("statusText").innerHTML == "Nghỉ học") {
+                  document.getElementById("statusText").classList.remove("badge-success");
+                  document.getElementById("statusText").classList.add("badge-danger");
+                  document.getElementById("statusText").innerHTML = "New text!";              
+                }
+          
+
+      </script>
+    </body>
   </body>
 </html>

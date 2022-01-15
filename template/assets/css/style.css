@@ -20665,6 +20665,7 @@ div.tagsinput {
           max-width: 100%;
           height: 28px;
           margin: auto; }
+
   .sidebar .nav {
     overflow: hidden;
     flex-wrap: nowrap;
@@ -21134,7 +21135,24 @@ div.tagsinput {
 
   #anhDiemDanh{
     position: relative;
+
     width: 35%;
   }
+  .col-lg-8.grid-margin {
+    list-style: none;
+    list-style-type: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .card {
+    border-radius: 35px;
+    font-family: system-ui;
+    color: antiquewhite;
+  }
+
+  
 
 /*# sourceMappingURL=maps/style.css.map */
