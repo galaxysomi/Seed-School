@@ -261,22 +261,52 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-                </ol>
-              </nav>
+            <div class="page-header">                                                                 
             </div>
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Thêm mới hoạt động</h4>                 
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for=""> <h4>Chọn ngày :</h4></label>
+                      <input style="border-radius: 7px;" type="date" id="" name="">   
+                    </div>
+                    <div class="form-group">
+                      <label for="appt">Thời gian bắt đầu:</label>
+                      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="appt">Thời gian kết thúc:</label>
+                      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Địa điểm</label>
+                      <input type="" class="form-control" id="exampleInputEmail3" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Nội dung</label>
+                      <input type="password" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Ghi chú</label>
+                      <input type="password" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                                                                   
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+        
             <div class="row">                         
               
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Hoạt động</h4>
-                    <button style="margin-bottom: 20px; margin-left: 10px;" type="button" class="btn btn-primary">Thêm mới</button>
+                  
                     <div class="table-responsive">
                       <table class="table table-bordered">
                         <colgroup>
@@ -292,11 +322,12 @@
                           <tr>
                             <th> ID </th>
                             <th> Ngày </th>
-                            <th> Giờ </th>
+                            <th> Giờ bắt đầu </th>
+                            <th> Giờ kết thúc </th>
                             <th> Nội dung </th>
                             <th> Địa điểm </th>
                             <th> Ghi chú</th>
-                            <th> Chức năng </th>
+                            <th> Tùy chọn</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -307,6 +338,7 @@
                             <td> Nam  </td>                       
                             <td> $ 77.99 </td>
                             <td> 123 </td>
+                            <td> 123 </td>
                             <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
                           </tr>
                           <tr>
@@ -316,6 +348,7 @@
                             <td> Nam  </td>                                                                           
                             <td> $245.30 </td>
                             <td> 123445579 </td>
+                            <td> 123 </td>
                             <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
                           </tr>
                           <tr>
@@ -325,6 +358,7 @@
                             <td> Nam  </td>
                             <td> $138.00 </td>
                             <td> 123445579 </td>
+                            <td> 123 </td>
                             <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
                           </tr>
                           <tr>
@@ -334,6 +368,7 @@
                             <td> Nam  </td>                     
                             <td> $ 77.99 </td>
                             <td> 123445579 </td>
+                            <td> 123 </td>
                             <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
                           </tr>
                           <tr>
@@ -343,6 +378,7 @@
                             <td> Nam  </td>
                             <td> $ 160.25 </td>
                             <td> 123445579 </td>
+                            <td> 123 </td>
                             <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
                           </tr>
                           <tr>
@@ -352,6 +388,7 @@
                             <td> Nam  </td>
                             <td> $ 123.21 </td>
                             <td> 123445579 </td>
+                            <td> 123 </td>
                             <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
                           </tr>
                           <tr>
@@ -361,6 +398,7 @@
                             <td> Nam  </td>
                             <td> $ 150.00 </td>
                             <td> 123445579 </td>
+                            <td> 123 </td>
                             <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>                          
                           </tr>
                         </tbody>
@@ -374,6 +412,7 @@
           <!-- content-wrapper ends -->
           
           <!-- partial -->
+          
         </div>
         <!-- main-panel ends -->
       </div>
