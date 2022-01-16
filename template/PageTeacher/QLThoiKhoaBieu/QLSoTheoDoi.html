@@ -40,7 +40,7 @@
                 </div>
                 <div class="profile-name">
                   <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Phụ huynh</span>
+                  <span>Giáo viên</span>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -269,63 +269,49 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">             
-              <form action="" method="post">
-                <label for="">Chọn ngày : </label>
-                <input style="border-radius: 7px;" type="date" id="" name="">
-                <button style="border-radius: 5px;" type="button" class="btn btn-primary">Submit</button>
-              </form>                                             
+            <div class="page-header">                                                                 
             </div>
-            <div class="row" id="information">
-              <div class="col-lg-7 grid-margin stretch-card">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Sổ theo dõi</h4>                  
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Tên học sinh</th>
-                            <th>Tùng Trần</th>                       
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mã học sinh</td>
-                            <td>53275534</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Ngày</td>
-                            <td>12 May 2017</td>                                                     
-                          </tr>                         
-                          <tr>
-                            <td>Trạng thái</td>
-                            <td><label class="badge badge-success">Đi học</label></td>
-                          </tr>                                                                                                           
-                        </tbody>
-                      </table>
-                    </div>
+                    <h4 class="card-title">Điểm danh học sinh</h4>                 
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <label for=""> <h4>Chọn ngày : </h4></label>
+                        <input style="border-radius: 7px;" type="date" id="" name="">   
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Tên học sinh</label>
+                        <input type="text" class="form-control" id="exampleInputName1" >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Mã số học sinh</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Trạng thái</label>
+                        <select class="form-control" id="exampleSelectGender">
+                          <option>Đi học</option>
+                          <option>Nghỉ học</option>
+                        </select>
+                      </div>                                            
+                      <div class="form-group">
+                        <label for="exampleInputName1">Ảnh điểm danh</label>
+                        <input type="text" class="form-control" id="exampleInputName1" >
+                      </div>                                                    
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-5 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Ảnh điểm danh</h4>
-                    
-                    </p>
-                    <div class="table-responsive" style="position: absolute;">
-                      <img id="anhDiemDanh" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9FMBxgpbg370vWs2GAnN4VjDLS1Tc1fNZzw&usqp=CAU" alt="">                                           
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              
-              
-              
+              </div>             
+            </div>
+            <div class="col-12 grid-margin stretch-card">
+
+            </div>
+            <div class="row" id="information">  
+               <!-- Thong tin in ra o day -->                                                                 
             </div>
           </div>
           <!-- content-wrapper ends -->
@@ -357,7 +343,7 @@
           name : 'Tung tran'  ,
           studentID : "123456" ,
           date : "Sep 15 , 2022",
-          status : "Di hoc",
+          status : "Đi học",
           anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
         },
         {
@@ -399,8 +385,18 @@
                             <td>${value.date}</td>                                                     
                           </tr>                         
                           <tr>
-                            <td>Trạng thái</td>
-                            <td><label class="badge badge-success" id="statusText">${value.status}</label></td>
+                            <td>Trạng thái</td>`;
+                            if(value.status == 'Đi học'){
+                  info += `
+                  <td><label class="badge badge-success" id="statusText">${value.status}</label></td>           
+                 `
+                }
+                if(value.status == 'Nghỉ học'){
+                  info += `
+                  <td><label class="badge badge-danger" id="statusText">${value.status}</label></td>              
+                 `
+                }
+                info += `                          
                           </tr>                                                                                                           
                         </tbody>
                       </table>
@@ -425,11 +421,7 @@
               $('#information').html(info);
           //   });
           // }
-          if (document.getElementById("statusText").innerHTML == "Nghỉ học") {
-                  document.getElementById("statusText").classList.remove("badge-success");
-                  document.getElementById("statusText").classList.add("badge-danger");
-                  document.getElementById("statusText").innerHTML = "New text!";              
-                }
+         
           
 
       </script>

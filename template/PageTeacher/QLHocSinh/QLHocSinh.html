@@ -42,7 +42,7 @@
                 </div>
                 <div class="profile-name">
                   <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Phụ Huynh</span>
+                  <span>Giáo viên</span>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -269,27 +269,79 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Form elements </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
-                </ol>
-              </nav>
+              <h3 class="page-title"> Quản lý học sinh </h3>              
             </div>
-            <div class="row">
-              <div class="col-md-6 grid-margin stretch-card">
-                
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Thêm học sinh mới</h4>                 
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputName1">Họ tên</label>
+                      <input type="text" class="form-control" id="exampleInputName1" >
+                    </div>
+                    <div class="form-group">
+                      <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
+                      <input style="border-radius: 7px;" type="date" id="" name="">   
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Giới tính</label>
+                      <select class="form-control" id="exampleSelectGender">
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                      </select>
+                    </div>       
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Lớp</label>
+                      <input type="email" class="form-control" id="exampleInputEmail3" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Địa chỉ</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Họ và tên bố</label>
+                      <input type="" class="form-control" i>
+                    </div> 
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Năm sinh</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Nghề nghiệp bố</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Số điện thoại bố</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Họ và tên mẹ</label>
+                      <input type="" class="form-control" i>
+                    </div> 
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Năm sinh</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Nghề nghiệp mẹ</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Số điện thoại mẹ</label>
+                      <input type="" class="form-control" id="exampleInputPassword4" ">
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark">Cancel</button>
+                  </form>
+                </div>
               </div>
-              <div class="col-md-6 grid-margin stretch-card">
-                
-              </div>
-              <div class="col-12 grid-margin stretch-card">
+            </div>
+            <div class="row">                         
                 <div class="col-lg-12 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Bordered table</h4>
-                      <button style="margin-bottom: 20px; margin-left: 10px;" type="button" class="btn btn-primary">Thêm mới</button>
+                      <h4 class="card-title">Danh sách học sinh</h4>        
                       <div class="table-responsive">
                         <table class="table table-bordered">
                           <colgroup>
@@ -303,98 +355,21 @@
                             <tr>
                               <th> # </th>
                               <th> Họ tên </th>
-                              <th> xxx </th>
-                              <th> Amount </th>
-                              <th> Chức năng </th>
+                              <th> Ngày sinh</th>
+                              <th> Mã học sinh </th>
+                              <th> Lớp</th>
+                              <th> Giới tính </th>
+                              <th> Địa chỉ </th>
                             </tr>
                           </thead>
-                          <tbody>
-                            <tr>
-                              <td> 1 </td>
-                              <td> Herman Beck </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $ 77.99 </td>
-                              <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                            </tr>
-                            <tr>
-                              <td> 2 </td>
-                              <td> Messsy Adam </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $245.30 </td>
-                              <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                            </tr>
-                            <tr>
-                              <td> 3 </td>
-                              <td> John Richards </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $138.00 </td>
-                              <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                            </tr>
-                            <tr>
-                              <td> 4 </td>
-                              <td> Peter Meggik </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $ 77.99 </td>
-                              <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                            </tr>
-                            <tr>
-                              <td> 5 </td>
-                              <td> Edward </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $ 160.25 </td>
-                              <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                            </tr>
-                            <tr>
-                              <td> 6 </td>
-                              <td> John Doe </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $ 123.21 </td>
-                              <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                            </tr>
-                            <tr>
-                              <td> 7 </td>
-                              <td> Henry Tom </td>
-                              <td>
-                                <div class="progress">
-                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </td>
-                              <td> $ 150.00 </td>
-                              <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                              
-                            </tr>
+                          <tbody id = "information">                                                                                                                                     
+                            
                           </tbody>
                         </table>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
+                </div>           
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
@@ -428,6 +403,50 @@
     <script src="../../assets/js/file-upload.js"></script>
     <script src="../../assets/js/typeahead.js"></script>
     <script src="../../assets/js/select2.js"></script>
+    <script> 
+      var x = [
+        {         
+          name : 'Tung'  ,
+          birthday : "12/09/01" ,         
+          ID : "123456",
+          class : "10a2",
+          sex : "nam",
+          address : 'tay son'
+        },
+        {
+          name : 'Tung'  ,
+          birthday : "12/09/01" ,         
+          ID : "123456",
+          class : "10a2",
+          sex : "nam",
+          address : 'tay son'
+        }
+      ]    
+        // function findSoTheoDoi() {
+        //   axios.post()  // dien link api vao
+        //     .then((x) => {
+              console.log(x);
+              let info = " ";
+              $.each(x, function (index, value) {
+                info += `
+                <tr>
+                  <td> ${index} </td>
+                  <td> ${value.name} </td>
+                  <td> ${value.birthday} </td>
+                  <td> ${value.id}   </td>                        
+                  <td> ${value.class}</td>
+                  <td> ${value.sex}</td>
+                  <td> ${value.address}</td>                
+                </tr>            
+                 `            
+              });         
+              $('#information').html(info);
+          //   });
+          // }
+         
+          
+
+      </script>
     <!-- End custom js for this page -->
   </body>
 </html>
