@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -320,87 +320,16 @@
                         </colgroup>
                         <thead>
                           <tr>
-                            <th> ID </th>
-                            <th> Ngày </th>
-                            <th> Giờ bắt đầu </th>
-                            <th> Giờ kết thúc </th>
-                            <th> Nội dung </th>
-                            <th> Địa điểm </th>
-                            <th> Ghi chú</th>
-                            <th> Tùy chọn</th>
+                            <tr>
+                              <th> Ngày </th>
+                              <th> Giờ</th>  
+                              <th> Hoạt động</th>                     
+                              <th> Địa điểm </th>
+                              <th> Chức năng </th>
+                            </tr>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td> 1 </td>
-                            <td> Herman Beck </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>                       
-                            <td> $ 77.99 </td>
-                            <td> 123 </td>
-                            <td> 123 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> Messsy Adam </td>
-                            <td> 1/1/2001  </td>  
-                            <td> Nam  </td>                                                                           
-                            <td> $245.30 </td>
-                            <td> 123445579 </td>
-                            <td> 123 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> John Richards </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $138.00 </td>
-                            <td> 123445579 </td>
-                            <td> 123 </td>
-                            <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                          </tr>
-                          <tr>
-                            <td> 4 </td>
-                            <td> Peter Meggik </td>
-                            <td> 1/1/2001  </td>     
-                            <td> Nam  </td>                     
-                            <td> $ 77.99 </td>
-                            <td> 123445579 </td>
-                            <td> 123 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          </tr>
-                          <tr>
-                            <td> 5 </td>
-                            <td> Edward </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $ 160.25 </td>
-                            <td> 123445579 </td>
-                            <td> 123 </td>
-                            <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                          </tr>
-                          <tr>
-                            <td> 6 </td>
-                            <td> John Doe </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $ 123.21 </td>
-                            <td> 123445579 </td>
-                            <td> 123 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          </tr>
-                          <tr>
-                            <td> 7 </td>
-                            <td> Henry Tom </td>
-                            <td> 1/1/2001  </td>
-                            <td> Nam  </td>
-                            <td> $ 150.00 </td>
-                            <td> 123445579 </td>
-                            <td> 123 </td>
-                            <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>                          
-                          </tr>
+                        <tbody id="information">                                                             
                         </tbody>
                       </table>
                     </div>
@@ -430,6 +359,43 @@
     <script src="../../assets/js/misc.js"></script>
     <script src="../../assets/js/settings.js"></script>
     <script src="../../assets/js/todolist.js"></script>
+    <script> 
+      var x = [
+        {         
+          date : 'Sep 15 , 2022'  ,
+          timeStart : "12h30" , 
+          timeFinish : "14h30" ,         
+          activity : "câu cá",
+          place : "công viên"
+        },
+        {
+          date : 'Sep 15 , 2022'  ,
+          timeStart : "12h30" , 
+          timeFinish : "13h30" ,         
+          activity : "câu cá",
+          place : "công viên"
+        }
+      ]    
+        // function findSoTheoDoi() {
+        //   axios.post()  // dien link api vao
+        //     .then((x) => {
+              console.log(x);
+              let info = " ";
+              $.each(x, function (index, value) {
+                info += `
+                <tr>
+                  <td> ${value.date} </td>
+                  <td> ${value.timeStart} - ${value.timeFinish} </td>
+                  <td> ${value.activity}   </td>                        
+                  <td> ${value.place}</td>
+                  <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
+                </tr>            
+                 `            
+              });         
+              $('#information').html(info);
+          //   });
+          // }                  
+      </script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->

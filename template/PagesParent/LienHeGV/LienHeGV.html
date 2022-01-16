@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Phụ huynh</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -309,7 +309,7 @@
                         <label for="exampleTextarea1">Textarea</label>
                         <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button type="submit" onclick="submitSuccess()" class="btn btn-primary mr-2">Submit</button>
                       <button class="btn btn-dark">Cancel</button>
                     </form>
                   </div>
@@ -351,4 +351,9 @@
     <script src="../../assets/js/select2.js"></script>
     <!-- End custom js for this page -->
   </body>
+  <script>
+    function submitSuccess(){
+      alert("Gửi thành công");
+    }
+  </script>
 </html>
