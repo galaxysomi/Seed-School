@@ -13,6 +13,10 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  place:{
+    type: String,
+    required: true
+  }
 });
 
 const Activity = mongoose.model('Activity', UserSchema);
