@@ -342,52 +342,12 @@
                 </ol>
               </nav>
             </div>
-            <div class="row">                         
-      
-              <div class="col-lg-4 grid-margin">
-                <div style="position: absolute;">
-                  <img style="position: relative;width: 200px;height: 200px; left: 20px;border-radius: 50%;" src="https://kenh14cdn.com/2016/photo-1-1466407298127.jpg" alt="">
-                </div>
-              </div>
-              <div class="col-lg-8 grid-margin ">
-                <div class="card">
-                  <ul style="margin-top: 20px;">
-                    <li>Họ và tên : Tùng Trần </li>
-                    <li>Ngày sinh</li>
-                    <li >Mã học sinh :</li>
-                    <li>Lớp :</li>
-                    <li>Giới tính :</li>
-                    <li>Năm vào trường :</li>
-                    <li>Địa chỉ :</li>
-
-                  </ul>
-                </div>
-              </div>                         
+            <div class="row" id="studentInformation">                         
+                   
             </div>
             <div style="margin-top: 50px;"><h3 style="color: rgb(218, 209, 209); margin-bottom: 20px;">Thông tin phụ huynh</h3></div>
-            <div style="" class="row">
-              <div class="col-lg-6 grid-margin ">             
-                <div class="card">
-                  <ul style="margin-top: 20px;">
-                    <li >Họ và tên bố: Tùng Trần </li>
-                    <li >Năm sinh :</li>
-                    <li>Nghề nghiệp :</li>
-                    <li>Điện thoại :</li>
-                    <li>Email :</li>
-                  </ul>
-                </div>             
-              </div>
-              <div class="col-lg-6 grid-margin ">
-                <div class="card">
-                  <ul style="margin-top: 20px;">
-                    <li >Họ và tên mẹ : Tùng Trần </li>
-                    <li >Năm sinh</li>
-                    <li>Nghề nghiệp :</li>
-                    <li>Điện thoại :</li>
-                    <li>Email :</li>
-                  </ul>
-                </div>
-              </div>
+            <div style="" class="row" id="parentInformation">
+              
 
             </div>
           </div>
@@ -417,8 +377,95 @@
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
-    <script>
-      
-    </script>
+    <script> 
+      var x = [
+        {         
+          name : "tung",
+          birthday : "2001",
+          id : "123 ",
+          class : "4A5",
+          sex : "nam",
+          address : "tay son"
+        }
+      ]
+      var y = [
+        {         
+          nameDad : "tung",
+          birthdayDad : "2001",
+          jobDad : "trader ",
+          phoneDad : "123",        
+          emailDad : "123@gmail.com",
+          nameMom : "tung",
+          birthdayMom : "2001",
+          jobMom : "trader ",
+          phoneMom : "123",        
+          emailMom : "123@gmail.com"
+        }
+      ]
+        // function findStudent() {
+        //   axios.post()  // dien link api vao
+        //     .then((x) => {
+              console.log(x);
+              let infoStudent = " ";
+              $.each(x, function (index, value) {
+                infoStudent += `
+                <div class="col-lg-4 grid-margin">
+                <div style="position: absolute;">
+                  <img style="position: relative;width: 200px;height: 200px; left: 20px;border-radius: 50%;" src="https://kenh14cdn.com/2016/photo-1-1466407298127.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8 grid-margin ">
+                <div class="card">
+                  <ul style="margin-top: 20px;">
+                    <li>Họ và tên : ${value.name} </li>
+                    <li>Ngày sinh : ${value.birthday}</li>
+                    <li >Mã học sinh : ${value.id}</li>
+                    <li>Lớp : ${value.class}</li>
+                    <li>Giới tính : ${value.sex}</li>                 
+                    <li>Địa chỉ : ${value.address}</li>
+                  </ul>
+                </div>
+              </div>                       
+                 `            
+              });         
+              $('#studentInformation').html(infoStudent);
+          //   });
+          // }
+          
+          // function findParent() {
+        //   axios.post()  // dien link api vao
+        //     .then((x) => {
+          console.log(x);
+              let infoParent = " ";
+              $.each(y, function (index, value) {
+                infoParent += `
+                <div class="col-lg-6 grid-margin ">             
+                <div class="card">
+                  <ul style="margin-top: 20px;">
+                    <li >Họ và tên bố: ${value.nameDad} </li>
+                    <li >Năm sinh : ${value.birthdayDad}</li>
+                    <li>Nghề nghiệp :${value.jobDad}</li>
+                    <li>Điện thoại :${value.phoneDad}</li>
+                    <li>Email : ${value.emailDad}</li>
+                  </ul>
+                </div>             
+              </div>
+              <div class="col-lg-6 grid-margin ">
+                <div class="card">
+                  <ul style="margin-top: 20px;">
+                    <li >Họ và tên mẹ : ${value.nameMom}</li>
+                    <li >Năm sinh : ${value.birthdayMom}</li>
+                    <li>Nghề nghiệp : ${value.jobMom}</li>
+                    <li>Điện thoại : ${value.phoneMom}</li>
+                    <li>Email : ${value.emailMom}</li>
+                  </ul>
+                </div>
+              </div>     
+                 `            
+              });         
+              $('#parentInformation').html(infoParent);
+          //   });
+          // }                  
+      </script>
   </body>
 </html>

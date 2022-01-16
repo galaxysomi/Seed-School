@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Phụ huynh</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -289,10 +289,43 @@
               <form action="" method="post">
                 <label for="">Chọn ngày : </label>
                 <input style="border-radius: 7px;" type="date" id="" name="">
-                <button style="border-radius: 5px;" type="button" class="btn btn-primary">Submit</button>
+                <button style="border-radius: 5px;" type="submit" onclick="submitSuccess()" class="btn btn-primary">Submit</button>
               </form>                                             
             </div>
 
+            
+
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Các hoạt động bên lề</h4>      
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <colgroup>
+                        <col width="60" span="1">
+                        <col width="50" span="1">
+                        <col width="450" span="1">
+                        <col width="200" span="1">
+                        <col width="auto" span="1">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th> Ngày </th>
+                          <th> Giờ </th>  
+                          <th> Hoạt động</th>                     
+                          <th> Địa điểm </th>
+                          <th> Chức năng </th>
+                        </tr>
+                      </thead>
+                      <tbody id="information">
+                                                                                                                   
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -309,56 +342,58 @@
                         
                       </colgroup>
                       <thead>
-                        <tr>
-                          <th> Thời gian bắt đầu </th>
-                          <th> Thời gian kết thúc </th>                              
+                        <tr>                         
+                          <th> Thời gian  </th>                              
                           <th> Hoạt động</th>                     
-                          <th> Nội dung chính </th>
-                          
+                          <th> Nội dung chính </th>                     
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>                         
-                          <td> a </td>
-                          <td> a </td>                        
-                          <td> a </td>  
-                          <td> a </td>                     
+                        <tr>                                               
+                          <td> 7h15-7h30 </td>                        
+                          <td> Đón trẻ</td>  
+                          <td> Đón trẻ - trao đổi thong tin với phụ huynh </td>                     
                         </tr>
-                        
-
-                                                                                    
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Các hoạt động</h4>      
-                  <div class="table-responsive">
-                    <table class="table table-bordered">
-                      <colgroup>
-                        <col width="60" span="1">
-                        <col width="50" span="1">
-                        <col width="450" span="1">
-                        <col width="200" span="1">
-                        <col width="auto" span="1">
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th> Ngày </th>
-                          <th> Giờ</th>  
-                          <th> Hoạt động</th>                     
-                          <th> Địa điểm </th>
-                          <th> Chức năng </th>
+                        <tr>                                               
+                          <td> 7h30-8h15</td>                        
+                          <td> Ăn sáng và thể dục </td>  
+                          <td> Thể dục sáng - Vệ sinh cá nhân </td>                     
                         </tr>
-                      </thead>
-                      <tbody id="information">
-                                                                                                                   
+                        <tr>                                               
+                          <td> 8h15-9h00 </td>                        
+                          <td> Hoạt động dạy học</td>  
+                          <td>Học tiếng anh với giáo viên bản ngữ - hoạt động ngoài trời </td>                     
+                        </tr>    
+                        <tr>                                               
+                          <td>9h00-9h40 </td>                        
+                          <td>Học theo chủ đề  </td>  
+                          <td>Học các môn âm nhạc ,toán , mỹ thuật ... </td>                     
+                        </tr>    
+                        <tr>                                               
+                          <td>9h40-10h30 </td>                        
+                          <td>Hoạt động góc </td>  
+                          <td>Hoạt động góc </td>                     
+                        </tr>    
+                        <tr>                                               
+                          <td>10h30-14h45 </td>                        
+                          <td>Ăn và ngủ trưa </td>  
+                          <td> Ăn và ngủ </td>                     
+                        </tr>    
+                        <tr>                                               
+                          <td>14h45-15h30 </td>                        
+                          <td>Học tiếng Anh </td>  
+                          <td>Họp tiếng Anh với người bản ngữ </td>                     
+                        </tr>    
+                        <tr>                                               
+                          <td>15h30-16h15 </td>                        
+                          <td> Hoạt động chiều</td>  
+                          <td>Hoạt động cả lớp,nhóm nhỏ giúp trẻ hoàn thiện kĩ năng sống </td>                     
+                        </tr>    
+                        <tr>                                               
+                          <td>16h15-17h00 </td>                        
+                          <td> Trả trẻ </td>  
+                          <td> Trả trẻ - trao đổi thông tin với phụ huynh </td>                     
+                        </tr>           
                       </tbody>
                     </table>
                   </div>
@@ -395,19 +430,21 @@
       var x = [
         {         
           date : 'Sep 15 , 2022'  ,
-          time : "12h30" ,         
+          timeStart : "12h30" , 
+          timeFinish : "14h30" ,         
           activity : "câu cá",
           place : "công viên"
         },
         {
           date : 'Sep 15 , 2022'  ,
-          time : "12h30" ,         
+          timeStart : "12h30" , 
+          timeFinish : "13h30" ,         
           activity : "câu cá",
           place : "công viên"
         }
       ]    
         // function findSoTheoDoi() {
-        //   axios.post()  // dien link api vao
+        //   axios.get()  // dien link api vao
         //     .then((x) => {
               console.log(x);
               let info = " ";
@@ -415,7 +452,7 @@
                 info += `
                 <tr>
                   <td> ${value.date} </td>
-                  <td> ${value.time} </td>
+                  <td> ${value.timeStart} - ${value.timeFinish} </td>
                   <td> ${value.activity}   </td>                        
                   <td> ${value.place}</td>
                   <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
@@ -424,7 +461,10 @@
               });         
               $('#information').html(info);
           //   });
-          // }                  
+          // }            
+        function submitSuccess(){
+          alert("Submit thành công");
+    }      
       </script>
     </body>
   </body>

@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Phụ huynh</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -304,92 +304,16 @@
                       </colgroup>
                       <thead>
                         <tr>
-                          <th> STT </th>
-                          <th> Ngày </th>
+                          <th> Ngày  </th>
+                          <th> Thứ </th>
                           <th> Bữa sáng </th>
                           <th> Bữa trưa </th>
                           <th> Bữa xế chiều </th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td> 1 </td>
-                          <td> Herman Beck </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 77.99 </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                        </tr>
-                        <tr>
-                          <td> 2 </td>
-                          <td> Messsy Adam </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $245.30 </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                        </tr>
-                        <tr>
-                          <td> 3 </td>
-                          <td> John Richards </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $138.00 </td>
-                          <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                        </tr>
-                        <tr>
-                          <td> 4 </td>
-                          <td> Peter Meggik </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 77.99 </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                        </tr>
-                        <tr>
-                          <td> 5 </td>
-                          <td> Edward </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 160.25 </td>
-                          <td><button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                        </tr>
-                        <tr>
-                          <td> 6 </td>
-                          <td> John Doe </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 123.21 </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                        </tr>
-                        <tr>
-                          <td> 7 </td>
-                          <td> Henry Tom </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> $ 150.00 </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                          
-                        </tr>
+                      <tbody id="information">
+                        
+                        
                       </tbody>
                     </table>
                   </div>
@@ -422,18 +346,18 @@
     <script> 
       var x = [
         {         
-          name : 'Tung tran'  ,
-          studentID : "123456" ,
-          date : "Sep 15 , 2022",
-          status : "Di hoc",
-          anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
+          date : 'Sep 15 , 2022'  ,
+          day : "monday" ,         
+          breakfast : "cá",
+          lunch : "cơm" ,
+          tea : " bánh"
         },
         {
-          name : 'Tung tran'  ,
-          studentID : "123456" ,
-          date : "Sep 15 , 2022",
-          status : "Nghỉ học",
-          anhDiemDanh : "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/51574639_2002558206715933_3318347992666210304_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=G8rbellI_JQAX89HqdD&_nc_ht=scontent.fhan3-1.fna&oh=00_AT-C1udkDwF5DkOTGdQHxU_6ZOsSmrne5QRY18t_OGo2BQ&oe=62070BF2"
+          date : 'Sep 15 , 2022'  ,
+          day : "monday" ,         
+          breakfast : "cá",
+          lunch : "cơm" ,
+          tea : " bánh"
         }
       ]    
         // function findSoTheoDoi() {
@@ -443,63 +367,18 @@
               let info = " ";
               $.each(x, function (index, value) {
                 info += `
-                <div class="col-lg-7 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Sổ theo dõi</h4>                  
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Tên học sinh</th>
-                            <th>${value.name}</th>                       
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mã học sinh</td>
-                            <td>${value.studentID}</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Ngày</td>
-                            <td>${value.date}</td>                                                     
-                          </tr>                         
-                          <tr>
-                            <td>Trạng thái</td>
-                            <td><label class="badge badge-success" id="statusText">${value.status}</label></td>
-                          </tr>                                                                                                           
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Ảnh điểm danh</h4>                  
-                    </p>
-                    <div class="table-responsive" style="position: absolute;">
-                      <img id="anhDiemDanh" src="${value.anhDiemDanh}" alt="">                                           
-                    </div>
-                  </div>
-                </div>
-              </div>         
-                 `
-                 
+                <tr>
+                  <td> ${value.date} </td>
+                  <td> ${value.day} </td>
+                  <td> ${value.breakfast}   </td>                        
+                  <td> ${value.lunch}</td>
+                  <td> ${value.tea}</td>                
+                </tr>            
+                 `            
               });         
               $('#information').html(info);
           //   });
-          // }
-          if (document.getElementById("statusText").innerHTML == "Nghỉ học") {
-                  document.getElementById("statusText").classList.remove("badge-success");
-                  document.getElementById("statusText").classList.add("badge-danger");
-                  document.getElementById("statusText").innerHTML = "New text!";              
-                }
-          
-
+          // }                  
       </script>
     </body>
   </body>

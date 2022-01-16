@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Giáo viên</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -331,8 +331,8 @@
                       <label for="exampleInputPassword4">Số điện thoại mẹ</label>
                       <input type="" class="form-control" id="exampleInputPassword4" ">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-dark">Cancel</button>
+                    <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>
+                    <button class="btn btn-dark" onclick="cancelSuccess()">Cancel</button>
                   </form>
                 </div>
               </div>
@@ -443,6 +443,13 @@
               $('#information').html(info);
           //   });
           // }
+
+          function submitSuccess(){
+          alert("Submit thành công");
+    }      
+    function cancelSuccess(){
+          alert("Cancel thành công");
+    }      
                
       </script>
     <!-- End custom js for this page -->

@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Corona Admin</title>
+  <title>Phụ huynh</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -303,7 +303,7 @@
             <form action="" method="post">
               <label for="birthday">Nhập năm : </label>
               <input style="border-radius: 7px;" id="" name="">
-              <button style="border-radius: 5px;" type="button" class="btn btn-primary">Submit</button>
+              <button style="border-radius: 5px;" type="button" onclick="submitSuccess()" class="btn btn-primary">Submit</button>
             </form>                                  
           </div>
           <div class="row">
@@ -405,6 +405,9 @@
       //   });
     
       // }
+      function submitSuccess(){
+        alert("Submit thành công");
+    }
   </script>
 </body>
 
