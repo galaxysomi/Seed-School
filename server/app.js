@@ -1,13 +1,26 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const expressLayouts = require('express-ejs-layouts');
-const passport = require('passport');
-var cookieParser = require('cookie-parser')
+const cors = require('cors');
 
 const app = express();
-//Cookie-parser
-app.use(cookieParser())
 
+
+// cors setup
+const corsOpts = {
+    origin: '*',
+    methods: [
+        'GET',
+        'POST',
+        'PUT',
+        'DELETE'
+    ],
+    allowedHeaders: [
+        'Content-Type',
+        'Authorization'
+    ],
+};
+
+app.use(cors(corsOpts))
 //DB config 
 const db = require('./sever/config/keys.js').MongoURI;
 
@@ -16,11 +29,9 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then (()=> console.log('Connected to Mongo'))
   .catch(err => console.log(err));
 
-app.use(expressLayouts);
-app.set('view engine', 'ejs')
 
 //body pasam
-app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 
 

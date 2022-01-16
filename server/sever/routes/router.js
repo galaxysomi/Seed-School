@@ -12,7 +12,7 @@ const foodmenu = require('../controller/admin/foodMenu')
 
 
 //login
-router.post('/api/parent/login',check.checkLogin, login.loginParent)
+router.post('/api/parent/login', login.loginParent)
 router.post('/api/teacher/login',check.checkLogin,  login.loginTeacher)
 router.post('/api/admin/login',check.checkLogin,  login.loginAdmin)
 
