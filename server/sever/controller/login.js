@@ -8,93 +8,95 @@ const Teacher = require ('../../models/Teacher');
 const Parent =  require ('../../models/Parent');
 const Admin = require ('../../models/admin');
 
-exports.loginTeacher = (req, res) => {
+exports.loginAdmin = async (req, res) => {
     const {username, password} = req.body;
-    Teacher.findOne({
-        username: username
-    }).then ((user) => {
-        if (!user){
-            return res.json({success: false, message: 'Tài khoản hoặc mật khẩu sai'})
-        }
-        //Match password
+    if (!username || !password)
+		return res
+			.status(400)
+			.json({ success: false, message: 'Không tìm thấy tài khoản hoặc mật khẩu' })
+    try{
+        const user = await Admin.findOne({username})
+        if (!user)
+            return res
+                .status(400)
+                .json({success:false, message:'Tài khoản hoặc mật khẩu sai'})
+        
         bcrypt.compare(password, user.password, (err, isMatch)=>{
-            if(err) throw err;
+            if (err) return res.json(err)
             if (isMatch){
-                var token = jwt.sign({
-                    _id : user._id
-                },'longphu')
-               res.json({
-                   success:true,
-                   token,
-                   message:'Đăng nhập thành công'
-               })
+                const token = jwt.sign(
+                    {userId: user._id},'longphu')
+                res.json(
+                    {success:true, message: 'Đăng nhập thành công', token})
             }else{
-                res.json({
-                    success:false, message: 'Tài khoản hoặc mật khẩu sai'
-                })
+                return res.json({success:false, message:'Tài khoản hoặc mật khẩu sai'})
             }
         })
-    })
+    }catch(err){
+        console.log(err)
+        res.status(500).json({success:false, message:'Lỗi sever'})
+    }
+
+}
+exports.loginParent = async (req, res) => {
+    const {username, password} = req.body;
+    if (!username || !password)
+		return res
+			.status(400)
+			.json({ success: false, message: 'Không tìm thấy tài khoản hoặc mật khẩu' })
+    try{
+        const user = await Parent.findOne({username})
+        if (!user)
+            return res
+                .status(400)
+                .json({success:false, message:'Tài khoản hoặc mật khẩu sai'})
+        
+        bcrypt.compare(password, user.password, (err, isMatch)=>{
+            if (err) return res.json(err)
+            if (isMatch){
+                const token = jwt.sign(
+                    {userId: user._id},'longphu')
+                res.json(
+                    {success:true, message: 'Đăng nhập thành công', token})
+            }else{
+                return res.json({success:false, message:'Tài khoản hoặc mật khẩu sai'})
+            }
+        })
+    }catch(err){
+        console.log(err)
+        res.status(500).json({success:false, message:'Lỗi sever'})
+    }
 
 }
 
-exports.loginParent = (req, res, next) => {
+exports.loginTeacher = async (req, res) => {
     const {username, password} = req.body;
-    Parent.findOne({
-        username: username
-    }).then ((user) => {
-        if (!user){
-            return res.json({success: false, message: 'Tài khoản hoặc mật khẩu sai'})
-        }
-        //Match password
+    if (!username || !password)
+		return res
+			.status(400)
+			.json({ success: false, message: 'Không tìm thấy tài khoản hoặc mật khẩu' })
+    try{
+        const user = await Teacher.findOne({username})
+        if (!user)
+            return res
+                .status(400)
+                .json({success:false, message:'Tài khoản hoặc mật khẩu sai'})
+        
         bcrypt.compare(password, user.password, (err, isMatch)=>{
-            if(err) throw err;
+            if (err) return res.json(err)
             if (isMatch){
-                var token = jwt.sign({
-                    _id : user._id
-                },'longphu')
-               res.json({
-                   success:true,
-                   token,
-                   message:'Đăng nhập thành công'
-               })
+                const token = jwt.sign(
+                    {userId: user._id},'longphu')
+                res.json(
+                    {success:true, message: 'Đăng nhập thành công', token})
             }else{
-                res.json({
-                    success:false, message: 'Tài khoản hoặc mật khẩu sai'
-                })
+                return res.json({success:false, message:'Tài khoản hoặc mật khẩu sai'})
             }
         })
-    })
-
-}
-
-exports.loginAdmin = (req, res) => {
-    const {username, password} = req.body;
-    Admin.findOne({
-        username: username
-    }).then ((user) => {
-        if (!user){
-            return res.json({success: false, message: 'Tài khoản hoặc mật khẩu sai'})
-        }
-        //Match password
-        bcrypt.compare(password, user.password, (err, isMatch)=>{
-            if(err) throw err;
-            if (isMatch){
-                var token = jwt.sign({
-                    _id : user._id
-                },'longphu')
-               res.json({
-                   success:true,
-                   token,
-                   message:'Đăng nhập thành công'
-               })
-            }else{
-                res.json({
-                    success:false, message: 'Tài khoản hoặc mật khẩu sai'
-                })
-            }
-        })
-    })
+    }catch(err){
+        console.log(err)
+        res.status(500).json({success:false, message:'Lỗi sever'})
+    }
 
 }
 

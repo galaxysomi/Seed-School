@@ -1,7 +1,7 @@
-POST http://localhost:5000/admin/login
+POST http://localhost:3000/api/parent/login
 Content-Type: application/json
 
 {
-    "username" : "admin",
-    "password" : "superadmin",
+    "username" : "paret",
+    "password" : "parent"
 }

@@ -25,7 +25,7 @@ exports.checkTeacher =async (req, res,next ) => {
 	    const token = authHeader && authHeader.split(' ')[1]
         const idUser = jwt.verify(token,'longphu')
         await Teacher.findOne({
-            _id: idUser
+            idUser
         })
         .then(user => {
             if(user){
@@ -46,7 +46,7 @@ exports.checkAdmin =  (req, res, next) => {
 	    const token = authHeader && authHeader.split(' ')[1]
         const idUser = jwt.verify(token,'longphu')
         Admin.findOne({
-            _id: idUser
+            idUser
         })
         .then(user => {
             if(user){
@@ -66,7 +66,7 @@ exports.checkParent = async (req, res, next) => {
 	    const token = authHeader && authHeader.split(' ')[1]
         const idUser = jwt.verify(token,'longphu')
         await Parent.findOne({
-            _id: idUser
+            idUser
         })
         .then(user => {
             if(user){
