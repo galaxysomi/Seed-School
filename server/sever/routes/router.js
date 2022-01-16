@@ -10,29 +10,30 @@ const login = require('../controller/login')
 const activity = require('../controller/admin/activity')
 const foodmenu = require('../controller/admin/foodMenu')
 
+
 //login
-router.post('/parent/login', login.loginParent)
-router.post('/teacher/login', login.loginTeacher)
-router.post('/admin/login', login.loginAdmin)
+router.post('/api/parent/login',check.checkLogin, login.loginParent)
+router.post('/api/teacher/login',check.checkLogin,  login.loginTeacher)
+router.post('/api/admin/login',check.checkLogin,  login.loginAdmin)
 
 
 //ManagerTeacher
-router.post('/admin/teacher',check.checkAdmin, teacher.add);
-router.get('/admin/teacher',check.checkAdmin, teacher.find);
-router.put('/admin/teacher/:id',check.checkAdmin, teacher.update);
-router.delete('/admin/teacher/:id',check.checkAdmin, teacher.delete);
+router.post('/api/admin/teacher',check.checkAdmin, teacher.add);
+router.get('/api/admin/teacher',check.checkAdmin, teacher.find);
+router.put('/api/admin/teacher/:id',check.checkAdmin, teacher.update);
+router.delete('/api/admin/teacher/:id',check.checkAdmin, teacher.delete);
 
 
 //Activity
-router.post('/admin/activities',check.checkAdmin, activity.create);
-router.get('/admin/activities',check.checkAdmin, activity.find);
-router.put('/admin/activities/:id',check.checkAdmin, activity.update);
-router.delete('/admin/activities/:id',check.checkAdmin, activity.delete);
+router.post('/api/admin/activities',check.checkAdmin, activity.create);
+router.get('/api/admin/activities',check.checkAdmin, activity.find);
+router.put('/api/admin/activities/:id',check.checkAdmin, activity.update);
+router.delete('/api/admin/activities/:id',check.checkAdmin, activity.delete);
 
 //FoodMenu7
-router.post('/admin/foodmenu', foodmenu.create);
-router.get('/admin/foodmenu', foodmenu.find);
-router.put('/admin/foodmenu/:id', foodmenu.update);
+router.post('/api/admin/foodmenu', foodmenu.create);
+router.get('/api/admin/foodmenu', foodmenu.find);
+router.put('/api/admin/foodmenu/:id', foodmenu.update);
 router.delete('/admin/foodmenu/:id', foodmenu.delete);
 
 

@@ -6,11 +6,12 @@ exports.create = async (req,res)=>{
         return res.status(400).json({success:false, message : "Content can not be emtpy!"})
     }
 
-    const {title,description} = req.body
+    const {title,description,place} = req.body
     // new user
     try{const newActivity = new Activity({
         title,
-        description 
+        description,
+        place
     })
 
     await newActivity.save()

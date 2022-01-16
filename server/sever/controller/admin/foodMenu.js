@@ -6,11 +6,13 @@ exports.create = async (req,res)=>{
         return res.status(400).json({success:false, message : "Content can not be emtpy!"})
     }
 
-    const {title,description} = req.body
+    const {title,monChinh, monDiemTam, quaChieu} = req.body
     // new user
     try{const newMenu = new FoodMenu({
         title,
-        description 
+        monChinh,
+        monDiemTam,
+        quaChieu
     })
 
     await newMenu.save()

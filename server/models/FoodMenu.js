@@ -5,7 +5,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  description: {
+  monChinh: {
+    type: String,
+    required: true
+  },
+  monDiemTam: {
+    type: String,
+    required: true
+  },
+  quaChieu: {
     type: String,
     required: true
   },

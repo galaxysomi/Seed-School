@@ -27,6 +27,6 @@ app.use(express.urlencoded({extended: false}));
 //Routes
 app.use('/', require('./sever/routes/router'))
 
-const POST = process.env.PORT || 5000
-app.listen(POST, console.log('Sever started on port 5000'));
+const POST = process.env.PORT || 3000
+app.listen(POST, console.log('Sever started on port 3000'));
 

@@ -7,15 +7,14 @@ const Parent = require('../../models/Parent')
 const Admin = require('../../models/admin')
 
 
-exports.verifyToken = (req, res, next) => {
+exports.checkLogin = async (req, res, next) => {
 	try {
         const authHeader = req.header('Authorization')
 	    const token = authHeader && authHeader.split(' ')[1]
-		const decoded = jwt.verify(token,'longphu')
-		next()
+		const iidUser = jwt.verify(token,'longphu')
+        res.json({success: false,message:'Ban da dang nhap'})   
 	} catch (error) {
-		console.log(error)
-		return res.status(403).json({ success: false, message: 'Invalid token' })
+		next()
 	}
 }
 
@@ -36,7 +35,7 @@ exports.checkTeacher =async (req, res,next ) => {
             }
         })
     }catch(err){
-        res.json({success: false, message: 'Lỗi server'})
+        res.json({success: false, message: 'Bạn chưa đăng nhập'})
     }
 }
 
@@ -57,7 +56,7 @@ exports.checkAdmin =  (req, res, next) => {
             }
         })
     }catch(err){
-        res.json({success: false, message: 'Lỗi server'})
+        res.json({success: false, message: 'Bạn chưa đăng nhập'})
     }
 }
 
@@ -77,6 +76,6 @@ exports.checkParent = async (req, res, next) => {
             }
         })
     }catch(err){
-        res.json({success: false, message: 'Lỗi server'})
+        res.json({success: false, message: 'Bạn chưa đăng nhập'})
     }
 }
