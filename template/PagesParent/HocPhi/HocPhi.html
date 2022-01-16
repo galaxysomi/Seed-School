@@ -318,8 +318,11 @@
                           <th> Tháng </th>
                           <th> Họ tên </th>
                           <th> Học phí </th>
-                          <th> Deadline </th>
+                          <th> Nghỉ có phép </th>
+                          <th> Nghỉ không phép</th>
+                          <th> Buổi trông muộn </th>
                           <th> Trạng thái</th>
+
                         </tr>
                       </thead>
                       <tbody id="tuitionTable">                       
@@ -358,27 +361,12 @@
   <!-- End custom js for this page -->
 
   <script> 
-  var x = [
-    {
-      month : 1 ,
-      name : 'Tung tran'  ,
-      tuition : "50$" ,
-      deadline : "Sep 15 , 2022",
-      status : "Đã nộp"
-    },
-    {
-      month : 2 ,
-      name : 'Quang'  ,
-      tuition : "50$" ,
-      status: "Chưa nộp"
-    }
-   ]     //Object de test
-    // function findTuition() {
-    //   axios.post()  // dien link api vao
-    //     .then((x) => {
-          
+  
+    function findTuition() {
+      axios.get()  // dien link api vao
+        .then((hocphi) => {       
           let tuition = " ";
-          $.each(x, function (index, value) {
+          $.each(hocphi.data, function (index, value) {
             tuition += `
             <tr>
               <td> ${value.month} </td> 
@@ -397,14 +385,11 @@
               <td><label class="badge badge-danger">${value.status}</label></td>
               </tr>              
              `
-            }
-            
-            
+            }                
           });
           $('#tuitionTable').html(tuition);
-      //   });
-    
-      // }
+        });   
+      }
       function submitSuccess(){
         alert("Submit thành công");
     }

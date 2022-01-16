@@ -124,7 +124,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="PagesParent/XemMenu/XemMenu.html">
+            <a class="nav-link" href="../../PagesParent/XemMenu/XemMenu.html">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
@@ -293,55 +293,7 @@
               </form>                                             
             </div>
             <div class="row" id="information">
-              <div class="col-lg-7 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Sổ theo dõi</h4>                  
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Tên học sinh</th>
-                            <th>Tùng Trần</th>                       
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mã học sinh</td>
-                            <td>53275534</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Ngày</td>
-                            <td>12 May 2017</td>                                                     
-                          </tr>                         
-                          <tr>
-                            <td>Trạng thái</td>
-                            <td><label class="badge badge-success">Đi học</label></td>
-                          </tr>                                                                                                           
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Ảnh điểm danh</h4>
-                    
-                    </p>
-                    <div class="table-responsive" style="position: absolute;">
-                      <img id="anhDiemDanh" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9FMBxgpbg370vWs2GAnN4VjDLS1Tc1fNZzw&usqp=CAU" alt="">                                           
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              
-              
-              
+
             </div>
           </div>
           <!-- content-wrapper ends -->
@@ -413,7 +365,15 @@
                           <tr>
                             <td>Ngày</td>
                             <td>${value.date}</td>                                                     
-                          </tr>                         
+                          </tr>
+                          <tr>
+                            <td>Trông muộn</td>
+                            <td> Có </td>                                                     
+                          </tr>
+                          <tr>
+                            <td>Nhận xét</td>
+                            <td> Em xinh lắm</td>                                                     
+                          </tr>                                  
                           <tr>
                             <td>Trạng thái</td>`;
                             if(value.status == 'Đi học'){
