@@ -338,42 +338,27 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Các hoạt động</h4>
-                
+                  <h4 class="card-title">Các hoạt động</h4>      
                   <div class="table-responsive">
                     <table class="table table-bordered">
                       <colgroup>
+                        <col width="60" span="1">
                         <col width="50" span="1">
-                        <col width="50" span="1">
-                        <col width="50" span="1">
-                        <col width="50" span="1">
-                        
+                        <col width="450" span="1">
+                        <col width="200" span="1">
+                        <col width="auto" span="1">
                       </colgroup>
                       <thead>
                         <tr>
-                          <th> STT </th>
-                          <th> Thời gian bắt đầu </th>
-                          <th> Thời gian kết thúc </th>                              
+                          <th> Ngày </th>
+                          <th> Giờ</th>  
                           <th> Hoạt động</th>                     
-                          <th> Nội dung chính </th>
+                          <th> Địa điểm </th>
+                          <th> Chức năng </th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td> 1 </td>
-                          <td> 13H30 </td>
-                          <td> Tùng máy dập </td>                        
-                          <td> Love hotel </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                        </tr>
-                        <tr>
-                          <td> 2 </td>
-                          <td> 13H30 </td>                        
-                          <td> Chửi tùng </td>                         
-                          <td> Sân </td>
-                          <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button></td>
-                        </tr>
-                                                                                    
+                      <tbody id="information">
+                                                                                                                   
                       </tbody>
                     </table>
                   </div>
@@ -409,18 +394,16 @@
     <script> 
       var x = [
         {         
-          name : 'Tung tran'  ,
-          studentID : "123456" ,
-          date : "Sep 15 , 2022",
-          status : "Di hoc",
-          anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
+          date : 'Sep 15 , 2022'  ,
+          time : "12h30" ,         
+          activity : "câu cá",
+          place : "công viên"
         },
         {
-          name : 'Tung tran'  ,
-          studentID : "123456" ,
-          date : "Sep 15 , 2022",
-          status : "Nghỉ học",
-          anhDiemDanh : "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/51574639_2002558206715933_3318347992666210304_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=G8rbellI_JQAX89HqdD&_nc_ht=scontent.fhan3-1.fna&oh=00_AT-C1udkDwF5DkOTGdQHxU_6ZOsSmrne5QRY18t_OGo2BQ&oe=62070BF2"
+          date : 'Sep 15 , 2022'  ,
+          time : "12h30" ,         
+          activity : "câu cá",
+          place : "công viên"
         }
       ]    
         // function findSoTheoDoi() {
@@ -430,63 +413,18 @@
               let info = " ";
               $.each(x, function (index, value) {
                 info += `
-                <div class="col-lg-7 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Sổ theo dõi</h4>                  
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Tên học sinh</th>
-                            <th>${value.name}</th>                       
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mã học sinh</td>
-                            <td>${value.studentID}</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Ngày</td>
-                            <td>${value.date}</td>                                                     
-                          </tr>                         
-                          <tr>
-                            <td>Trạng thái</td>
-                            <td><label class="badge badge-success" id="statusText">${value.status}</label></td>
-                          </tr>                                                                                                           
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Ảnh điểm danh</h4>                  
-                    </p>
-                    <div class="table-responsive" style="position: absolute;">
-                      <img id="anhDiemDanh" src="${value.anhDiemDanh}" alt="">                                           
-                    </div>
-                  </div>
-                </div>
-              </div>         
-                 `
-                 
+                <tr>
+                  <td> ${value.date} </td>
+                  <td> ${value.time} </td>
+                  <td> ${value.activity}   </td>                        
+                  <td> ${value.place}</td>
+                  <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
+                </tr>            
+                 `            
               });         
               $('#information').html(info);
           //   });
-          // }
-          if (document.getElementById("statusText").innerHTML == "Nghỉ học") {
-                  document.getElementById("statusText").classList.remove("badge-success");
-                  document.getElementById("statusText").classList.add("badge-danger");
-                  document.getElementById("statusText").innerHTML = "New text!";              
-                }
-          
-
+          // }                  
       </script>
     </body>
   </body>

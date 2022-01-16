@@ -373,7 +373,7 @@
           name : 'Tung tran'  ,
           studentID : "123456" ,
           date : "Sep 15 , 2022",
-          status : "Di hoc",
+          status : "Đi học",
           anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
         },
         {
@@ -415,8 +415,18 @@
                             <td>${value.date}</td>                                                     
                           </tr>                         
                           <tr>
-                            <td>Trạng thái</td>
-                            <td><label class="badge badge-success" id="statusText">${value.status}</label></td>
+                            <td>Trạng thái</td>`;
+                            if(value.status == 'Đi học'){
+                  info += `
+                  <td><label class="badge badge-success" id="statusText">${value.status}</label></td>           
+                 `
+                }
+                if(value.status == 'Nghỉ học'){
+                  info += `
+                  <td><label class="badge badge-danger" id="statusText">${value.status}</label></td>              
+                 `
+                }
+                info += `                          
                           </tr>                                                                                                           
                         </tbody>
                       </table>
@@ -441,11 +451,7 @@
               $('#information').html(info);
           //   });
           // }
-          if (document.getElementById("statusText").innerHTML == "Nghỉ học") {
-                  document.getElementById("statusText").classList.remove("badge-success");
-                  document.getElementById("statusText").classList.add("badge-danger");
-                  document.getElementById("statusText").innerHTML = "New text!";              
-                }
+         
           
 
       </script>
