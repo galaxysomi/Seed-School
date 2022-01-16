@@ -5,6 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Corona Admin</title>
+   
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendors/bootstrap1/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendors/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendors/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendors/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -283,38 +299,109 @@
           </div>
         </nav>
         <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Form elements </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
-                </ol>
-              </nav>
-            </div>
-            <div class="row">
-              <div class="col-md-6 grid-margin stretch-card">
-                
-              </div>
-              <div class="col-md-6 grid-margin stretch-card">
-                
-              </div>
-              <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    
-                      <div class="form-group">
-                        <label for="exampleTextarea1">Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
-                    </form>
+        <div class="bg-contact3" style="">
+          <div class="container-contact3">
+            <div class="wrap-contact3">
+              <form class="contact3-form validate-form">
+                <span class="contact3-form-title">
+                  Gửi thư cho giáo viên
+                </span>
+      
+                <div class="wrap-contact3-form-radio">
+                  <div class="contact3-form-radio m-r-42">
+                    <input class="input-radio3" id="radio1" type="radio" name="choice" value="say-hi" checked="checked">
+                    <label class="label-radio3" for="radio1">
+                      Xin nghỉ học
+                    </label>
+                  </div>
+      
+                  <div class="contact3-form-radio">
+                    <input class="input-radio3" id="radio2" type="radio" name="choice" value="get-quote">
+                    <label class="label-radio3" for="radio2">
+                      Thư cảm ơn
+                    </label>
                   </div>
                 </div>
-              </div>
+      
+                <div class="wrap-input3 validate-input" data-validate="Name is required">
+                  <input class="input3" type="text" name="name" placeholder="Your Name">
+                  <span class="focus-input3"></span>
+                </div>
+      
+                <div class="wrap-input3 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                  <input class="input3" type="text" name="email" placeholder="Your Email">
+                  <span class="focus-input3"></span>
+                </div>
+      
+                <div class="wrap-input3 input3-select">
+                  <div>
+                    <select class="selection-2" name="service">
+                      <option>Test</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                  <span class="focus-input3"></span>
+                </div>
+      
+                <div class="wrap-input3 input3-select">
+                  <div>
+                    <select class="selection-2" name="budget">
+                      <option>Test</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                  <span class="focus-input3"></span>
+                </div>
+      
+                <div class="wrap-input3 validate-input" data-validate = "Message is required">
+                  <textarea class="input3" name="message" placeholder="Your Message"></textarea>
+                  <span class="focus-input3"></span>
+                </div>
+      
+                <div class="container-contact3-form-btn">
+                  <button class="contact3-form-btn">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+      
+        <div id="dropDownSelect1"></div>
+      
+      <!--===============================================================================================-->
+        <script src="../../assets/vendors/jquery/jquery-3.2.1.min.js"></script>
+      <!--===============================================================================================-->
+        <script src="../../assets/vendors/bootstrap1/js/bootstrap.js"></script>
+        <script src="../../assets/vendors/bootstrap1/js/bootstrap.min.js"></script>
+      <!--===============================================================================================-->
+        <script src="../../assets/vendors/select2/select2.min.js"></script>
+        <script>
+          $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+          });
+        </script>
+      <!--===============================================================================================-->
+        <script src="../../assets/js/main.js"></script>
+      
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-23581568-13');
+      </script>
+                
+              
 
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
