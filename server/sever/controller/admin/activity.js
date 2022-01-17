@@ -1,4 +1,5 @@
 const Activity = require('../../../models/activity')
+const mongoose = require('mongoose')
 
 exports.create = async (req,res)=>{
     // validate request
@@ -6,12 +7,15 @@ exports.create = async (req,res)=>{
         return res.status(400).json({success:false, message : "Content can not be emtpy!"})
     }
 
-    const {title,description,place} = req.body
+    const {title,description,place, date, timeStart, timeFinish} = req.body
     // new user
     try{const newActivity = new Activity({
         title,
         description,
-        place
+        place,
+        date,
+        timeStart,
+        timeFinish
     })
 
     await newActivity.save()
@@ -52,6 +56,24 @@ exports.find = async (req, res)=>{
     }catch{
     res.status(500).json({ success: false, message: 'Thất bại' })
     }
+}
+
+exports.findDate = async (req, res) => {
+    if (!req.body){
+        return res.json({ success: false, message: 'Bạn hãy nhập ngày'})
+    }
+    const date = new Date(req.body.date)
+    await Activity.find({date})
+        .then((data) => {
+            if(data){
+                return res.json({activity: data })
+            }else{
+                return res.json({susccess:false, message:"Không có hoạt động trong ngày này"})
+            }
+        })
+        .catch(err=>{
+            res.status(500).json({susccess:false, message : "Lỗi tìm kiếm"})
+        })
 }
 
 // Update a new idetified user by user id

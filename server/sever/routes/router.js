@@ -18,22 +18,23 @@ router.post('/api/admin/login',check.checkLogin,  login.loginAdmin)
 
 
 //ManagerTeacher
-router.post('/api/admin/teacher', teacher.add);
-router.get('/api/admin/teacher', teacher.find);
+router.post('/api/admin/teacher',check.checkAdmin, teacher.add);
+router.get('/api/admin/teacher',check.checkAdmin, teacher.find);
 router.put('/api/admin/teacher/:id',check.checkAdmin, teacher.update);
 router.delete('/api/admin/teacher/:id',check.checkAdmin, teacher.delete);
 
 
 //Activity
 router.post('/api/admin/activities',check.checkAdmin, activity.create);
-router.get('/api/admin/activities', activity.find )
-   
-router.put('/api/admin/activities/:id',check.checkAdmin, activity.update);
+router.get('/api/admin/activities', activity.find);
+router.post('/api/admin/activities/find', activity.findDate)
+router.put('/api/admin/activities/:id', activity.update);
 router.delete('/api/admin/activities/:id',check.checkAdmin, activity.delete);
 
 //FoodMenu7
 router.post('/api/admin/foodmenu', foodmenu.create);
 router.get('/api/admin/foodmenu', foodmenu.find);
+router.post('/api/admin/foodmenu/find', foodmenu.findDate)
 router.put('/api/admin/foodmenu/:id', foodmenu.update);
 router.delete('/admin/foodmenu/:id', foodmenu.delete);
 

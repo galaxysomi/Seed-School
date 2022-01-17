@@ -11,9 +11,17 @@ const UserSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+    timestamp: true
   },
   place:{
+    type: String,
+    required: true
+  },
+  timeStart:{
+    type: String,
+    required: true
+  },
+  timeFinish:{
     type: String,
     required: true
   }

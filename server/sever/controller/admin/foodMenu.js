@@ -6,17 +6,24 @@ exports.create = async (req,res)=>{
         return res.status(400).json({success:false, message : "Content can not be emtpy!"})
     }
 
-    const {title,monChinh, monDiemTam, quaChieu} = req.body
-    // new user
-    try{const newMenu = new FoodMenu({
-        title,
-        monChinh,
-        monDiemTam,
-        quaChieu
-    })
-
-    await newMenu.save()
-    res.json({ success: true, message: 'Thêm thành công', fooMenu: newMenu })
+    const {monChinh, monDiemTam, quaChieu, date} = req.body
+    try{ await FoodMenu.findOne({date})
+    .then((data)=>{
+        if(data){
+            res.json({susccess:false, message:"Bạn đã thêm thực đơn cho ngày này rồi"})
+        }else{
+        
+            const newMenu = new FoodMenu({
+                monChinh,
+                monDiemTam,
+                quaChieu,
+                date
+            })
+            newMenu.save()
+            res.json({ 
+            success: true, message: 'Thêm thành công', fooMenu: newMenu })
+            }
+        })
     }catch{
             res.status(500).json({ success: false, message: 'Thất bại' })
         };
@@ -52,6 +59,25 @@ exports.find = (req, res)=>{
     }
 
     
+}
+
+
+exports.findDate = async (req, res) => {
+    if (!req.body){
+        return res.json({ success: false, message: 'Bạn hãy nhập ngày'})
+    }
+    const date = new Date(req.body.date)
+    await FoodMenu.findOne({date})
+        .then((data) => {
+            if(data){
+                return res.json({activity: data })
+            }else{
+                return res.json({susccess:false, message:"Không có bữa ăn trong ngày này"})
+            }
+        })
+        .catch(err=>{
+            res.status(500).json({susccess:false, message : "Lỗi tìm kiếm"})
+        })
 }
 
 // Update a new idetified user by user id
