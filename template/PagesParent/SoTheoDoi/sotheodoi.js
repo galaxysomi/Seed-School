@@ -1,25 +1,26 @@
-var x = [
-    {         
-      name : 'Tung tran'  ,
-      studentID : "123456" ,
-      date : "Sep 15 , 2022",
-      status : "Đi học",
-      anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
-    },
-    {
-      name : 'Tung tran'  ,
-      studentID : "123456" ,
-      date : "Sep 15 , 2022",
-      status : "Nghỉ học",
-      anhDiemDanh : "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/51574639_2002558206715933_3318347992666210304_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=G8rbellI_JQAX89HqdD&_nc_ht=scontent.fhan3-1.fna&oh=00_AT-C1udkDwF5DkOTGdQHxU_6ZOsSmrne5QRY18t_OGo2BQ&oe=62070BF2"
-    }
-  ]    
-    // function findSoTheoDoi() {
-    //   axios.post()  // dien link api vao
-    //     .then((x) => {
-          console.log(x);
-          let info = " ";
-          $.each(x, function (index, value) {
+
+
+const host = 'http://localhost:3000'
+axios.get(host + '/api/parent/logbook', {
+  headers: { Authorization: 'Bearer ' + localStorage.token }
+}).then(result => {
+  if (result.data.status === 'ok') {
+    const logbooks = result.data.logBooks ;
+    console.log(result.data);
+
+  
+    let info = " ";
+          $.each(logbooks, function (index, value) {
+            let trongMuon ;
+            if(value.lookAfterLate1 == 0 && value.lookAfterLate2 ==0){
+              trongMuon = "Không";
+            }
+            else if (value.lookAfterLate1 ==1){
+              trongMuon = "Từ 5h30 đến 6h30"
+            }
+            else if(value.lookAfterLate2 ==1){
+              trongMuon = "Sau 6h30"
+            }
             info += `
             <div class="col-lg-7 grid-margin stretch-card">
             <div class="card">
@@ -31,39 +32,39 @@ var x = [
                     <thead>
                       <tr>
                         <th>Tên học sinh</th>
-                        <th>${value.name}</th>                       
+                        <th>${value.student.name}</th>                       
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Mã học sinh</td>
-                        <td>${value.studentID}</td>
-                        
-                      </tr>
+                    <tbody>                     
                       <tr>
                         <td>Ngày</td>
-                        <td>${value.date}</td>                                                     
+                        <td>${new Date(value.date).getDate()}/${new Date(value.date).getMonth()+1}/${new Date(value.date).getFullYear()}</td>                                                     
                       </tr>
                       <tr>
                         <td>Trông muộn</td>
-                        <td> Có </td>                                                     
+                        <td> ${trongMuon} </td>                                                     
                       </tr>
                       <tr>
                         <td>Nhận xét</td>
-                        <td> Em xinh lắm</td>                                                     
+                        <td>${value.comment}</td>                                                     
                       </tr>                                  
                       <tr>
                         <td>Trạng thái</td>`;
-                        if(value.status == 'Đi học'){
+                        if(value.lateForSchool1 == 0 && value.lateForSchool2 ==0){
               info += `
-              <td><label class="badge badge-success" id="statusText">${value.status}</label></td>           
+              <td><label class="badge badge-success" id="statusText">Đi học</label></td>           
              `
             }
-            if(value.status == 'Nghỉ học'){
+            else if(value.lateForSchool1 == 1){
               info += `
-              <td><label class="badge badge-danger" id="statusText">${value.status}</label></td>              
+              <td><label class="badge badge-primary" id="statusText">Nghỉ có phép</label></td>              
              `
             }
+            else if(value.lateForSchool2 == 1){
+              info += `
+              <td><label class="badge badge-primary" id="statusText">Nghỉ không phép</label></td>              
+             `
+            }          
             info += `                          
                       </tr>                                                                                                           
                     </tbody>
@@ -87,9 +88,12 @@ var x = [
              
           });         
           $('#information').html(info);
-      //   });
-      // }
+  }
+})
+
+        
+          
+    
      
-      function submitSuccess(){
-        alert("Gửi thành công");
-    }
+
+     

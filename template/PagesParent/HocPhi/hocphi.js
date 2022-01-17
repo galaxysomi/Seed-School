@@ -1,8 +1,11 @@
-function findTuition() {
-    axios.get()  // dien link api vao
-      .then((hocphi) => {       
-        let tuition = " ";
-        $.each(hocphi.data, function (index, value) {
+const host = 'http://localhost:3000'
+axios.get(host + '/api/parent/tuition', {
+  headers: { Authorization: 'Bearer ' + localStorage.token }
+}).then(result => {
+  if (result.data.status === 'ok') {
+    console.log(result.data);
+    let tuition = " ";
+        $.each(result.data.tuition, function (index, value) {
           tuition += `
           <tr>
             <td> ${value.month} </td> 
@@ -24,8 +27,8 @@ function findTuition() {
           }                
         });
         $('#tuitionTable').html(tuition);
-      });   
-    }
-    function submitSuccess(){
-      alert("Submit thành công");
   }
+})
+
+        
+      

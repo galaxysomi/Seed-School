@@ -24,20 +24,32 @@ var x = [
               <td> ${value.month} </td> 
               <td> ${value.name} </td> 
               <td> ${value.tuition} </td> 
-              <td> ${value.deadline} </td> 
+              <td> ${value.deadline} </td>
+               
+              
               `;
             if(value.status == 'Đã nộp'){
               tuition += `
               <td><label class="badge badge-success">${value.status}</label></td>
-              </tr>              
+                       
              `
             }
             if(value.status == 'Chưa nộp'){
               tuition += `
               <td><label class="badge badge-danger">${value.status}</label></td>
-              </tr>              
+                         
              `
             }
+            tuition += `
+            <td> <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
+              Sửa
+            </button>
+            <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTuition">
+              Xóa
+            </button>
+            </td>
+            </tr> 
+            `
                          
           });
           $('#tuitionTable').html(tuition);
