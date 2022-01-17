@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const route= require('./sever/routes/router')
 const app = express();
 
 
@@ -36,7 +36,9 @@ app.use(express.json());
 
 
 //Routes
-app.use('/', require('./sever/routes/router'))
+app.use(route,function(req,res,next){
+    next();
+})
 
 const POST = process.env.PORT || 3000
 app.listen(POST, console.log('Sever started on port 3000'));

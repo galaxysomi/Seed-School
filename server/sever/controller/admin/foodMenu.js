@@ -31,10 +31,10 @@ exports.create = async (req,res)=>{
 }
 
 //find
-exports.find = (req, res)=>{
+exports.findByID = (req, res)=>{
 
-    if(req.query.id){
-        const id = req.query.id;
+    if(req.params.id){
+        const id = req.params.id;
 
         FoodMenu.findById(id)
             .then(data =>{
