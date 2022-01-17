@@ -268,57 +268,18 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">                                                                 
-            </div>
-            <div class="row">
-              <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Điểm danh học sinh</h4>                 
-                    <form class="forms-sample">
-                      <div class="form-group">
-                        <label for=""> <h4>Chọn ngày : </h4></label>
-                        <input style="border-radius: 7px;" type="date" id="" name="">   
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputName1">Tên học sinh</label>
-                        <input type="text" class="form-control" id="exampleInputName1" >
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Mã số học sinh</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" >
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Trông muộn</label>
-                        <input type="email" class="form-control"  >
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Nhận xét</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" >
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Trạng thái</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Đi học</option>
-                          <option>Nghỉ học</option>
-                        </select>
-                      </div>                                            
-                      <div class="form-group">
-                        <label for="exampleInputName1">Ảnh điểm danh</label>
-                        <input type="text" class="form-control" id="exampleInputName1" >
-                      </div>                                                    
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
-                    </form>
-                  </div>
-                </div>
-              </div>             
-            </div>
-            <div class="col-12 grid-margin stretch-card">
-
-            </div>
-            <div class="row" id="information">  
+          <div class="content-wrapper">            
+            <button style="margin-left: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
+              Thêm mới
+            </button>
+            <button style="margin-left: 10px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changesotheodoi">
+              Sửa
+            </button>
+            <button style="margin-left: 10px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletesotheodoi">
+              Xóa
+            </button>
+                      
+            <div style="margin-top:20px ;" class="row" id="information">  
                <!-- Thong tin in ra o day -->                                                                 
             </div>
           </div>
@@ -331,6 +292,145 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+
+<!-- modal add -->
+<div class="modal fade" id="addsotheodoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for=""> <h4>Chọn ngày : </h4></label>
+            <input style="border-radius: 7px;" type="date" id="" name="">   
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Tên học sinh</label>
+            <input type="text" class="form-control" id="exampleInputName1" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Mã số học sinh</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Trông muộn</label>
+            <input type="email" class="form-control"  >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Nhận xét</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Trạng thái</label>
+            <select class="form-control" id="exampleSelectGender">
+              <option>Đi học</option>
+              <option>Nghỉ học</option>
+            </select>
+          </div>                                            
+          <div class="form-group">
+            <label for="exampleInputName1">Ảnh điểm danh</label>
+            <input type="text" class="form-control" id="exampleInputName1" >
+          </div>                                                    
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal sửa -->
+ <div class="modal fade" id="changesotheodoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sửa </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for=""> <h4>Chọn ngày : </h4></label>
+            <input style="border-radius: 7px;" type="date" id="" name="">   
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Tên học sinh</label>
+            <input type="text" class="form-control" id="exampleInputName1" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Mã số học sinh</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Trông muộn</label>
+            <input type="email" class="form-control"  >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Nhận xét</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Trạng thái</label>
+            <select class="form-control" id="exampleSelectGender">
+              <option>Đi học</option>
+              <option>Nghỉ học</option>
+            </select>
+          </div>                                            
+          <div class="form-group">
+            <label for="exampleInputName1">Ảnh điểm danh</label>
+            <input type="text" class="form-control" id="exampleInputName1" >
+          </div>                                                    
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal xóa -->
+<div class="modal fade" id="deletesotheodoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa hoạt động</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="forms-sample">                                                   
+        <div class="form-group">
+          <label for="exampleSelectGender">ID</label>
+          <input type="" class="form-control" i>
+        </div>                                                                      
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Xóa menu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- end modal -->
+
     <!-- plugins:js -->
     <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -345,94 +445,9 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
-    <script> 
-      var x = [
-        {         
-          name : 'Tung tran'  ,
-          studentID : "123456" ,
-          date : "Sep 15 , 2022",
-          status : "Đi học",
-          anhDiemDanh : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqgcSx5b7CbwTZ4E-wiVsCuEwBSiMY9gb4A&usqp=CAU"
-        },
-        {
-          name : 'Tung tran'  ,
-          studentID : "123456" ,
-          date : "Sep 15 , 2022",
-          status : "Nghỉ học",
-          anhDiemDanh : "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/51574639_2002558206715933_3318347992666210304_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=G8rbellI_JQAX89HqdD&_nc_ht=scontent.fhan3-1.fna&oh=00_AT-C1udkDwF5DkOTGdQHxU_6ZOsSmrne5QRY18t_OGo2BQ&oe=62070BF2"
-        }
-      ]    
-        // function findSoTheoDoi() {
-        //   axios.post()  // dien link api vao
-        //     .then((x) => {
-              console.log(x);
-              let info = " ";
-              $.each(x, function (index, value) {
-                info += `
-                <div class="col-lg-7 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Sổ theo dõi</h4>                  
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Tên học sinh</th>
-                            <th>${value.name}</th>                       
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mã học sinh</td>
-                            <td>${value.studentID}</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Ngày</td>
-                            <td>${value.date}</td>                                                     
-                          </tr>                         
-                          <tr>
-                            <td>Trạng thái</td>`;
-                            if(value.status == 'Đi học'){
-                  info += `
-                  <td><label class="badge badge-success" id="statusText">${value.status}</label></td>           
-                 `
-                }
-                if(value.status == 'Nghỉ học'){
-                  info += `
-                  <td><label class="badge badge-danger" id="statusText">${value.status}</label></td>              
-                 `
-                }
-                info += `                          
-                          </tr>                                                                                                           
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Ảnh điểm danh</h4>                  
-                    </p>
-                    <div class="table-responsive" style="position: absolute;">
-                      <img id="anhDiemDanh" src="${value.anhDiemDanh}" alt="">                                           
-                    </div>
-                  </div>
-                </div>
-              </div>         
-                 `
-                 
-              });         
-              $('#information').html(info);
-          //   });
-          // }
-         
-          
-
-      </script>
+    <script src="./QLsotheodoi.js"> 
+      
+    </script>
     </body>
   </body>
 </html>

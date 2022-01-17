@@ -294,7 +294,7 @@
                       <label for="exampleSelectGender">Địa điểm</label>
                       <input type="" class="form-control" i>
                     </div>                                                    
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="button" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-dark">Cancel</button>
                   </form>
                 </div>
@@ -319,17 +319,92 @@
                           <th> Giờ</th>  
                           <th> Hoạt động</th>                     
                           <th> Địa điểm </th>
-                          <th> Chức năng </th>
+                          <th> ID </th>
                         </tr>
                       </thead>
                       <tbody id="information">
                                                                                                                    
                       </tbody>
                     </table>
+                    <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeActivity">
+                      Sửa
+                    </button>
+                    <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
+                      Xóa
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="changeActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sửa hoạt động</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <label for=""> <h4>Chọn ngày : </h4></label>
+                        <input style="border-radius: 7px;" type="date" id="" name="">   
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Thời gian bắt đầu</label>
+                        <input type="text" class="form-control" id="exampleInputName1" >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Thời gian kết thúc</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Hoạt động</label>
+                        <input type="password" class="form-control" id="exampleInputPassword4" ">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelectGender">Địa điểm</label>
+                        <input type="" class="form-control" i>
+                      </div>                                                                         
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="deleteActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa hoạt động</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="forms-sample">                                                   
+                    <div class="form-group">
+                      <label for="exampleSelectGender">ID</label>
+                      <input type="" class="form-control" i>
+                    </div>                                                                      
+                  </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Xóa hoạt động</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- end modal -->
 
             
             
@@ -356,44 +431,9 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
-    <script> 
-      var x = [
-        {         
-          date : 'Sep 15 , 2022'  ,
-          time : "12h30" ,         
-          activity : "câu cá",
-          place : "công viên"
-        },
-        {
-          date : 'Sep 15 , 2022'  ,
-          time : "12h30" ,         
-          activity : "câu cá",
-          place : "công viên"
-        }
-      ]    
-        // function findSoTheoDoi() {
-        //   axios.post()  // dien link api vao
-        //     .then((x) => {
-              console.log(x);
-              let info = " ";
-              $.each(x, function (index, value) {
-                info += `
-                <tr>
-                  <td> ${value.date} </td>
-                  <td> ${value.time} </td>
-                  <td> ${value.activity}   </td>                        
-                  <td> ${value.place}</td>
-                  <td> <button type="button" class="btn btn-success">Sửa</button> <button type="button" class="btn btn-danger">Xóa</button> </td>
-                </tr>            
-                 `            
-              });         
-              $('#information').html(info);
-          //   });
-          // }
-         
-          
-
-      </script>
+    <script src="./QLthoikhoabieu.js"> 
+      
+    </script>
     </body>
   </body>
 </html>

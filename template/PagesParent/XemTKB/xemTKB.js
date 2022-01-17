@@ -1,4 +1,4 @@
-function findSoTheoDoi() {
+function findActivity() {
     axios.get("http://localhost:3000/api/admin/activities")  // dien link api vao
       .then((activities) => { 
         console.log(activities.data);           
@@ -10,7 +10,7 @@ function findSoTheoDoi() {
             <td> ${value.timeStart} - ${value.timeFinish} </td>
             <td> ${value.title}</td>                        
             <td> ${value.place}</td>
-            <td> ${value._id}</td>        
+            
           </tr>            
            `            
         });         
@@ -21,5 +21,3 @@ function findSoTheoDoi() {
   function submitSuccess(){
     alert("Submit thành công");
 }      
-
-$( document ).ready(findSoTheoDoi());

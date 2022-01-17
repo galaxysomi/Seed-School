@@ -267,76 +267,7 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Quản lý học sinh </h3>              
-            </div>
-            <div class="col-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Thêm học sinh mới</h4>                 
-                  <form class="forms-sample">
-                    <div class="form-group">
-                      <label for="exampleInputName1">Họ tên</label>
-                      <input type="text" class="form-control" id="exampleInputName1" >
-                    </div>
-                    <div class="form-group">
-                      <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
-                      <input style="border-radius: 7px;" type="date" id="" name="">   
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Giới tính</label>
-                      <select class="form-control" id="exampleSelectGender">
-                        <option>Nam</option>
-                        <option>Nữ</option>
-                      </select>
-                    </div>       
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Lớp</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Địa chỉ</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Họ và tên bố</label>
-                      <input type="" class="form-control" i>
-                    </div> 
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Năm sinh</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Nghề nghiệp bố</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Số điện thoại bố</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Họ và tên mẹ</label>
-                      <input type="" class="form-control" i>
-                    </div> 
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Năm sinh</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Nghề nghiệp mẹ</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Số điện thoại mẹ</label>
-                      <input type="" class="form-control" id="exampleInputPassword4" ">
-                    </div>
-                    <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>
-                    <button class="btn btn-dark" onclick="cancelSuccess()">Cancel</button>
-                  </form>
-                </div>
-              </div>
-            </div>
+          <div class="content-wrapper">                           
             <div class="row">                         
                 <div class="col-lg-12 grid-margin stretch-card">
                   <div class="card">
@@ -346,9 +277,9 @@
                         <table class="table table-bordered">
                           <colgroup>
                             <col width="40" span="1">
-                            <col width="300" span="1">
                             <col width="200" span="1">
-                            <col width="200" span="1">
+                            <col width="150" span="1">
+                            <col width="150" span="1">
                             <col width="auto" span="1">
                           </colgroup>
                           <thead>
@@ -366,24 +297,213 @@
                             
                           </tbody>
                         </table>
+                        <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent">
+                          Thêm mới
+                        </button>
+                        <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
+                          Sửa
+                        </button>
+                        <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent">
+                          Xóa
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>           
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
           
-              
-            </div>
-          </footer>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>
+
+    <!-- modal add -->
+<div class="modal fade" id="addStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thêm </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for="exampleInputName1">Họ tên</label>
+            <input type="text" class="form-control" id="exampleInputName1" >
+          </div>
+          <div class="form-group">
+            <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
+            <input style="border-radius: 7px;" type="date" id="" name="">   
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Giới tính</label>
+            <select class="form-control" id="exampleSelectGender">
+              <option>Nam</option>
+              <option>Nữ</option>
+            </select>
+          </div>       
+          <div class="form-group">
+            <label for="exampleInputEmail3">Lớp</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Địa chỉ</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleSelectGender">Họ và tên bố</label>
+            <input type="" class="form-control" i>
+          </div> 
+          <div class="form-group">
+            <label for="exampleInputPassword4">Năm sinh</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Nghề nghiệp bố</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Số điện thoại bố</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleSelectGender">Họ và tên mẹ</label>
+            <input type="" class="form-control" i>
+          </div> 
+          <div class="form-group">
+            <label for="exampleInputPassword4">Năm sinh</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Nghề nghiệp mẹ</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Số điện thoại mẹ</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal sửa -->
+ <div class="modal fade" id="changeStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sửa </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for="exampleInputName1">Họ tên</label>
+            <input type="text" class="form-control" id="exampleInputName1" >
+          </div>
+          <div class="form-group">
+            <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
+            <input style="border-radius: 7px;" type="date" id="" name="">   
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Giới tính</label>
+            <select class="form-control" id="exampleSelectGender">
+              <option>Nam</option>
+              <option>Nữ</option>
+            </select>
+          </div>       
+          <div class="form-group">
+            <label for="exampleInputEmail3">Lớp</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Địa chỉ</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleSelectGender">Họ và tên bố</label>
+            <input type="" class="form-control" i>
+          </div> 
+          <div class="form-group">
+            <label for="exampleInputPassword4">Năm sinh</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Nghề nghiệp bố</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Số điện thoại bố</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleSelectGender">Họ và tên mẹ</label>
+            <input type="" class="form-control" i>
+          </div> 
+          <div class="form-group">
+            <label for="exampleInputPassword4">Năm sinh</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Nghề nghiệp mẹ</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Số điện thoại mẹ</label>
+            <input type="" class="form-control" id="exampleInputPassword4" >
+          </div>        
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal xóa -->
+<div class="modal fade" id="deleteStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="forms-sample">                                                   
+        <div class="form-group">
+          <label for="exampleSelectGender">ID</label>
+          <input type="" class="form-control" i>
+        </div>                                                                      
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Xóa </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- end modal -->
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
@@ -403,55 +523,11 @@
     <script src="../../assets/js/file-upload.js"></script>
     <script src="../../assets/js/typeahead.js"></script>
     <script src="../../assets/js/select2.js"></script>
-    <script> 
-      var x = [
-        {         
-          name : 'Tung'  ,
-          birthday : "12/09/01" ,         
-          ID : "123456",
-          class : "10a2",
-          sex : "nam",
-          address : 'tay son'
-        },
-        {
-          name : 'Tung'  ,
-          birthday : "12/09/01" ,         
-          ID : "123456",
-          class : "10a2",
-          sex : "nam",
-          address : 'tay son'
-        }
-      ]    
-        // function findSoTheoDoi() {
-        //   axios.post()  // dien link api vao
-        //     .then((x) => {
-              console.log(x);
-              let info = " ";
-              $.each(x, function (index, value) {
-                info += `
-                <tr>
-                  <td> ${index} </td>
-                  <td> ${value.name} </td>
-                  <td> ${value.birthday} </td>
-                  <td> ${value.id}   </td>                        
-                  <td> ${value.class}</td>
-                  <td> ${value.sex}</td>
-                  <td> ${value.address}</td>                
-                </tr>            
-                 `            
-              });         
-              $('#information').html(info);
-          //   });
-          // }
 
-          function submitSuccess(){
-          alert("Submit thành công");
-    }      
-    function cancelSuccess(){
-          alert("Cancel thành công");
-    }      
-               
-      </script>
+  
+    <script src="./QLhocsinh.js">  
+                    
+    </script>
     <!-- End custom js for this page -->
   </body>
 </html>

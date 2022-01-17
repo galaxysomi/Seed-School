@@ -271,12 +271,67 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">                                                                 
-            </div>         
-            <div class="col-12 grid-margin stretch-card">
+                       
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Thêm mới học phí</h4>                 
+                <div class="card-body">                 
+                  <form style="margin-bottom: 30px;"  method="post">
+                    <label for="">Chọn ngày : </label>
+                    <input style="margin-left:10px;" style="border-radius: 7px;" type="date" id="" name="">
+                    <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>            
+                  </form>    
+                  <div class="table-responsive">
+                    <table class="table table-dark">
+                      <thead>
+                        <tr>
+                          <th> Tháng </th>
+                          <th> Họ tên </th>
+                          <th> Nghỉ có phép </th>
+                          <th> Nghỉ không phép </th>
+                          <th> Buổi trông muộn </th>
+                          <th> Trạng thái </th>
+                          <th> ID </th>
+                        </tr>
+                      </thead>
+                      <tbody id="tuitionTable">                       
+                      </tbody>
+                    </table>
+                    <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addTuition">
+                      Thêm mới
+                    </button>
+                    <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
+                      Sửa
+                    </button>
+                    <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTuition">
+                      Xóa
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>                      
+          <!-- content-wrapper ends -->
+        
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- modal -->
+           <!-- modal add -->
+           <div class="modal fade" id="addTuition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Xóa </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
                   <form class="forms-sample" method="post"  action="">                   
                     <div class="form-group">
                       <label for="exampleInputEmail3">Mã số học sinh</label>
@@ -308,49 +363,105 @@
                     <div class="form-group">
                       <label for="exampleInputPassword4">Trạng thái</label>
                       <input type="" class="form-control" name="status" >
-                    </div>                                                                              
-                    <button type="button"  onclick="submitSuccess()" class="btn btn-primary ">Submit</button>                   
+                    </div>                                                                                                                                      
                   </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">                 
-                  <form style="margin-bottom: 30px;"  method="post">
-                    <label for="">Chọn ngày : </label>
-                    <input style="margin-left:10px;" style="border-radius: 7px;" type="date" id="" name="">
-                    <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>            
-                  </form>    
-                  <div class="table-responsive">
-                    <table class="table table-dark">
-                      <thead>
-                        <tr>
-                          <th> Tháng </th>
-                          <th> Họ tên </th>
-                          <th> Học phí </th>
-                          <th> Deadline </th>
-                          <th> Trạng thái</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tuitionTable">                       
-                      </tbody>
-                    </table>
-                  </div>
+          </div>
+
+          <!-- modal sửa -->
+           <div class="modal fade" id="changeTuition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sửa </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form class="forms-sample" method="post"  action="">      
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">ID học phí</label>
+                      <input type="" class="form-control" name="status" >
+                    </div>                   
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Mã số học sinh</label>
+                      <input type="" class="form-control" name="studentID" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Năm</label>
+                      <input type="text" class="form-control" name="year" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Tháng</label>
+                      <input type="" class="form-control" name="month" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Nghỉ có phép</label>
+                      <input type="" class="form-control" name="nghicophep" >
+                    </div>        
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Nghỉ không phép</label>
+                      <input type="" class="form-control" name="nghikophep" >
+                    </div>        
+                    <div class="form-group"><div class="form-group">
+                      <label for="exampleInputPassword4">Buổi trông muộn</label>
+                      <input type="" class="form-control" name="trongMuon" >
+                    </div>        
+                      <label for="exampleInputPassword4">Tổng tiền</label>
+                      <input type="" class="form-control" name="tuition" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Trạng thái</label>
+                      <input type="" class="form-control" name="status" >
+                    </div>
+                                                                                                                                  
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
-            </div>                      
-          <!-- content-wrapper ends -->
-        
-          <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+            </div>
+          </div>
+
+          <!-- modal xóa -->
+          <div class="modal fade" id="deleteTuition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Xóa hoạt động</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form class="forms-sample">                                                   
+                  <div class="form-group">
+                    <label for="exampleSelectGender">ID</label>
+                    <input type="" class="form-control" i>
+                  </div>                                                                      
+                </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger">Xóa menu</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          
+          <!-- end modal -->
+          
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
@@ -363,60 +474,9 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
-    <script> 
-      var x = [
-        {
-          month : 1 ,
-          name : 'Tung tran'  ,
-          tuition : "50$" ,
-          deadline : "Sep 15 , 2022",
-          status : "Đã nộp"
-        },
-        {
-          month : 2 ,
-          name : 'Quang'  ,
-          tuition : "50$" ,
-          status: "Chưa nộp"
-        }
-       ]     //Object de test
-        // function findTuition() {
-        //   axios.post()  // dien link api vao
-        //     .then((x) => {
-              
-              let tuition = " ";
-              $.each(x, function (index, value) {
-                tuition += `
-                <tr>
-                  <td> ${value.month} </td> 
-                  <td> ${value.name} </td> 
-                  <td> ${value.tuition} </td> 
-                  <td> ${value.deadline} </td> 
-                  `;
-                if(value.status == 'Đã nộp'){
-                  tuition += `
-                  <td><label class="badge badge-success">${value.status}</label></td>
-                  </tr>              
-                 `
-                }
-                if(value.status == 'Chưa nộp'){
-                  tuition += `
-                  <td><label class="badge badge-danger">${value.status}</label></td>
-                  </tr>              
-                 `
-                }
-                             
-              });
-              $('#tuitionTable').html(tuition);
-          //   });
-        
-          // }
-          function submitSuccess(){
-          alert("Submit thành công");
-    }      
-    function cancelSuccess(){
-          alert("Cancel thành công");
-    }      
-      </script>
+    <script src="./QLhocphi.js"> 
+      
+    </script>
     </body>
   </body>
 </html>
