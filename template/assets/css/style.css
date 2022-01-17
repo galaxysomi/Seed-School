@@ -8990,7 +8990,9 @@ textarea.tt-hint {
   height: auto; }
 
 .form-group {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  border-radius: 25px;
+ }
 
 .form-text {
   display: block;
@@ -16905,7 +16907,9 @@ code {
 
 /* Forms */
 .form-group {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem; 
+  border-radius: 20%;
+}
 
 .input-group-append,
 .input-group-prepend {
@@ -20300,6 +20304,10 @@ div.tagsinput {
 .auth form .auth-form-btn {
   height: 50px;
   line-height: 1.5; }
+
+  .form-control {
+    border-radius: 15px;
+     }
 
 .auth form .auth-link {
   font-size: 0.875rem; }
