@@ -292,7 +292,7 @@
               <form action="" method="post">
                 <label for="">Chọn ngày : </label>
                 <input style="border-radius: 7px;" type="date" id="" name="">
-                <button type="button" style="border-radius: 5px;" type="submit"  onclick="findSoTheoDoi()" class="btn btn-primary">Submit</button>
+                <button type="button" style="border-radius: 5px;" type="submit"  onclick="findActivity()" class="btn btn-primary">Submit</button>
               </form>                                             
             </div>
 
@@ -429,10 +429,8 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
-    <script>      
-      
-      
-        function findSoTheoDoi() {
+    <script>                    
+        function findActivity() {
           axios.get("http://localhost:3000/api/admin/activities")  // dien link api vao
             .then((activities) => { 
               console.log(activities.data);           
