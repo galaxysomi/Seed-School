@@ -276,8 +276,8 @@
               <div class="card">
                 <div class="card-body">                 
                   <form style="margin-bottom: 30px;"  method="post">
-                    <label for="">Chọn ngày : </label>
-                    <input style="margin-left:10px;" style="border-radius: 7px;" type="date" id="" name="">
+                    <label for="">Chọn Tháng : </label>
+                    <input style="margin-left:10px;" style="border-radius: 7px;" type="month" id="" name="">
                     <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>            
                   </form>    
                   <div class="table-responsive">
@@ -326,7 +326,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Xóa </h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Thêm  </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -338,13 +338,10 @@
                       <input type="" class="form-control" name="studentID" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputName1">Năm</label>
-                      <input type="text" class="form-control" name="year" >
+                      <label for="exampleInputName1">Tháng - Năm</label>
+                      <input type="month" class="form-control" name="year" >
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Tháng</label>
-                      <input type="" class="form-control" name="month" >
-                    </div>
+                    
                     <div class="form-group">
                       <label for="exampleInputPassword4">Nghỉ có phép</label>
                       <input type="" class="form-control" name="nghicophep" >

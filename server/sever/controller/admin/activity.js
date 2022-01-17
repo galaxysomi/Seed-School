@@ -120,3 +120,12 @@ exports.delete = (req, res)=>{
         });
 }
 
+exports.findActivityById= (req,res)=>{
+    const id= req.params.id;
+    console.log(id)
+    Activity.findOne({_id:id},(err,doc)=>{
+        if(err)return res.json({status:'false',msg:"khong tim thay"})
+        return res.json({status:"success",data:doc})
+    })
+}
+
