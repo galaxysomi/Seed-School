@@ -11405,6 +11405,17 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem; }
+  .card1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: black;
+    border: 1px solid white;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem; }
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
@@ -11426,7 +11437,9 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem; }
+  padding: 1.25rem; 
+  
+}
 
 .card-title {
   margin-bottom: 0.75rem; }
@@ -20308,6 +20321,53 @@ div.tagsinput {
   .form-control {
     border-radius: 15px;
      }
+
+     input[type=checkbox] + label {
+      display: block;
+      margin: 0.2em;
+      cursor: pointer;
+      padding: 0.2em;
+    }
+    
+    input[type=checkbox] {
+      display: none;
+    }
+    
+    input[type=checkbox] + label:before {
+      content: "\123";
+      border: 0.1em solid #000;
+      border-radius: 0.2em;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      padding-left: 0.2em;
+      padding-bottom: 0.3em;
+      margin-right: 0.2em;
+      vertical-align: bottom;
+      color: transparent;
+      transition: .2s;
+    }
+    
+    input[type=checkbox] + label:active:before {
+      transform: scale(0);
+    }
+    
+    input[type=checkbox]:checked + label:before {
+      background-color: MediumSeaGreen;
+      border-color: MediumSeaGreen;
+      color: #fff;
+    }
+    
+    input[type=checkbox]:disabled + label:before {
+      transform: scale(1);
+      border-color: #aaa;
+    }
+    
+    input[type=checkbox]:checked:disabled + label:before {
+      transform: scale(1);
+      background-color: #bfb;
+      border-color: #bfb;
+    }
 
 .auth form .auth-link {
   font-size: 0.875rem; }
