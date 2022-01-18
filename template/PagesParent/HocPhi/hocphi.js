@@ -21,13 +21,23 @@ axios.get(host + '/api/parent/tuition', {
             `;
           if(value.paid == 'Đã nộp'){
             tuition += `
-            <td><label class="badge badge-success">${value.paid}</label></td>
+            <td>
+            <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" checked> Checked </label>
+          </div>
+            </td>
             </tr>              
            `
           }
           if(value.paid == 'Chưa nộp'){
             tuition += `
-            <td><label class="badge badge-danger">${value.paid}</label></td>
+            <td>
+            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" checked> Checked </label>
+                            </div>
+            </td>
             </tr>              
            `
           }                
