@@ -58,10 +58,13 @@ var x = [
             }
             info += `                          
                       </tr>  
+                      <button style="margin-left: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
+              Thêm mới
+            </button>
                       <button style="margin-left: 10px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changesotheodoi">
               Sửa
             </button>
-            <button style="margin-left: 10px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletesotheodoi">
+                      <button style="margin-left: 10px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletesotheodoi">
               Xóa
             </button>                                                                                                         
                     </tbody>
