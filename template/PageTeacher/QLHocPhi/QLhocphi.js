@@ -41,7 +41,8 @@ var x = [
              `
             }
             tuition += `
-            <td> <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
+            <td>
+             <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
               Sửa
             </button>
             <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTuition">

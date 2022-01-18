@@ -108,6 +108,7 @@
               </span>
               <span class="menu-title">Hoạt động</span>
             </a>
+            <input id="invisibleID" style="visibility: hidden"><!-- Vô cùng quan trọng  --> 
           </li>
         
         
@@ -285,11 +286,10 @@
                           <tr>
                             <th> STT </th>
                             <th> Họ tên </th>
-                            <th> Tuổi</th>
+                            <th> Giới tính</th>
                             <th> Số điện thoại</th>
-                            <th> Lớp </th>
-                            <th> ID </th>       
-                            <th> Chức năng </th>                                                                              
+                            <th> Chủ nhiệm lớp </th>       
+                            <th> Số học sinh</th>                                                                              
                           </tr>
                         </thead>
                         <tbody id="information">               
@@ -328,33 +328,49 @@
                 <div class="modal-body">
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Họ tên</label>
+                      <label for="exampleInputEmail3">Họ tên:</label>
                       <input type="" class="form-control" id="name" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Tuổi</label>
-                      <input type="" class="form-control" id="age" >
+                      <label for="exampleInputEmail3"> Ngày sinh:</label>
+                      <input style="border-radius: 7px;" type="date" id="birth" name="">   
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Giới tính</label>
+                      <label for="exampleInputEmail3">Giới tính:</label>
                       <select class="form-control" id="sex">
                         <option>Nam</option>
                         <option>Nữ</option>
                       </select>
                     </div>      
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Lớp</label>
-                      <input type="" class="form-control" id="class" >
+                      <label for="exampleInputEmail3">Username:</label>
+                      <input type="" class="form-control" id="uername" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputName1">Số điện thoại</label>
-                      <input type="text" class="form-control" id="phoneNumber" >
+                      <label for="exampleInputName1">Password:</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Xác nhận password:</label>
+                      <input type="password" class="form-control" id="password2">
+                    </div>  
+                    <div class="form-group">
+                      <label for="exampleInputName1">Lớp chủ nhiệm:</label>
+                      <input type="" class="form-control" id="className">
+                    </div> 
+                    <div class="form-group">
+                      <label for="exampleInputName1">Số điện thoại:</label>
+                      <input type="" class="form-control" id="phoneNumber">
+                    </div> 
+                    <div class="form-group">
+                      <label for="exampleInputName1">Số học sinh trong lớp:</label>
+                      <input type="" class="form-control" id="numStudent">
                     </div>                                                                                                                      
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button"onclick=addTeacher() class="btn btn-primary">Thêm mới</button>
                 </div>
               </div>
             </div>
@@ -373,65 +389,89 @@
                 <div class="modal-body">
                   <form class="forms-sample">                  
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Họ tên</label>
+                      <label for="exampleInputEmail3">Họ tên:</label>
                       <input type="" class="form-control" id="changeName" >
-                    </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Tuổi</label>
-                      <input type="" class="form-control" id="changeAge" >
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Giới tính</label>
+                      <label for="exampleInputEmail3">Giới tính:</label>
                       <select class="form-control" id="changeSex">
                         <option>Nam</option>
                         <option>Nữ</option>
                       </select>
                     </div>      
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Lớp</label>
+                      <label for="exampleInputEmail3">Chủ nhiệm lớp:</label>
                       <input type="" class="form-control" id="changeClass" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputName1">Số điện thoại</label>
-                      <input type="text" class="form-control" id="changePhoneNumber" >
-                    </div>                                                                                                                      
+                      <label for="exampleInputEmail3">Số điện thoại:</label>
+                      <input type="" class="form-control" id="changeNumber" >
+                    </div>  
+                    <div class="form-group">
+                      <label for="exampleInputName1">Số học sinh trong lớp:</label>
+                      <input type="" class="form-control" id="changeNumStudent" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Mật khẩu</label>
+                      <input type="password" class="form-control" id="changePassword" >
+                    </div>                                                                                                                    
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" onclick= changeTeacherByID() class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- modal xóa -->
-          <!-- <div class="modal fade" id="deleteTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <!--  <div class="modal fade" id="deleteTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Xóa </h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Sửa </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form class="forms-sample">                                                   
-                  <div class="form-group">
-                    <label for="exampleSelectGender">ID</label>
-                    <input type="" class="form-control" i>
-                  </div>                                                                      
-                </form>
+                  <form class="forms-sample">                  
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Họ tên:</label>
+                      <input type="" class="form-control" id="changeName" >
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Giới tính:</label>
+                      <select class="form-control" id="changeSex">
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                      </select>
+                    </div>      
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Chủ nhiệm lớp:</label>
+                      <input type="" class="form-control" id="changeClass" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Số điện thoại:</label>
+                      <input type="" class="form-control" id="changeNumber" >
+                    </div>  
+                    <div class="form-group">
+                      <label for="exampleInputName1">Số học sinh trong lớp:</label>
+                      <input type="" class="form-control" id="changeNumStudent" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Mật khẩu</label>
+                      <input type="password" class="form-control" id="changePassword" >
+                    </div>                                                                                                                    
+                  </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-danger">Xóa </button>
+                  <button type="button" onclick= changeTeacherByID() class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
-          </div> -->
-
-          
+          </div>
+           -->
           
           <!-- end modal -->
     <!-- container-scroller -->
@@ -453,4 +493,5 @@
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
   </body>
+  <script src="../checkLogin.js"></script>
 </html>
