@@ -295,15 +295,6 @@
                         <tbody id="information">                                                             
                         </tbody>
                       </table>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addActivity">
-                        Thêm mới
-                      </button>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeActivity">
-                        Sửa
-                      </button>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
-                        Xóa
-                      </button>
                       
                     </div>
                   </div>
@@ -373,29 +364,34 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for=""> <h4>Chọn ngày : </h4></label>
-                      <input style="border-radius: 7px;" type="date" id="" name="">   
+                      <input style="border-radius: 7px;" type="date" id="updateDate" name="">   
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Thời gian bắt đầu</label>
-                      <input type="time" class="form-control" id="exampleInputName1" >
+                      <input type="" class="form-control" id="updateTimeStart" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Thời gian kết thúc</label>
-                      <input type="time" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="updateTimeFinish" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword4">Hoạt động</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" >
+                      <input type="" class="form-control" id="updateTitle" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Mô tả hoạt động</label>
+                      <input type="" class="form-control" id="updateDescription" >
                     </div>
                     <div class="form-group">
                       <label for="exampleSelectGender">Địa điểm</label>
-                      <input type="" class="form-control" i>
-                    </div>                                                                         
+                      <input type="" id ="updatePlace"class="form-control" >
+                    </div>
+                    <input id="invisibleID" style="visibility: hidden">                                                                         
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" onclick=changeAcivityByID() class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>

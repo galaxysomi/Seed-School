@@ -17,7 +17,12 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    
   </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.js"
+    integrity="sha512-RT3IJsuoHZ2waemM8ccCUlPNdUuOn8dJCH46N3H2uZoY7swMn1Yn7s56SsE2UBMpjpndeZ91hm87TP1oU6ANjQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
@@ -295,12 +300,6 @@
                       <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addActivity">
                         Thêm mới
                       </button>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeActivity">
-                        Sửa
-                      </button>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
-                        Xóa
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -324,21 +323,21 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for=""> <h4>Chọn ngày :</h4></label>
-                      <input style="border-radius: 7px;" type="date" id="" name="">   
+                      <input style="border-radius: 7px;" type="date" id="date" >   
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Bữa sáng</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <label for="exampleInputEmail3">Món chính</label>
+                      <input type="" class="form-control" id="monChinh" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputName1">Bữa trưa</label>
-                      <input type="text" class="form-control" id="exampleInputName1" >
+                      <label for="exampleInputName1">Món trưa</label>
+                      <input type="text" class="form-control" id="monTrua" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Bữa xế chiều</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <label for="exampleInputEmail3">Quà chiều</label>
+                      <input type="" class="form-control" id="quaChieu" >
                     </div>                                                                                         
-                    <button type="button" class="btn btn-primary mr-2">Submit</button>
+                    <button type="button" onclick= themMoiOnClick() class="btn btn-primary mr-2">Submit</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </form>
                 </div>
@@ -347,7 +346,7 @@
           </div>
 
           <!-- modal sửa -->
-           <div class="modal fade" id="changeActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal fade" id="changeFoodMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -359,14 +358,29 @@
                 <div class="modal-body">
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for=""> <h4>Chọn ngày : </h4></label>
-                      <input style="border-radius: 7px;" type="date" id="" name="">   
+                      <div class="form-group">
+                        <label for=""> <h4>Chọn ngày :</h4></label>
+                        <input style="border-radius: 7px;" type="date"id="changeDate">   
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Món chính</label>
+                        <input type="" class="form-control" id="changeMonChinh" >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Món trưa</label>
+                        <input type="text" class="form-control" id="changeMonDiemTam" >
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Quà chiều</label>
+                        <input type="" class="form-control" id="changeQuaChieu" >
+                      </div>
+                      <input  id="invisibleID" style ="visibility:hidden">                 
                     </div>                                                                                                           
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" onclick= changeMenuByID() class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
@@ -377,22 +391,19 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Xóa hoạt động</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                  <h5 class="modal-title" id="exampleModalLabel">Xóa thực đơn</h5>
                 </div>
                 <div class="modal-body">
                   <form class="forms-sample">                                                   
                   <div class="form-group">
-                    <label for="exampleSelectGender">Thứ</label>
-                    <input type="" class="form-control" i>
-                  </div>                                                                      
+                    <label for="exampleSelectGender">Bạn có muốn xóa thực đơn này không ?</label>
+                  </div> 
+                  <input id="invisibleID" style ="visibility:hidden">                                                                       
                 </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-danger">Xóa menu</button>
+                  <button type="button" onclick=deleteMenu() class="btn btn-danger">Xóa thực đơn</button>
                 </div>
               </div>
             </div>

@@ -288,7 +288,8 @@
                             <th> Tuổi</th>
                             <th> Số điện thoại</th>
                             <th> Lớp </th>
-                            <th> ID </th>                                                                              
+                            <th> ID </th>       
+                            <th> Chức năng </th>                                                                              
                           </tr>
                         </thead>
                         <tbody id="information">               
@@ -298,12 +299,7 @@
                       <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addTeacher">
                         Thêm mới
                       </button>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTeacher">
-                        Sửa
-                      </button>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTeacher">
-                        Xóa
-                      </button>                    
+                                    
                     </div>
                   </div>
                 </div>
@@ -333,26 +329,26 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for="exampleInputEmail3">Họ tên</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="name" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Tuổi</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="age" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Giới tính</label>
-                      <select class="form-control" id="exampleSelectGender">
+                      <select class="form-control" id="sex">
                         <option>Nam</option>
                         <option>Nữ</option>
                       </select>
                     </div>      
                     <div class="form-group">
                       <label for="exampleInputEmail3">Lớp</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="class" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Số điện thoại</label>
-                      <input type="text" class="form-control" id="exampleInputName1" >
+                      <input type="text" class="form-control" id="phoneNumber" >
                     </div>                                                                                                                      
                   </form>
                 </div>
@@ -375,33 +371,29 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form class="forms-sample">
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">ID</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
-                    </div>
+                  <form class="forms-sample">                  
                     <div class="form-group">
                       <label for="exampleInputEmail3">Họ tên</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="changeName" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Tuổi</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="changeAge" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Giới tính</label>
-                      <select class="form-control" id="exampleSelectGender">
+                      <select class="form-control" id="changeSex">
                         <option>Nam</option>
                         <option>Nữ</option>
                       </select>
                     </div>      
                     <div class="form-group">
                       <label for="exampleInputEmail3">Lớp</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <input type="" class="form-control" id="changeClass" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Số điện thoại</label>
-                      <input type="text" class="form-control" id="exampleInputName1" >
+                      <input type="text" class="form-control" id="changePhoneNumber" >
                     </div>                                                                                                                      
                   </form>
                 </div>
@@ -414,7 +406,7 @@
           </div>
 
           <!-- modal xóa -->
-          <div class="modal fade" id="deleteTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <!-- <div class="modal fade" id="deleteTeacher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -437,7 +429,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           
           
