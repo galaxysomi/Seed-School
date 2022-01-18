@@ -274,9 +274,10 @@
                       <table class="table table-bordered">
                         <colgroup>
                           <col width="80" span="1">
-                          <col width="100" span="1">
                           <col width="150" span="1">
-                          <col width="150" span="1">                         
+                          <col width="150" span="1">
+                          <col width="150" span="1">
+                          <col width="200" span="1">
                           <col width="150" span="1">
                           <col width="auto" span="1">
                         </colgroup>
@@ -286,19 +287,15 @@
                               <th> Ngày </th>
                               <th> Giờ</th>  
                               <th> Hoạt động</th>                     
-                              <th> Địa điểm </th>                            
-                              <th> Chức năng</th>
+                              <th> Địa điểm </th>
+                              <th> ID</th>
                             </tr>
                           </tr>
                         </thead>
-                        <tbody id="information">      
-                                                                                 
+                        <tbody id="information">                                                             
                         </tbody>
                       </table>
-                      <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addActivity">
-                        Thêm mới
-                      </button>
-                                        
+                      
                     </div>
                   </div>
                 </div>
@@ -313,7 +310,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Thêm hoạt động</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Xóa hoạt động</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -322,24 +319,29 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for=""> <h4>Chọn ngày :</h4></label>
-                      <input style="border-radius: 7px;" type="date" id="date" >   
+                      <input style="border-radius: 7px;" type="date" id="" name="">   
                     </div>
                     <div class="form-group">
                       <label for="appt">Thời gian bắt đầu:</label>
-                      <input type="time" id="timeStart"   >
+                      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
                     </div>
                     <div class="form-group">
                       <label for="appt">Thời gian kết thúc:</label>
-                      <input type="time" id="timeFinish" >
+                      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Địa điểm</label>
-                      <input type="" class="form-control" id="place" >
+                      <input type="" class="form-control" id="exampleInputEmail3" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword4">Nội dung</label>
-                      <input type="password" class="form-control" id="description" >
-                    </div>                                                                                    
+                      <input type="password" class="form-control" id="exampleInputPassword4" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Ghi chú</label>
+                      <input type="password" class="form-control" id="exampleInputPassword4" >
+                    </div>
+                                                                   
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-dark">Cancel</button>
                   </form>
@@ -362,36 +364,41 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for=""> <h4>Chọn ngày : </h4></label>
-                      <input style="border-radius: 7px;" type="date" id="changeDate" name="">   
+                      <input style="border-radius: 7px;" type="date" id="updateDate" name="">   
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Thời gian bắt đầu</label>
-                      <input type="time" class="form-control" id="changeTimeStart" >
+                      <input type="" class="form-control" id="updateTimeStart" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Thời gian kết thúc</label>
-                      <input type="time" class="form-control" id="changeTimeFinish" >
+                      <input type="" class="form-control" id="updateTimeFinish" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword4">Hoạt động</label>
-                      <input type="password" class="form-control" id="changeDescription" >
+                      <input type="" class="form-control" id="updateTitle" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Mô tả hoạt động</label>
+                      <input type="" class="form-control" id="updateDescription" >
                     </div>
                     <div class="form-group">
                       <label for="exampleSelectGender">Địa điểm</label>
-                      <input type="" class="form-control" id="changePlace">
-                    </div>                                                                         
+                      <input type="" id ="updatePlace"class="form-control" >
+                    </div>
+                    <input id="invisibleID" style="visibility: hidden">                                                                         
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" onclick=changeAcivityByID() class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- modal xóa -->
-          <!-- <div class="modal fade" id="deleteActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="deleteActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -414,7 +421,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
           
           

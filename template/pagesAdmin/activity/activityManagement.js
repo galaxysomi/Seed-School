@@ -1,16 +1,16 @@
 function getActivityById(id){
-  axios.get('http://localhost:3000/api/admin/activity/'+id).then(data=>{
-    var d=ampmTo24(data.data.data.timeStart)
-    document.getElementById("timeStart").value=d;
-    document.getElementById("timeFinish").value=data.data.data.timeFinish;
-    document.getElementById("day").value=data.data.data.day; 
-    // var d= new Date(parseInt(data.data.data.timeStart))
-    document.getElementById("timeStart").value=d.defaultValue
-    document.getElementById("place").value=data.data.data.place;
-    document.getElementById("description").value=data.data.data.description;
-
+  axios.get('http://localhost:3000/api/admin/activities/'+id).then(data =>{
+    //document.getElementById("changeDate").value = data.data.date ;
+    document.getElementById("updateTitle").value = data.data.title ;
+    document.getElementById("updateDescription").value = data.data.description;
+    document.getElementById("updateTimeStart").value = data.data.timeStart ;    
+    document.getElementById("invisibleID").value = id ;
+    document.getElementById("updateTimeFinish").value = data.data.timeFinish ;
+    document.getElementById("updatePlace").value = data.data.place ;
+                 
   })
 }
+
 function ampmTo24(time)
 {
   var hours = Number(time.match(/^(\d+)/)[1]);
@@ -60,60 +60,35 @@ function deleteActivity(id) {
   axios.delete('http://localhost:3000/api/admin/activities/' + id)
   .then((rs) => {
     console.log(rs);
-    if(rs.data.suscess){
+    if(rs.data.susccess){
     alert("Xóa hoạt động thành công")
   }
   })
 }
-function addActivityManagement() {
-  axios.post('', {
-    date: document.getElementById("date").value,
-    timeStart: document.getElementById("timeStart").value,
-    timeFinish: document.getElementById("timeFinish").value,
-    place: document.getElementById("place").value,
-    description: document.getElementById("description").value
-  })
-    .then((rs) => {
-      console.log(rs.data);
-      if (rs.data.success == true) {
-        alert("Thêm thành công");
-      }
-      if (rs.data.suscess == false) {
-        alert("Không thành công");
-      }
-      refreshPage();
-    })
-}
-
-function changeActivityByID() {
-  const id = document.getElementById("invisibleID").value;
-  console.log(id);
-  axios.put(' ' + id, {
-    date: document.getElementById("changeDate").value,
-    timeStart: document.getElementById("changeTimeStart").value,
-    timeFinish: document.getElementById("changeTimeFinish").value,
-    description: document.getElementById("changeDescription").value,
-    place: document.getElementById("changePlace").value
-  })
-    .then((rs) => {
-      console.log(rs.data);
-      if (rs.data.success == true) {
-        alert("Sửa thành công");
-      }
-      if (rs.data.suscess == false) {
-        alert("Không thành công");
-      }
-      refreshPage();
-
-    })
-
-}
-
-
-
-
 
 $(document).ready(function () {
     findActivity();
     $('#menuTable').DataTable();
 });
+
+function changeAcivityByID() {
+      const id = document.getElementById("invisibleID").value
+      console.log(id);
+      axios.put('http://localhost:3000/api/admin/activities/'+id,{
+        date : document.getElementById("updateDate"),
+        title : document.getElementById("updateTitle").value,
+        description:document.getElementById("updateDescription").value,
+        timeStart: document.getElementById("updateTimeStart").value,
+        timeFinish : document.getElementById("updateTimeFinish").value,
+        place: document.getElementById("updatePlace").value
+      })
+      .then((rs) => {      
+        if(rs.data.success){
+            alert(rs.data.message);
+            refreshPage()
+        }else{
+            alert(rs.data.message)
+            refreshPage()
+      }
+    })
+    }
