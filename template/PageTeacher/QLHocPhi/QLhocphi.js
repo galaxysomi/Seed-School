@@ -3,13 +3,18 @@ var x = [
       month : 1 ,
       name : 'Tung tran'  ,
       tuition : "50$" ,
-      deadline : "Sep 15 , 2022",
+      nghicophep : "4",
+      nghikhongphep1 : "2" ,
+      nghikhongphep2 : "2" ,
       status : "Đã nộp"
     },
     {
       month : 2 ,
       name : 'Quang'  ,
       tuition : "50$" ,
+      nghicophep : "4",
+      nghikhongphep1 : "2" ,
+      nghikhongphep1 : "2" ,
       status: "Chưa nộp"
     }
    ]     //Object de test
@@ -23,31 +28,38 @@ var x = [
             <tr>
               <td> ${value.month} </td> 
               <td> ${value.name} </td> 
+              <td> ${value.nghicophep} </td>
+              <td> ${value.nghikhongphep1} </td>
+              <td> ${value.nghikhongphep2} </td>
               <td> ${value.tuition} </td> 
-              <td> ${value.deadline} </td>
                
               
               `;
             if(value.status == 'Đã nộp'){
               tuition += `
-              <td><label class="badge badge-success">${value.status}</label></td>
+              <td>
+              <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" checked> Đã nộp </label>
+              </div>
+              </td>
                        
              `
             }
             if(value.status == 'Chưa nộp'){
               tuition += `
-              <td><label class="badge badge-danger">${value.status}</label></td>
+              <td>
+              <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" checked> Đã nộp </label>
+                            </div>
+              </td>
                          
              `
             }
             tuition += `
             <td>
-             <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
-              Sửa
-            </button>
-            <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTuition">
-              Xóa
-            </button>
+             
             </td>
             </tr> 
             `
