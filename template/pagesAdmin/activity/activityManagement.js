@@ -11,7 +11,13 @@ function getActivityById(id){
   })
 }
 
-function ampmTo24(time)
+
+function refreshPage() {
+  window.location.reload();
+}
+
+
+/* function ampmTo24(time)
 {
   var hours = Number(time.match(/^(\d+)/)[1]);
   var minutes = Number(time.match(/:(\d+)/)[1]);
@@ -26,7 +32,7 @@ function ampmTo24(time)
   if(minutes<10) Minutes24 = "0" + Minutes24;
 
   return Hours24 + ":" + Minutes24
-}
+} */
 function findActivity() {
   axios.get("http://localhost:3000/api/admin/activities")  // dien link api vao
     .then((activities) => {
@@ -35,8 +41,9 @@ function findActivity() {
       $.each(activities.data, function (index, value) {
         info += `
           <tr>
-            <td> ${value.date}  </td>
+          <td> ${new Date(value.date).getDate()}/${new Date(value.date).getMonth()+1}/${new Date(value.date).getFullYear()} </td>
             <td> ${value.timeStart} - ${value.timeFinish} </td>
+            <td> ${value.title}</td>  
             <td> ${value.description}</td>                        
             <td> ${value.place}</td>
            
@@ -44,7 +51,7 @@ function findActivity() {
             <button onClick="getActivityById('${value._id}')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeActivity">
             Sửa
           </button>
-          <button  onClick="deleteActivity('${value._id}')"  type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
+          <button  onClick="getActivityById('${value._id}')"  type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
             Xóa
           </button>
           </td>        
@@ -56,13 +63,37 @@ function findActivity() {
     });
 }
 
-function deleteActivity(id) {
+function addMenu() {
+  axios.post('http://localhost:3000/api/admin/activities',{
+    date : document.getElementById("Date").value,
+    description:document.getElementById("description").value,
+    title: document.getElementById("title").value,
+    timeStart : document.getElementById("timeStart").value,
+    timeFinish: document.getElementById("timeFinish").value,
+    place: document.getElementById("place").value
+  })
+  .then((rs) => {
+    if(rs.data.success){
+      alert(rs.data.message);
+    }else{
+      alert(rs.data.message);
+    }
+    //refreshPage();               
+  })   
+}
+
+function deleteActivity() {
+  const id = document.getElementById("invisibleID").value
   axios.delete('http://localhost:3000/api/admin/activities/' + id)
   .then((rs) => {
     console.log(rs);
-    if(rs.data.susccess){
-    alert("Xóa hoạt động thành công")
-  }
+    if(rs.data.success){
+        alert(rs.data.message)
+        refreshPage()
+    }else{
+        alert(rs.data.message)
+        refreshPage()
+    }
   })
 }
 
@@ -75,7 +106,7 @@ function changeAcivityByID() {
       const id = document.getElementById("invisibleID").value
       console.log(id);
       axios.put('http://localhost:3000/api/admin/activities/'+id,{
-        date : document.getElementById("updateDate"),
+        date : document.getElementById("updateDate").value,
         title : document.getElementById("updateTitle").value,
         description:document.getElementById("updateDescription").value,
         timeStart: document.getElementById("updateTimeStart").value,
@@ -92,3 +123,5 @@ function changeAcivityByID() {
       }
     })
     }
+
+

@@ -108,6 +108,7 @@
               </span>
               <span class="menu-title">Hoạt động</span>
             </a>
+            <input id="invisibleID" style="visibility: hidden">   
           </li>
         
         
@@ -286,7 +287,8 @@
                             <tr>
                               <th> Ngày </th>
                               <th> Giờ</th>  
-                              <th> Hoạt động</th>                     
+                              <th> Hoạt động</th> 
+                              <th> Chi Tiết</th>                    
                               <th> Địa điểm </th>
                               <th> ID</th>
                             </tr>
@@ -295,7 +297,9 @@
                         <tbody id="information">                                                             
                         </tbody>
                       </table>
-                      
+                      <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addActivity">
+                        Thêm mới
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -319,30 +323,30 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for=""> <h4>Chọn ngày :</h4></label>
-                      <input style="border-radius: 7px;" type="date" id="" name="">   
+                      <input style="border-radius: 7px;" type="date" id="Date" name="">   
                     </div>
                     <div class="form-group">
                       <label for="appt">Thời gian bắt đầu:</label>
-                      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                      <input type="" placeholder="Giờ:phút" id="timeStart" required>
                     </div>
                     <div class="form-group">
                       <label for="appt">Thời gian kết thúc:</label>
-                      <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                      <input type="" placeholder="Giờ:phút" id="timeFinish" name=""  required>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Địa điểm</label>
-                      <input type="" class="form-control" id="exampleInputEmail3" >
+                      <label for="exampleInputEmail3">Hoạt động</label>
+                      <input type="" class="form-control" id="title" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword4">Nội dung</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" >
+                      <label for="exampleInputPassword4">Chi tiết</label>
+                      <input type="" class="form-control" id="description" >
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword4">Ghi chú</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" >
+                      <label for="exampleInputPassword4">Địa điểm</label>
+                      <input type="" class="form-control" id="place" >
                     </div>
                                                                    
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" onclick= addMenu() class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-dark">Cancel</button>
                   </form>
                 </div>
@@ -385,8 +389,7 @@
                     <div class="form-group">
                       <label for="exampleSelectGender">Địa điểm</label>
                       <input type="" id ="updatePlace"class="form-control" >
-                    </div>
-                    <input id="invisibleID" style="visibility: hidden">                                                                         
+                    </div>                                                                      
                   </form>
                 </div>
                 <div class="modal-footer">
@@ -410,14 +413,13 @@
                 <div class="modal-body">
                   <form class="forms-sample">                                                   
                   <div class="form-group">
-                    <label for="exampleSelectGender">ID</label>
-                    <input type="" class="form-control" i>
+                    <label for="exampleSelectGender">Bạn có muốn xóa hoạt động này?</label>
                   </div>                                                                      
                 </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-danger">Xóa hoạt động</button>
+                  <button type="button" onclick = deleteActivity() class="btn btn-danger">Xóa hoạt động</button>
                 </div>
               </div>
             </div>
