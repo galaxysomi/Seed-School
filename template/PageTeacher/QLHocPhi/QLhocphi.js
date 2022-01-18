@@ -11,12 +11,18 @@ axios.get(host + '/api/teacher/tuition', {
           <tr>
             <td>${new Date(value.date).getMonth()+1} </td> 
             <td> ${value.student.name} </td> 
-            <td> ${totalTuition}$</td> 
+            <td> ${totalTuition}</td> 
             <td> ${value.validAbsence} </td> 
             <td> ${value.invalidAbsence} </td>
             <td> ${value.late1} </td> 
             <td> ${value.late2} </td> 
-            
+            <td>
+            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" checked> Checked </label>
+                            </div>
+
+            </td>
             `;
           if(value.paid == 'Đã nộp'){
             tuition += `
