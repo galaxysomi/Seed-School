@@ -24,5 +24,6 @@ axios.get(host + '/api/parent/mail', {
             `;
     });
     $('#information').html(info);
+    
   }
 })
