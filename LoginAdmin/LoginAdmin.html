@@ -185,43 +185,23 @@
         console.log(document.getElementById('username').value);
 
         let host = 'http://localhost:3000'
-        axios.post(host + '/api/parent/login', {
+        axios.post(host + '/api/admin/login', {
             username: document.getElementById('username').value,
             password: document.getElementById('password').value,
         }, {
             headers: { Authorization: 'Bearer ' + localStorage.token }
         }
         ).then(rs => {
-            if (rs.data.status === "success") {
+            if (rs.data.success) {
                 localStorage.setItem('token', rs.data.token);
-                window.location = "http://127.0.0.1:5501/template/index1.html"
+                window.location = "http://127.0.0.1:5533/template/pagesAdmin/teacher/teacherManagement.html"
                 console.log('Login OK, hello parrent')
                 console.log(localStorage.token)
-            } else {
-
-            }
+            } 
         })
     }
 </script>
 
-<script>
-    if (localStorage.token) {
-        console.log('Dang goi vao script day...')
-        let host = 'http://localhost:3000'
-        axios.post(host + '/api/parent/login', {}, {
-            headers: { Authorization: 'Bearer ' + localStorage.token }
-        }
-        ).then(rs => {
-            if (rs.data.status === "success") {
-                localStorage.setItem('token', rs.data.token);
-                window.location = "http://127.0.0.1:5501/template/index1.html"
-                console.log('Login OK, heello parrent')
-                console.log(localStorage.token)
-            } else {
-
-            }
-        })
-    }
-</script>
+<script src="./checkAuth.js"></script>
 
 </html>
