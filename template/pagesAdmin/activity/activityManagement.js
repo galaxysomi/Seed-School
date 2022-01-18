@@ -60,11 +60,57 @@ function deleteActivity(id) {
   axios.delete('http://localhost:3000/api/admin/activities/' + id)
   .then((rs) => {
     console.log(rs);
-    if(rs.data.susccess){
+    if(rs.data.suscess){
     alert("Xóa hoạt động thành công")
   }
   })
 }
+function addActivityManagement() {
+  axios.post('', {
+    date: document.getElementById("date").value,
+    timeStart: document.getElementById("timeStart").value,
+    timeFinish: document.getElementById("timeFinish").value,
+    place: document.getElementById("place").value,
+    description: document.getElementById("description").value
+  })
+    .then((rs) => {
+      console.log(rs.data);
+      if (rs.data.success == true) {
+        alert("Thêm thành công");
+      }
+      if (rs.data.suscess == false) {
+        alert("Không thành công");
+      }
+      refreshPage();
+    })
+}
+
+function changeActivityByID() {
+  const id = document.getElementById("invisibleID").value;
+  console.log(id);
+  axios.put(' ' + id, {
+    date: document.getElementById("changeDate").value,
+    timeStart: document.getElementById("changeTimeStart").value,
+    timeFinish: document.getElementById("changeTimeFinish").value,
+    description: document.getElementById("changeDescription").value,
+    place: document.getElementById("changePlace").value
+  })
+    .then((rs) => {
+      console.log(rs.data);
+      if (rs.data.success == true) {
+        alert("Sửa thành công");
+      }
+      if (rs.data.suscess == false) {
+        alert("Không thành công");
+      }
+      refreshPage();
+
+    })
+
+}
+
+
+
 
 
 $(document).ready(function () {
