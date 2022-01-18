@@ -6,19 +6,19 @@ function findTeacher() {
       $.each(teacher.data, function (index, value) {
         info += `
           <tr>
-            <td> ${index} </td>
+            <td> ${index+1} </td>
             <td> ${value.name} </td>
-            <td> ${value.age}   </td>                        
-            <td> ${value.SDT}</td>
-            <td> ${value.class}</td>
-            <td> ${value._id}</td>
+            <td> ${value.sex}</td>
+            <td> ${value.phoneNumber}</td>
+            <td> ${value.className}</td>
+            <td> ${value.numStudent}</td>
             <td>
-            <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTeacher">
+            <button onClick="getTeacherById('${value._id}')" style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTeacher">
             Sửa
             </button>
-            <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTeacher">
-            Xóa
-            </button>      
+            <button onClick = "getTeacherById('${value._id}')"  style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTeacher">
+                Xóa
+            </button>    
             </td>                                
           </tr>            
            `
@@ -30,44 +30,58 @@ function findTeacher() {
 $(document).ready(findTeacher());
 
 
+function refreshPage() {
+  window.location.reload();
+}
+
+
 function addTeacher() {
-  axios.post('', {
+  axios.post('http://localhost:3000/api/admin/teacher', {
     name: document.getElementById("name").value,
-    age: document.getElementById("age").value,
+    birth: document.getElementById("birth").value,
     sex: document.getElementById("sex").value,
-    class: document.getElementById("class").value,
-    number: document.getElementById("phoneNumber").value
+    username : document.getElementById("uername").value,
+    password: document.getElementById("password").value,
+    password2: document.getElementById("password2").value,
+    className : document.getElementById("className").value,
+    phoneNumber: document.getElementById("phoneNumber").value,
+    numStudent: document.getElementById("numStudent").value,
   })
     .then((rs) => {
       console.log(rs.data);
-      if (rs.data.success == true) {
-        alert("Thêm thành công");
-      }
-      if (rs.data.suscess == false) {
-        alert("Không thành công");
+      if (rs.data.success) {
+        alert(rs.data.message);
+      }else{
+        alert(rs.data.message);
       }
       refreshPage();
     })
 }
 
-function deleteTeacher(id) {
-  axios.delete('' + id)
+function deleteTeacher() {
+  const id = document.getElementById("invisibleID").value;
+  axios.delete('http://localhost:3000/api/admin/teacher' + id)
     .then((rs) => {
       console.log(rs);
-      if (rs.data.susccess) {
-        alert("Xóa thành công")
+      if (rs.data.success) {
+        alert(rs.data.message)
+        refreshPage();
+      }else{
+        alert(rs.data.message)
         refreshPage();
       }
     })
 }
 
 function getTeacherById(id) {
-  axios.get('' + id).then(data => {
+  axios.get('http://localhost:3000/api/admin/teacher/' + id).then(data => {
     document.getElementById("changeName").value = data.data.name;
-    document.getElementById("changeAge").value = data.data.age;
+   // document.getElementById("changeAge").value 
     document.getElementById("changeSex").value = data.data.sex;
-    document.getElementById("changeClass").value = data.data.class;
-    document.getElementById("changeNumber").value = data.data.number;
+    document.getElementById("changeClass").value = data.data.className;
+    document.getElementById("changeNumber").value = data.data.phoneNumber;
+    document.getElementById("changeNumStudent").value = data.data.numStudent;
+    document.getElementById("changePassword").value = data.data.password;
     document.getElementById("invisibleID").value = id;
   })
 }
@@ -75,23 +89,22 @@ function getTeacherById(id) {
 function changeTeacherByID() {
   const id = document.getElementById("invisibleID").value;
   console.log(id);
-  axios.put(' ' + id, {
+  axios.put('http://localhost:3000/api/admin/teacher/' + id, {
     name: document.getElementById("changeName").value,
-    age: document.getElementById("changeAge").value,
     sex: document.getElementById("changeSex").value,
-    class: document.getElementById("changeClass").value,
-    number: document.getElementById("changePhoneNumber").value
+    className: document.getElementById("changeClass").value,
+    password: document.getElementById("changePassword").value,
+    phoneNumber: document.getElementById("changeNumber").value,
+    numStudent: document.getElementById("changeNumStudent").value
   })
     .then((rs) => {
       console.log(rs.data);
-      if (rs.data.success == true) {
-        alert("Sửa thành công");
-      }
-      if (rs.data.suscess == false) {
-        alert("Không thành công");
+      if (rs.data.success) {
+        alert(rs.data.message);
+      }else{
+        alert(rs.data.message)
       }
       refreshPage();
-
     })
 
 }
