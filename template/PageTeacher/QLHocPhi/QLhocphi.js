@@ -69,9 +69,5 @@ var x = [
       //   });
     
       // }
-      function submitSuccess(){
-      alert("Submit thành công");
-}      
-function cancelSuccess(){
-      alert("Cancel thành công");
-}      
+     
+      

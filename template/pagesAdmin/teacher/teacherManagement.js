@@ -1,5 +1,7 @@
 function findTeacher() {
-  axios.get("http://localhost:3000/api/admin/teacher")  // dien link api vao
+  axios.get("http://localhost:3000/api/admin/teacher",{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})  // dien link api vao
     .then((teacher) => {
       console.log(teacher);
       let info = " ";
@@ -16,9 +18,7 @@ function findTeacher() {
             <button onClick="getTeacherById('${value._id}')" style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTeacher">
             Sửa
             </button>
-            <button onClick = "getTeacherById('${value._id}')"  style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTeacher">
-                Xóa
-            </button>    
+            <button type="button" onClick = "deleteTeacher('${value._id}')"style="margin-top: 20px;" type="button" class="btn btn-danger">Xóa</button>  
             </td>                                
           </tr>            
            `
@@ -46,7 +46,9 @@ function addTeacher() {
     className : document.getElementById("className").value,
     phoneNumber: document.getElementById("phoneNumber").value,
     numStudent: document.getElementById("numStudent").value,
-  })
+  },{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
     .then((rs) => {
       console.log(rs.data);
       if (rs.data.success) {
@@ -58,11 +60,12 @@ function addTeacher() {
     })
 }
 
-function deleteTeacher() {
-  const id = document.getElementById("invisibleID").value;
-  axios.delete('http://localhost:3000/api/admin/teacher' + id)
+function deleteTeacher(id) {
+  axios.delete('http://localhost:3000/api/admin/teacher/' + id,{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
     .then((rs) => {
-      console.log(rs);
+      alert('Bạn có muốn xóa giáo viên này không?')
       if (rs.data.success) {
         alert(rs.data.message)
         refreshPage();
@@ -83,7 +86,9 @@ function getTeacherById(id) {
     document.getElementById("changeNumStudent").value = data.data.numStudent;
     document.getElementById("changePassword").value = data.data.password;
     document.getElementById("invisibleID").value = id;
-  })
+  },{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
 }
 
 function changeTeacherByID() {
@@ -96,7 +101,9 @@ function changeTeacherByID() {
     password: document.getElementById("changePassword").value,
     phoneNumber: document.getElementById("changeNumber").value,
     numStudent: document.getElementById("changeNumStudent").value
-  })
+  },{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
     .then((rs) => {
       console.log(rs.data);
       if (rs.data.success) {

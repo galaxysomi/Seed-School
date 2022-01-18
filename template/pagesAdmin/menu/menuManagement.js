@@ -1,6 +1,8 @@
 
     function findMenu() {
-      axios.get('http://localhost:3000/api/admin/foodmenu')  // dien link api vao
+      axios.get('http://localhost:3000/api/admin/foodmenu',{
+        headers: { Authorization: 'Bearer ' + localStorage.token }
+    })  // dien link api vao
         .then((x) => {
           console.log(x);
           let info = " ";
@@ -33,7 +35,9 @@
     
     function deleteMenu() {
       const id = document.getElementById("invisibleID").value
-      axios.delete('http://localhost:3000/api/admin/foodmenu/'+ id)
+      axios.delete('http://localhost:3000/api/admin/foodmenu/'+ id,{
+        headers: { Authorization: 'Bearer ' + localStorage.token }
+    })
       .then((rs) => {
         console.log(rs);
         if(rs.data.success){
@@ -49,7 +53,9 @@
         monChinh:document.getElementById("monChinh").value,
         monDiemTam: document.getElementById("monTrua").value,
         quaChieu : document.getElementById("quaChieu").value
-      })
+      },{
+        headers: { Authorization: 'Bearer ' + localStorage.token }
+    })
       .then((rs) => {
         
         console.log(rs.data);
@@ -79,7 +85,9 @@
     }
 
     function getMenuById(id){
-      axios.get('http://localhost:3000/api/admin/foodmenu/'+id).then(data =>{
+      axios.get('http://localhost:3000/api/admin/foodmenu/'+id,{
+        headers: { Authorization: 'Bearer ' + localStorage.token }
+    }).then(data =>{
         //document.getElementById("changeDate").value = data.data.date ;
         document.getElementById("changeMonChinh").value = data.data.monChinh ;
         document.getElementById("changeMonDiemTam").value = data.data.monDiemTam;
@@ -99,7 +107,9 @@
         monChinh:document.getElementById("changeMonChinh").value,
         monDiemTam: document.getElementById("changeMonDiemTam").value,
         quaChieu : document.getElementById("changeQuaChieu").value
-      })
+      },{
+        headers: { Authorization: 'Bearer ' + localStorage.token }
+    })
       .then((rs) => {      
         if(rs.data.success){
             alert(rs.data.message);

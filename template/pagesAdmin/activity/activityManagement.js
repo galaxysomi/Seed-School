@@ -1,5 +1,7 @@
 function getActivityById(id){
-  axios.get('http://localhost:3000/api/admin/activities/'+id).then(data =>{
+  axios.get('http://localhost:3000/api/admin/activities/'+id, {
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+}).then(data =>{
     //document.getElementById("changeDate").value = data.data.date ;
     document.getElementById("updateTitle").value = data.data.title ;
     document.getElementById("updateDescription").value = data.data.description;
@@ -30,11 +32,12 @@ function refreshPage() {
   var Minutes24 = minutes.toString();
   if(hours<10) Hours24 = "0" + Hours24;
   if(minutes<10) Minutes24 = "0" + Minutes24;
-
   return Hours24 + ":" + Minutes24
 } */
 function findActivity() {
-  axios.get("http://localhost:3000/api/admin/activities")  // dien link api vao
+  axios.get("http://localhost:3000/api/admin/activities", {
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})  // dien link api vao
     .then((activities) => {
       console.log(activities.data);     
       let info = " ";
@@ -71,7 +74,9 @@ function addMenu() {
     timeStart : document.getElementById("timeStart").value,
     timeFinish: document.getElementById("timeFinish").value,
     place: document.getElementById("place").value
-  })
+  }, {
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
   .then((rs) => {
     if(rs.data.success){
       alert(rs.data.message);
@@ -84,7 +89,9 @@ function addMenu() {
 
 function deleteActivity() {
   const id = document.getElementById("invisibleID").value
-  axios.delete('http://localhost:3000/api/admin/activities/' + id)
+  axios.delete('http://localhost:3000/api/admin/activities/' + id, {
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
   .then((rs) => {
     console.log(rs);
     if(rs.data.success){
@@ -112,7 +119,9 @@ function changeAcivityByID() {
         timeStart: document.getElementById("updateTimeStart").value,
         timeFinish : document.getElementById("updateTimeFinish").value,
         place: document.getElementById("updatePlace").value
-      })
+      }, {
+        headers: { Authorization: 'Bearer ' + localStorage.token }
+    })
       .then((rs) => {      
         if(rs.data.success){
             alert(rs.data.message);
@@ -123,5 +132,3 @@ function changeAcivityByID() {
       }
     })
     }
-
-
