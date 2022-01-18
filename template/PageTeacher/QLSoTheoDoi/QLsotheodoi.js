@@ -9,6 +9,7 @@ axios.get(host + '/api/teacher/logbook', {
     let info = " ";
     console.log(logbooks);
     $.each(logbooks, function (index, logbook) {
+     
       let trongMuon;
       if (logbook.lookAfterLate1 == 0 && logbook.lookAfterLate2 == 0) {
         trongMuon = "Không";
@@ -31,7 +32,7 @@ axios.get(host + '/api/teacher/logbook', {
                     <thead>
                       <tr>
                         <th>Tên học sinh</th>
-                        <th></th>                       
+                        <th>${logbook.student.name}</th>                       
                       </tr>
                     </thead>
                     <tbody>                     
@@ -70,15 +71,14 @@ axios.get(host + '/api/teacher/logbook', {
                     </tbody>
                     
                   </table>
-                  <button onClick="addSoTheoDoi('${logbook.student}')" style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
+                  <button  style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
                   Thêm mới
-                </button>       
-                  <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
+                </button>   
+                  
+                  <button onClick="setID('${logbook._id}')" style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changesotheodoi">
               Sửa
             </button>
-            <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTuition">
-              Xóa
-            </button>         
+                  
                 </div>
               </div>
             </div>
@@ -89,19 +89,22 @@ axios.get(host + '/api/teacher/logbook', {
                 <h4 class="card-title">Ảnh điểm danh</h4>                  
                 </p>
                 <div class="table-responsive" style="position: absolute;">
-                  <img id="anhDiemDanh" src="${logbook.attendancePicture}" alt="">
-                  <p>  ${logbook.attendancePicture} </p>                                         
+                  <img id="anhDiemDanh" src="${logbook.attendancePicture}" alt="">                                                   
                 </div>
               </div>
             </div>
           </div>         
              `
-
+            
     });
     $('#information').html(info);
 
   }
 })
+
+function setID(id) {
+  document.getElementById("invisibleID").value = id ;  
+}
 
 
 function getSoTheoDoiByDate() {
@@ -139,7 +142,7 @@ function getSoTheoDoiByDate() {
                       <thead>
                         <tr>
                           <th>Tên học sinh</th>
-                          <th></th>                       
+                          <th>${logbook.student.name}</th>                       
                         </tr>
                       </thead>
                       <tbody>                     
@@ -179,15 +182,13 @@ function getSoTheoDoiByDate() {
                       </tbody>
                       
                     </table>
-                    <button onClick="addSoTheoDoi('${logbook.student}')" style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
+                    <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
                     Thêm mới
                   </button>   
-                    <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeTuition">
+                    <button onClick="setID('${logbook._id}')" style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changesotheodoi">
               Sửa
             </button>
-            <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTuition">
-              Xóa
-            </button>             
+                     
                   </div>
                 </div>
               </div>
@@ -198,8 +199,7 @@ function getSoTheoDoiByDate() {
                   <h4 class="card-title">Ảnh điểm danh</h4>                  
                   </p>
                   <div class="table-responsive" style="position: absolute;">
-                    <img id="anhDiemDanh" src="${logbook.attendancePicture}" alt="">
-                    <p>  ${logbook.attendancePicture} </p>                                         
+                    <img id="anhDiemDanh" src="${logbook.attendancePicture}" alt="">                                                                  
                   </div>
                 </div>
               </div>
@@ -213,13 +213,17 @@ function getSoTheoDoiByDate() {
   })
 }
 
-function addSoTheoDoi(id) {
+function addSoTheoDoi() {
+  let id = document.getElementById("invisibleID").value ;
+  console.log(id);
+  let date = new Date();
   var formData = new FormData();
   var imagefile = document.querySelector('#file');
-  formData.append("image", imagefile.files[0]);
+  formData.append("file", imagefile.files[0]);
   axios.post("https://api.bandeck.com/v1/user/storage/upload?access_token=w4fCq2xrZsKYwpLCm2zCmMKUbMKWaW3CmmjDhmhuwpxuwp1waWrDhcKUwpfCmcKdwpQ=&name=" + date, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   }).then((response) => {
+    console.log(response);
     sendSoTheoDoi({
       student: id,
       attendancePicture: "https://cdn.bandeck.com/" + response?.data.data.id,
@@ -246,3 +250,42 @@ function sendSoTheoDoi(logbook) {
     console.log(rs);
   })
 }
+
+
+function changeSoTheoDoi() {
+  let id = document.getElementById("invisibleID").value ;
+  console.log(id);
+  let date = new Date();
+  var formData = new FormData();
+  var imagefile = document.querySelector('#changeFile');
+  formData.append("file", imagefile.files[0]);
+  axios.post("https://api.bandeck.com/v1/user/storage/upload?access_token=w4fCq2xrZsKYwpLCm2zCmMKUbMKWaW3CmmjDhmhuwpxuwp1waWrDhcKUwpfCmcKdwpQ=&name=" + date, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  }).then((response) => {
+    console.log(response);
+    putSoTheoDoi(id,{
+      attendancePicture: "https://cdn.bandeck.com/" + response?.data.data.id,
+      comment: document.getElementById("changeComment").value ,
+      status: document.getElementById("changeStatus").value ,
+      lookAfterLate: document.getElementById("changeTrongMuon").value 
+    }).then((result) => {
+      console.log(result);
+      if (result.data.status === "ok") {
+        alert("Change successful")
+      } else {
+        alert(result?.msg)
+      };
+    })
+  })
+}
+
+function putSoTheoDoi(id,logbook) {
+  axios.put('http://localhost:3000/api/teacher/logbook/'+id,{
+    logbook: logbook  
+  },{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+  }).then(rs =>{
+    console.log(rs);
+  })
+}
+

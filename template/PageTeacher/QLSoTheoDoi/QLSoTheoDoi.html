@@ -339,13 +339,14 @@
           </div>                                            
           <div class="form-group">
             <label for="exampleInputName1">Ảnh điểm danh</label>
-            <input type="file" class="form-control" id="anhDiemDanh" >
+            <input type="file" class="form-control" id="file" >
           </div>                                                     
         </form>
       </div>
+      <input style="visibility: hidden;"  id="invisibleID">
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" onclick="addSoTheoDoi()" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -362,45 +363,37 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="forms-sample">
-          <div class="form-group">
-            <label for=""> <h4>Chọn ngày : </h4></label>
-            <input style="border-radius: 7px;" type="date" id="" name="">   
-          </div>
-          <div class="form-group">
-            <label for="exampleInputName1">Tên học sinh</label>
-            <input type="text" class="form-control" id="exampleInputName1" >
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail3">Mã số học sinh</label>
-            <input type="email" class="form-control" id="exampleInputEmail3" >
-          </div>
+        <form class="forms-sample">        
           <div class="form-group">
             <label for="exampleInputEmail3">Trông muộn</label>
-            <input type="email" class="form-control"  >
-          </div>
+            <select class="form-control" id="changeTrongMuon">
+              <option>5h30-6h30</option>
+              <option>Sau 6h30</option>
+              <option>Không</option>
+            </select>
+          </div>       
           <div class="form-group">
             <label for="exampleInputEmail3">Nhận xét</label>
-            <input type="email" class="form-control" id="exampleInputEmail3" >
+            <input type="email" class="form-control" id="changeComment" >
           </div>
           <div class="form-group">
             <label for="exampleInputEmail3">Trạng thái</label>
-            <select class="form-control" id="exampleSelectGender">
+            <select class="form-control" id="changeStatus">
               <option>Đi học</option>
-              <option>Nghỉ có phép</option>
+              <option>Nghỉ học</option>
               <option>Nghỉ không phép</option>
             </select>
           </div>                                            
           <div class="form-group">
             <label for="exampleInputName1">Ảnh điểm danh</label>
-            <input type="text" class="form-control" id="exampleInputName1" >
-          </div>                                                    
-
+            <input type="file" class="form-control" id="changeFile" >
+          </div>                                                     
         </form>
       </div>
+      <input style="visibility: hidden;"  id="invisibleID">
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" onclick="changeSoTheoDoi()" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
