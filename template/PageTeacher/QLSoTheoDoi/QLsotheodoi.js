@@ -57,13 +57,20 @@ var x = [
              `
             }
             info += `                          
-                      </tr>                                                                                                           
+                      </tr>  
+                      <button style="margin-left: 10px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changesotheodoi">
+              Sửa
+            </button>
+            <button style="margin-left: 10px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletesotheodoi">
+              Xóa
+            </button>                                                                                                         
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
+          
           <div class="col-lg-5 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
