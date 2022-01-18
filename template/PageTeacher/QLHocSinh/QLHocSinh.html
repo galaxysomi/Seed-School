@@ -117,6 +117,14 @@
               <span class="menu-title">Quản lý TKB</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="../HomThu/ThongBao.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Thông báo</span>
+            </a>
+          </li>
       </nav>
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
@@ -280,16 +288,18 @@
                             <col width="200" span="1">
                             <col width="150" span="1">
                             <col width="150" span="1">
+                            <col width="150" span="1">
                             <col width="auto" span="1">
                           </colgroup>
                           <thead>
                             <tr>
-                              <th> # </th>
+                              <th> STT </th>
                               <th> Họ tên </th>
                               <th> Ngày sinh</th>
                               <th> Mã học sinh </th>
-                              <th> Lớp</th>
                               <th> Giới tính </th>
+                              <th> Tên phụ huynh </th>
+                              <th> Số diện thoại </th>
                               <th> Địa chỉ </th>
                             </tr>
                           </thead>
@@ -297,13 +307,13 @@
                             
                           </tbody>
                         </table>
-                        <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent">
+                        <button style="margin-top: 50px; margin-left: 75%; margin-bottom: 50px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent">
                           Thêm mới
                         </button>
-                        <button style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
+                        <button style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
                           Sửa
                         </button>
-                        <button style="margin-top: 20px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent">
+                        <button style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent">
                           Xóa
                         </button>
                       </div>
@@ -333,7 +343,7 @@
       <div class="modal-body">
         <form class="forms-sample">
           <div class="form-group">
-            <label for="exampleInputName1">Họ tên</label>
+            <label for="exampleInputName1">Họ tên học sinh</label>
             <input type="text" class="form-control" id="exampleInputName1" >
           </div>
           <div class="form-group">
@@ -341,52 +351,44 @@
             <input style="border-radius: 7px;" type="date" id="" name="">   
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail3">Giới tính</label>
+            <label for="exampleInputEmail3">Giới tính học sinh</label>
             <select class="form-control" id="exampleSelectGender">
               <option>Nam</option>
               <option>Nữ</option>
             </select>
           </div>       
           <div class="form-group">
-            <label for="exampleInputEmail3">Lớp</label>
-            <input type="email" class="form-control" id="exampleInputEmail3" >
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword4">Địa chỉ</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
-          </div>
-          <div class="form-group">
-            <label for="exampleSelectGender">Họ và tên bố</label>
+            <label for="exampleSelectGender">Họ tên phụ huynh</label>
             <input type="" class="form-control" i>
           </div> 
           <div class="form-group">
-            <label for="exampleInputPassword4">Năm sinh</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Tên đăng nhập</label>
+            <input type="" class="form-control" id="exampleInputUsername" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Nghề nghiệp bố</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Mật khẩu</label>
+            <input type="" class="form-control" id="exampleInputPassword" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Số điện thoại bố</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
+            <input style="border-radius: 7px;" type="date" id="" name="">   
           </div>
           <div class="form-group">
-            <label for="exampleSelectGender">Họ và tên mẹ</label>
-            <input type="" class="form-control" i>
-          </div> 
-          <div class="form-group">
-            <label for="exampleInputPassword4">Năm sinh</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputEmail3">Giới tính phụ huynh</label>
+            <select class="form-control" id="exampleSelectSex">
+              <option>Nam</option>
+              <option>Nữ</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Nghề nghiệp mẹ</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Địa chỉ phụ huynh</label>
+            <input type="" class="form-control" id="exampleInputAdress" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Số điện thoại mẹ</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Số điện thoại phụ huynh</label>
+            <input type="" class="form-control" id="exampleInputPhoneNumber" >
           </div>
+          
           
         </form>
       </div>
@@ -411,7 +413,7 @@
       <div class="modal-body">
         <form class="forms-sample">
           <div class="form-group">
-            <label for="exampleInputName1">Họ tên</label>
+            <label for="exampleInputName1">Họ tên học sinh</label>
             <input type="text" class="form-control" id="exampleInputName1" >
           </div>
           <div class="form-group">
@@ -419,51 +421,42 @@
             <input style="border-radius: 7px;" type="date" id="" name="">   
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail3">Giới tính</label>
+            <label for="exampleInputEmail3">Giới tính học sinh</label>
             <select class="form-control" id="exampleSelectGender">
               <option>Nam</option>
               <option>Nữ</option>
             </select>
           </div>       
           <div class="form-group">
-            <label for="exampleInputEmail3">Lớp</label>
-            <input type="email" class="form-control" id="exampleInputEmail3" >
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword4">Địa chỉ</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
-          </div>
-          <div class="form-group">
-            <label for="exampleSelectGender">Họ và tên bố</label>
+            <label for="exampleSelectGender">Họ tên phụ huynh</label>
             <input type="" class="form-control" i>
           </div> 
           <div class="form-group">
-            <label for="exampleInputPassword4">Năm sinh</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Tên đăng nhập</label>
+            <input type="" class="form-control" id="exampleInputUsername" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Nghề nghiệp bố</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Mật khẩu</label>
+            <input type="" class="form-control" id="exampleInputPassword" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Số điện thoại bố</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
+            <input style="border-radius: 7px;" type="date" id="" name="">   
           </div>
           <div class="form-group">
-            <label for="exampleSelectGender">Họ và tên mẹ</label>
-            <input type="" class="form-control" i>
-          </div> 
-          <div class="form-group">
-            <label for="exampleInputPassword4">Năm sinh</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputEmail3">Giới tính phụ huynh</label>
+            <select class="form-control" id="exampleSelectSex">
+              <option>Nam</option>
+              <option>Nữ</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Nghề nghiệp mẹ</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Địa chỉ phụ huynh</label>
+            <input type="" class="form-control" id="exampleInputAdress" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword4">Số điện thoại mẹ</label>
-            <input type="" class="form-control" id="exampleInputPassword4" >
+            <label for="exampleInputPassword4">Số điện thoại phụ huynh</label>
+            <input type="" class="form-control" id="exampleInputPhoneNumber" >
           </div>        
         </form>
       </div>
