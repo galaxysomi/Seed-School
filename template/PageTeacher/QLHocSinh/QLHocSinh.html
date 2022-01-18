@@ -303,7 +303,7 @@
                               <th> Giới tính </th>
                               <th> Tên phụ huynh </th>
                               <th> Số diện thoại </th>
-                              <th> Địa chỉ </th>
+                              <th> Chức năng </th>
                             </tr>
                           </thead>
                           <tbody id = "information">                                                                                                                                     
@@ -313,12 +313,7 @@
                         <button style="margin-top: 50px; margin-left: 75%; margin-bottom: 50px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent">
                           Thêm mới
                         </button>
-                        <button style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
-                          Sửa
-                        </button>
-                        <button style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent">
-                          Xóa
-                        </button>
+                       
                       </div>
                     </div>
                   </div>
@@ -347,57 +342,57 @@
         <form class="forms-sample">
           <div class="form-group">
             <label for="exampleInputName1">Họ tên học sinh</label>
-            <input type="text" class="form-control" id="exampleInputName1" >
+            <input type="text" class="form-control" id="name" >
           </div>
           <div class="form-group">
             <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
-            <input style="border-radius: 7px;" type="date" id="" name="">   
+            <input style="border-radius: 7px;" type="date" id="birth" >   
           </div>
           <div class="form-group">
             <label for="exampleInputEmail3">Giới tính học sinh</label>
-            <select class="form-control" id="exampleSelectGender">
+            <select class="form-control" id="sex">
               <option>Nam</option>
               <option>Nữ</option>
             </select>
           </div>       
           <div class="form-group">
             <label for="exampleSelectGender">Họ tên phụ huynh</label>
-            <input type="" class="form-control" i>
+            <input type="" class="form-control" id="nameParent">
           </div> 
           <div class="form-group">
-            <label for="exampleInputPassword4">Tên đăng nhập</label>
-            <input type="" class="form-control" id="exampleInputUsername" >
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword4">Mật khẩu</label>
-            <input type="" class="form-control" id="exampleInputPassword" >
-          </div>
-          <div class="form-group">
-            <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
-            <input style="border-radius: 7px;" type="date" id="" name="">   
+            <label for=""> <h4>Ngày tháng năm sinh </h4></label>
+            <input style="border-radius: 7px;" type="date" id="birthParent" >   
           </div>
           <div class="form-group">
             <label for="exampleInputEmail3">Giới tính phụ huynh</label>
-            <select class="form-control" id="exampleSelectSex">
+            <select class="form-control" id="sexParent">
               <option>Nam</option>
               <option>Nữ</option>
             </select>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword4">Địa chỉ phụ huynh</label>
-            <input type="" class="form-control" id="exampleInputAdress" >
+            <input type="" class="form-control" id="address" >
           </div>
           <div class="form-group">
             <label for="exampleInputPassword4">Số điện thoại phụ huynh</label>
-            <input type="" class="form-control" id="exampleInputPhoneNumber" >
+            <input type="" class="form-control" id="phoneNumber" >
           </div>
-          
-          
+          <div class="form-group">
+            <label for="exampleInputPassword4">Tên đăng nhập</label>
+            <input type="" class="form-control" id="username" >
+          </div>     
+          <div class="form-group">
+            <label for="exampleInputPassword4">Mật khẩu</label>
+            <input type="" class="form-control" id="password" >
+          </div>                     
         </form>
+          
+            
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" onclick="addStudent()" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
@@ -417,55 +412,56 @@
         <form class="forms-sample">
           <div class="form-group">
             <label for="exampleInputName1">Họ tên học sinh</label>
-            <input type="text" class="form-control" id="exampleInputName1" >
+            <input type="text" class="form-control" id="changeName" >
           </div>
           <div class="form-group">
             <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
-            <input style="border-radius: 7px;" type="date" id="" name="">   
+            <input style="border-radius: 7px;" type="date" id="changeBirth" >   
           </div>
           <div class="form-group">
             <label for="exampleInputEmail3">Giới tính học sinh</label>
-            <select class="form-control" id="exampleSelectGender">
+            <select class="form-control" id="changeSex">
               <option>Nam</option>
               <option>Nữ</option>
             </select>
           </div>       
           <div class="form-group">
             <label for="exampleSelectGender">Họ tên phụ huynh</label>
-            <input type="" class="form-control" i>
+            <input type="" class="form-control" id="changeNameParent">
           </div> 
           <div class="form-group">
-            <label for="exampleInputPassword4">Tên đăng nhập</label>
-            <input type="" class="form-control" id="exampleInputUsername" >
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword4">Mật khẩu</label>
-            <input type="" class="form-control" id="exampleInputPassword" >
-          </div>
-          <div class="form-group">
-            <label for=""> <h4>Ngày tháng năm sinh : </h4></label>
-            <input style="border-radius: 7px;" type="date" id="" name="">   
+            <label for=""> <h4>Ngày tháng năm sinh </h4></label>
+            <input style="border-radius: 7px;" type="date" id="changeBirthParent" name="">   
           </div>
           <div class="form-group">
             <label for="exampleInputEmail3">Giới tính phụ huynh</label>
-            <select class="form-control" id="exampleSelectSex">
+            <select class="form-control" id="changeSexParent">
               <option>Nam</option>
               <option>Nữ</option>
             </select>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword4">Địa chỉ phụ huynh</label>
-            <input type="" class="form-control" id="exampleInputAdress" >
+            <input type="" class="form-control" id="changeAddress" >
           </div>
           <div class="form-group">
             <label for="exampleInputPassword4">Số điện thoại phụ huynh</label>
-            <input type="" class="form-control" id="exampleInputPhoneNumber" >
-          </div>        
+            <input type="" class="form-control" id="changePhoneNumber" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Tên đăng nhập</label>
+            <input type="" class="form-control" id="changeUsername" >
+          </div>     
+          <div class="form-group">
+            <label for="exampleInputPassword4">Mật khẩu</label>
+            <input type="" class="form-control" id="changePassword" >
+          </div>             
+          <input id="invisibleID" style="visibility: hidden">                                                                         
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick=" changeStudentById()">Save changes</button>
       </div>
     </div>
   </div>
