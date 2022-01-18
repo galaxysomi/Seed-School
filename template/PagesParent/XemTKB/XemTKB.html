@@ -299,8 +299,8 @@
             <div class="page-header">             
               <form action="" method="post">
                 <label for="">Chọn ngày : </label>
-                <input style="border-radius: 7px;" type="date" id="" name="">
-                <button type="button" style="border-radius: 5px;" type="submit"  onclick="findActivity()" class="btn btn-primary">Submit</button>
+                <input style="border-radius: 7px;" type="date" id="activityDate" name="">
+                <button type="button" style="border-radius: 5px;" type="submit"  onclick="getActivityByDate()" class="btn btn-primary">Submit</button>
               </form>                                             
             </div>
 
@@ -324,9 +324,7 @@
                         <tr>
                           <th> Ngày </th>
                           <th> Giờ </th>  
-                          <th> Hoạt động</th>                     
-                          <th> Địa điểm </th>
-                          <th> Chức năng </th>
+                          <th> Hoạt động</th>                                                            
                         </tr>
                       </thead>
                       <tbody id="information">
