@@ -169,7 +169,7 @@
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
 
-        <button onclick="callApi()"> Đăng nhập ngay</button>
+        <button type="button" onclick="callApi()"> Đăng nhập ngay</button>
 
         <div class="social">
             
@@ -185,16 +185,16 @@
         console.log(document.getElementById('username').value);
 
         let host = 'http://localhost:3000'
-        axios.post(host + '/api/parent/login', {
+        axios.post(host + '/api/teacher/login', {
             username: document.getElementById('username').value,
             password: document.getElementById('password').value,
         }, {
             headers: { Authorization: 'Bearer ' + localStorage.token }
         }
         ).then(rs => {
-            if (rs.data.status === "success") {
+            if (rs.data.status === "ok") {
                 localStorage.setItem('token', rs.data.token);
-                window.location = "http://127.0.0.1:5501/template/index1.html"
+                window.location = "/template/PageTeacher/QLHocSinh/QLHocSinh.html"
                 console.log('Login OK, hello parrent')
                 console.log(localStorage.token)
             } else {
