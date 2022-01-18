@@ -289,7 +289,9 @@
                   <form style="margin-bottom: 30px;"  method="post">
                     <label for="">Chọn ngày : </label>
                     <input style="margin-left:10px;" style="border-radius: 7px;" type="date" id="" name="">
-                    <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>            
+                    <button type="submit" onclick="submitSuccess()" class="btn btn-primary ">Submit</button>  
+                    <button style="margin-left: 300px;" type="submit" onclick="" class="btn btn-primary ">Cập nhật trạng thái đóng học phí </button>  
+                    <button style="margin-left: 10px;" type="submit" onclick="submitSuccess()" class="btn btn-primary ">Cập nhật học phí tháng hiện tại</button>            
                   </form>    
                   <div class="table-responsive">
                     <table class="table table-dark">
@@ -304,20 +306,18 @@
                         <tr>
                           <th> Tháng </th>
                           <th> Họ tên </th>
+                          <th> Nghỉ có phép </th>
+                          <th> Buổi trông muộn(5h30-6h30) </th>
+                          <th> Buổi trông muộn(Sau 6h30) </th>
                           <th> Học phí </th>
-                          <th> Nghỉ có phép</th>
-                          <th> Nghỉ không phép </th>
-                          <th> Buổi trông muộn(5h30-6h30)</th>
-                          <th> Buổi trông muộn(Sau 6h30)</th>
-                          <th> Trạng thái</th>                                        
+                          <th> Trạng  thái </th>
+                          
                         </tr>
                       </thead>
                       <tbody id="tuitionTable">                       
                       </tbody>
                     </table>
-                    <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addTuition">
-                      Thêm mới
-                    </button>
+                   
                     
                   </div>
                 </div>
