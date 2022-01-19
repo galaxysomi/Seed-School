@@ -12,10 +12,13 @@ axios.get(host + '/api/teacher/student', {
       <tr>
             <td> ${index}</td>
             <td> ${value.name}   </td>
-            <td> ${value.birth}  </td>
-            <td> ${value._id}  </td>                        
+            <td> ${convertDateToString(value.birth)}  </td>
+                                   
             <td> ${value.sex}  </td>
             <td> ${value.parent.name}  </td>  
+            <td> ${convertDateToString(value.parent.birth)}  </td>  
+            <td> ${value.parent.phoneNumber}  </td>  
+            
             <td> ${value.sex}  </td>  
             <td>
             <button onClick="getStudentById('${value._id}')" style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
@@ -129,4 +132,12 @@ function clearFieldAdd() {
   document.getElementById("username").value=''
   document.getElementById("password").value=''
 
+}
+
+function convertDateToString(date) {
+  const d = new Date(date)
+  var curr_date = d.getDate();
+  var curr_month = d.getMonth() + 1; //Months are zero based
+  var curr_year = d.getFullYear();
+  return curr_date + "/" + curr_month + "/" + curr_year
 }
