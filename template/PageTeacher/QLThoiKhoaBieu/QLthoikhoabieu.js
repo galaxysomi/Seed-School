@@ -34,13 +34,7 @@ axios.get(host + '/api/teacher/schedule', {
 
 
 function addActivity() {
-  console.log(document.getElementById("invisibleID").value);
-  console.log(document.getElementById("content").value);
-  console.log(document.getElementById("start").value);
-  console.log(document.getElementById("end").value);
-  console.log(document.getElementById("date").value);
-
-
+ 
   axios.post('http://localhost:3000/api/teacher/activity', {
     
     date: document.getElementById("date").value,

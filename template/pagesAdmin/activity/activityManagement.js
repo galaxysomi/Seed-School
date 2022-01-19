@@ -60,6 +60,9 @@ function findActivity() {
           <button  onClick="thongBao('${value._id}')"  type="button" class="btn btn-success" ">
             Gửi thông báo
           </button>
+          <button  onClick="thongBao('${value._id}')"  type="button" class="btn btn-success" ">
+          <a href="../registerActivity/QLYregisterActivity.html?${value._id}"> Xem danh sách</a>
+          </button>
           </td>        
           </tr>            
            `;
