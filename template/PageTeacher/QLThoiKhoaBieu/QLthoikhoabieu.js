@@ -1,4 +1,4 @@
-
+function findActivity() {
 const host = 'http://localhost:3000'
 axios.get(host + '/api/teacher/schedule', {
   headers: { Authorization: 'Bearer ' + localStorage.token }
@@ -10,10 +10,13 @@ axios.get(host + '/api/teacher/schedule', {
     let activities = result.data.schedules[0].activityList;
     let info = " ";
     $.each(activities, function (index, value) {
+      //const time = value.start.slice(12,16)
+      console.log(value.start)
       info += `
           <tr>            
           <td> ${new Date(value.start).getDate()}/${new Date(value.start).getMonth() + 1}/${new Date(value.start).getFullYear()} </td>
-          <td> ${new Date(value.start).getHours()}:${new Date(value.start).getMinutes()}-${new Date(value.end).getHours()}:${new Date(value.end).getMinutes()}</td>            
+          <td> ${value.start.slice(12,16)} </td>
+               
           <td> ${value.content} </td>
           <td>
           <button type="button" onclick="deleteActivity('${result.data.schedules[0]._id}','${value._id}')" class="btn btn-danger" >
@@ -27,7 +30,7 @@ axios.get(host + '/api/teacher/schedule', {
     $('#information').html(info);
   }
 })
-
+}
 
 
 function addActivity() {
@@ -38,9 +41,8 @@ function addActivity() {
   console.log(document.getElementById("date").value);
 
 
-
   axios.post('http://localhost:3000/api/teacher/activity', {
-    scheduleId: document.getElementById("invisibleID").value,
+    
     date: document.getElementById("date").value,
     newActivity: {
       start: document.getElementById("start").value,
@@ -52,28 +54,30 @@ function addActivity() {
   })
     .then((rs) => {
       console.log(rs);
-      if (rs.data.success) {
-        alert(rs.data.message);
+      if (rs.data.status =="ok") {
+        alert(rs.data.msg);
       } else {
-        alert(rs.data.message);
+        alert(rs.data.msg);
       }
-      window.location.reload();
+      findActivityByDate();
     })
 }
 
 
 function deleteActivity(scheduleId , activityId) {
   axios.delete('http://localhost:3000/api/teacher/activity',{
+    headers: 
+    { Authorization: 'Bearer ' + localStorage.token 
+    },
+    data:{
     scheduleId : scheduleId ,
     activityId : activityId
-  }, {
-    headers: { Authorization: 'Bearer ' + localStorage.token }
-  })
+  }})
     .then((rs) => {
       console.log(rs);
       if (rs.data.status == "ok") {
         alert("Xóa thành công")
-        window.location.reload();
+        // window.location.reload();
 
       }
     })
@@ -97,7 +101,7 @@ function findActivityByDate() {
         info += `
           <tr>            
           <td> ${new Date(value.start).getDate()}/${new Date(value.start).getMonth() + 1}/${new Date(value.start).getFullYear()} </td>
-          <td> ${new Date(value.start).getHours()}:${new Date(value.start).getMinutes()}-${new Date(value.end).getHours()}:${new Date(value.end).getMinutes()}</td>            
+          <td> ${value.start.slice(11,16)} - ${value.end.slice(11,16)} </td>           
           <td> ${value.content} </td>
           <td>
           <button    type="button" onclick= deleteMenu() class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
@@ -108,6 +112,12 @@ function findActivityByDate() {
              `
       });
       $('#information').html(info);
+    } else if(result.data.msg==="cannot find any schedule with this teacher and date") {
+      $('#information').html("")
     }
   })
 }
+
+$( document ).ready(function() {
+  console.log( "ready!" );
+});
