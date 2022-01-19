@@ -5,9 +5,9 @@ if(localStorage.token){
         }
         ).then(rs => {
             if (rs.data.success) {
-                window.location = "http://127.0.0.1:5533/template/pagesAdmin/teacher/teacherManagement.html"
+                window.location = "../template/pagesAdmin/teacher/teacherManagement.html"
             }else{
-                window.location = "http://127.0.0.1:5533/LoginAdmin/LoginAdmin.html"
+                window.location = "../LoginAdmin/LoginAdmin.html"
             }
         })
    }

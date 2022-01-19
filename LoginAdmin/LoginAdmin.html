@@ -194,7 +194,7 @@
         ).then(rs => {
             if (rs.data.success) {
                 localStorage.setItem('token', rs.data.token);
-                window.location = "http://127.0.0.1:5533/template/pagesAdmin/teacher/teacherManagement.html"
+                window.location = "../template/pagesAdmin/teacher/teacherManagement.html"
                 console.log('Login OK, hello parrent')
                 console.log(localStorage.token)
             } 
