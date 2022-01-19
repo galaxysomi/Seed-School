@@ -127,6 +127,7 @@
               </span>
               <span class="menu-title">Thông báo</span>
             </a>
+            <input id="invisibleID" style="visibility: hidden">  
           </li>
       </nav>
       <!-- partial -->
@@ -455,8 +456,7 @@
           <div class="form-group">
             <label for="exampleInputPassword4">Mật khẩu</label>
             <input type="" class="form-control" id="changePassword" >
-          </div>             
-          <input id="invisibleID" style="visibility: hidden">                                                                         
+          </div>                                                                                    
         </form>
       </div>
       <div class="modal-footer">
@@ -480,14 +480,13 @@
       <div class="modal-body">
         <form class="forms-sample">                                                   
         <div class="form-group">
-          <label for="exampleSelectGender">ID</label>
-          <input type="" class="form-control" i>
+          <label for="exampleSelectGender">Bạn có muốn xóa học sinh này không ?</label>
         </div>                                                                      
       </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger">Xóa </button>
+        <button type="button" onclick = deleteStudentByID() class="btn btn-danger">Xóa </button>
       </div>
     </div>
   </div>
