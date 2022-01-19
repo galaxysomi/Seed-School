@@ -14,9 +14,9 @@ axios.get(host + '/api/teacher/mail', {
                   <b> ${value.title} </b>                               
               </p>                          
               <p>${new Date(value.date).getDate()}/${new Date(value.date).getMonth()+1}/${new Date(value.date).getFullYear()}</p>
-              <button onClick="setText('${value._id}','${value.title}','${value.content}')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail">                           
+              <a href ="./ChiTiet.html?${value._id}" >                           
                     Xem chi tiết
-                  </button>  
+                  </a>  
           </div>                
       </div>               
   </div>       
@@ -28,10 +28,4 @@ axios.get(host + '/api/teacher/mail', {
   }
 })
 
-function setText(id,title,content) {
-    document.getElementById("invisibleID").value = id;
-    document.getElementById("title").innerHTML = title;
-    document.getElementById("content").innerHTML = content;
-
-}
 

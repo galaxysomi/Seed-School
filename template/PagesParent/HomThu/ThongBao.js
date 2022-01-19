@@ -4,19 +4,21 @@ axios.get(host + '/api/parent/mail', {
 }).then(result => {
   if (result.data.status === 'ok') {
     console.log(result);
+    
     let info = " ";
     $.each(result.data.mails, function (index, value) {
+      console.log(value.content);
       info += `
       <div class="col-lg-3 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">                    
               <p class="card-title">
-                  <b> ${value.title} </b>                               
-              </p>                          
+                  <b> ${value.title}   </b>                               
+              </p>                         
               <p>${new Date(value.date).getDate()}/${new Date(value.date).getMonth()+1}/${new Date(value.date).getFullYear()}</p>
-              <button onClick="setText('${value._id}','${value.title}','${value.content}')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail">                           
+              <a href ="./chitiet.html?${value._id}" >                           
                     Xem chi tiết
-                  </button>  
+                  </a>  
           </div>                
       </div>               
   </div>       
@@ -28,13 +30,4 @@ axios.get(host + '/api/parent/mail', {
   }
 })
 
-
-
-
-function setText(id,title,content) {
-    document.getElementById("invisibleID").value = id;
-    document.getElementById("title").innerHTML = title;
-    document.getElementById("content").innerHTML = content;
-
-}
 
