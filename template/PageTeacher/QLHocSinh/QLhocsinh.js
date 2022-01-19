@@ -10,16 +10,17 @@ axios.get(host + '/api/teacher/student', {
     $.each(students, function (index, value) {
       info += `
       <tr>
-            <td> ${index}</td>
+            <td> ${index+1}</td>
+
             <td> ${value.name}   </td>
-            <td> ${convertDateToString(value.birth)}  </td>
-                                   
+            <td> ${convertDateToString(value.birth)}  </td>                                  
             <td> ${value.sex}  </td>
+
             <td> ${value.parent.name}  </td>  
             <td> ${convertDateToString(value.parent.birth)}  </td>  
             <td> ${value.parent.phoneNumber}  </td>  
             
-            <td> ${value.sex}  </td>  
+            <td> ${value.parent.sex}  </td>  
             <td>
             <button onClick="getStudentById('${value._id}')" style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
             Sửa
@@ -79,7 +80,7 @@ function changeStudentById(){
       sBirth : document.getElementById("changeBirth").value ,
     },
     pInfo:{
-      pName  : document.getElementById("changeName").value  ,
+      pName  : document.getElementById("changeNameParent").value  ,
       pBirth  : document.getElementById("changeBirthParent").value  ,
       pAddress : document.getElementById("changeAddress").value  ,
       pSex : document.getElementById("changeSexParent").value ,
