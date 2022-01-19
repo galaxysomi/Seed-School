@@ -143,10 +143,10 @@ function thongBao(id) {
   })
     .then((rs) => {
       console.log(rs);
-      if (rs.data.success) {
-        alert(rs.data.message);
+      if (rs.data.status==="ok") {
+        alert(rs.data.msg);
       } else {
-        alert(rs.data.message);
+        alert(rs.data.msg);
       }
       //refreshPage();               
     })
