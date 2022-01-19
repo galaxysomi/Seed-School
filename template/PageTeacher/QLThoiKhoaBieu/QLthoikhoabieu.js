@@ -104,7 +104,7 @@ function findActivityByDate() {
           <td> ${value.start.slice(11,16)} - ${value.end.slice(11,16)} </td>           
           <td> ${value.content} </td>
           <td>
-          <button    type="button" onclick= deleteMenu() class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
+          <button    type="button" onclick="deleteActivity('${result.data.schedules[0]._id}','${value._id}')" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
             Xóa
           </button>
           </td>                          
