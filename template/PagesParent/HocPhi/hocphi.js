@@ -29,7 +29,9 @@ axios.get(host + '/api/parent/tuition', {
 
         
 function getTuitionByMonth() {
+  console.log('dcmmmmmmm')
   let month = document.getElementById("tuitionMonth").value;
+  console.log(month)
   let url = 'http://localhost:3000/api/parent/tuition/'+"?time="+month;
   console.log(url);
   axios.get(url,{   
