@@ -12,35 +12,16 @@ axios.get(host + '/api/parent/tuition', {
           <tr>
             <td>${new Date(value.date).getMonth()+1} </td> 
             <td> ${value.student.name} </td> 
-            <td> ${totalTuition}$</td> 
+            
             <td> ${value.validAbsence} </td> 
             <td> ${value.invalidAbsence} </td>
             <td> ${value.late1} </td> 
             <td> ${value.late2} </td> 
-            
+            <td> ${totalTuition}$</td> 
             `;
-          if(value.paid == 'Đã nộp'){
-            tuition += `
-            <td>
-            <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" checked> Checked </label>
-          </div>
-            </td>
-            </tr>              
-           `
-          }
-          if(value.paid == 'Chưa nộp'){
-            tuition += `
-            <td>
-            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" checked> Checked </label>
-                            </div>
-            </td>
-            </tr>              
-           `
-          }                
+                      
+           
+                         
         });
         $('#tuitionTable').html(tuition);
   }
@@ -75,18 +56,18 @@ function getTuitionByMonth() {
             <td> ${hocphi.late2} </td> 
             
             `;
-          if(hocphi.paid == 'Đã nộp'){
-            tuition += `
-            <td><label class="badge badge-success">${hocphi.paid}</label></td>
-            </tr>              
-           `
-          }
-          if(hocphi.paid == 'Chưa nộp'){
-            tuition += `
-            <td><label class="badge badge-danger">${hocphi.paid}</label></td>
-            </tr>              
-           `
-          }                  
+          // if(hocphi.paid == 'Đã nộp'){
+          //   tuition += `
+          //   <td><label class="badge badge-success">${hocphi.paid}</label></td>
+          //   </tr>              
+          //  `
+          // }
+          // if(hocphi.paid == 'Chưa nộp'){
+          //   tuition += `
+          //   <td><label class="badge badge-danger">${hocphi.paid}</label></td>
+          //   </tr>              
+          //  `
+          // }                  
         $('#tuitionTable').html(tuition);  
         
     }else{

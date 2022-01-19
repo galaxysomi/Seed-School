@@ -1,5 +1,7 @@
 function findMenu() {
-  axios.get('http://localhost:3000/api/admin/foodmenu')
+  axios.get('http://localhost:3000/api/parent/foodmenu', {
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+  })
     .then((x) => {
       console.log(x);
       let info = " ";

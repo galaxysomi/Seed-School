@@ -79,7 +79,7 @@ axios.get(host + '/api/parent/logbook', {
                 <h4 class="card-title">Ảnh điểm danh</h4>                  
                 </p>
                 <div class="table-responsive" style="position: absolute;">
-                  <img id="anhDiemDanh" src="${value.anhDiemDanh}" alt="">                                           
+                <img id="anhDiemDanh" src="${value.attendancePicture}" alt="">                                       
                 </div>
               </div>
             </div>
@@ -129,6 +129,7 @@ function getSoTheoDoiByDate() {
                     <thead>
                       <tr>
                         <th>Tên học sinh</th>
+                        <th> ${logbook.student.name} </th>
                         <th></th>                       
                       </tr>
                     </thead>
