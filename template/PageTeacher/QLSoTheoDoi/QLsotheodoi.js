@@ -9,7 +9,7 @@ axios.get(host + '/api/teacher/logbook', {
     let info = " ";
     console.log(logbooks);
     $.each(logbooks, function (index, logbook) {
-     
+      console.log(logbook.student)
       let trongMuon;
       if (logbook.lookAfterLate1 == 0 && logbook.lookAfterLate2 == 0) {
         trongMuon = "Không";
@@ -182,7 +182,7 @@ function getSoTheoDoiByDate() {
                       </tbody>
                       
                     </table>
-                    <button style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
+                    <button onclick="setID('${logbook.student._id}')"style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
                     Thêm mới
                   </button>   
                     <button onClick="setID('${logbook._id}')" style="margin-top: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changesotheodoi">

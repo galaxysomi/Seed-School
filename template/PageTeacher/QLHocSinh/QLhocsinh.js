@@ -15,7 +15,7 @@ axios.get(host + '/api/teacher/student', {
             <td> ${value.birth}  </td>
             <td> ${value._id}  </td>                        
             <td> ${value.sex}  </td>
-            <td> ${value.sex}  </td>  
+            <td> ${value.parent.name}  </td>  
             <td> ${value.sex}  </td>  
             <td>
             <button onClick="getStudentById('${value._id}')" style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
@@ -93,7 +93,7 @@ function addStudent(){
       sBirth : document.getElementById("birth").value ,
     },
     pInfo:{
-      pName  : document.getElementById("name").value  ,
+      pName  : document.getElementById("nameParent").value  ,
       pBirth  : document.getElementById("birthParent").value  ,
       pAddress : document.getElementById("address").value  ,
       pSex : document.getElementById("sexParent").value ,
@@ -119,4 +119,14 @@ function deleteStudentByID(id){
   })
 }
 
-    
+function clearFieldAdd() {
+  document.getElementById("name").value=''
+  document.getElementById("sex").value=''
+  document.getElementById("nameParent").value=''
+  document.getElementById("sexParent").value=''
+  document.getElementById("address").value=''
+  document.getElementById("phoneNumber").value=''
+  document.getElementById("username").value=''
+  document.getElementById("password").value=''
+
+}
