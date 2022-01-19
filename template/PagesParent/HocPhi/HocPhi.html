@@ -180,7 +180,7 @@
                   <span class="menu-icon">
                     <i class=""></i>
                   </span>
-                  <span class="menu-title">Đăng xuất</span>
+                  <span type ="button" onclick="deleteItem()" class="menu-title">Đăng xuất</span>
                 </a>
               </a>
             </li>
@@ -267,6 +267,11 @@
   
    
   </script>
+   <script> 
+    function deleteItem() {
+      localStorage.removeItem("token");
+    }
+    </script>
 </body>
 
 </html>

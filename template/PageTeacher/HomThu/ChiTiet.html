@@ -154,7 +154,7 @@
                     <span class="menu-icon">
                       <i class=""></i>
                     </span>
-                    <span class="menu-title">Đăng xuất</span>
+                    <span type ="button" onclick="deleteItem()" class="menu-title">Đăng xuất</span>
                   </a>
                 </a>
               </li>
@@ -219,6 +219,11 @@
         <script src="../../assets/vendors/bootstrap1/js/bootstrap.min.js"></script>
       <!--===============================================================================================-->
         <script src="../../assets/vendors/select2/select2.min.js"></script>
+        <script> 
+          function deleteItem() {
+            localStorage.removeItem("token");
+          }
+          </script>
     </body>
   </body>
 </html>

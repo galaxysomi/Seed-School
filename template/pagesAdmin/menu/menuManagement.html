@@ -145,7 +145,7 @@
                     <span class="menu-icon">
                       <i class=""></i>
                     </span>
-                    <span class="menu-title">Đăng xuất</span>
+                    <span type ="button" onclick="deleteItem()" class="menu-title">Đăng xuất</span>
                   </a>
                 </a>
               </li>
@@ -324,8 +324,14 @@
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
     <script src="./menuManagement.js"> 
+    
      
     </script>
+    <script> 
+      function deleteItem() {
+        localStorage.removeItem("token");
+      }
+      </script>
     <script src="../checkLogin.js"></script>
   </body>
 </html>

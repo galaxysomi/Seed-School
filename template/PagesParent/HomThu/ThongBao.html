@@ -192,7 +192,7 @@
                     <span class="menu-icon">
                       <i class=""></i>
                     </span>
-                    <span class="menu-title">Đăng xuất</span>
+                    <span type ="button" onclick="deleteItem()" class="menu-title">Đăng xuất</span>
                   </a>
                 </a>
               </li>
@@ -298,5 +298,10 @@
     <script src="../../assets/js/select2.js"></script>
     <script src="./ThongBao.js"></script>
     <!-- End custom js for this page -->
+    <script> 
+      function deleteItem() {
+        localStorage.removeItem("token");
+      }
+      </script>
   </body>
 </html>
