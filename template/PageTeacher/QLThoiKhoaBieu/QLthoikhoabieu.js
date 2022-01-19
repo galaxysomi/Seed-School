@@ -78,6 +78,7 @@ function deleteActivity(scheduleId , activityId) {
       if (rs.data.status == "ok") {
         alert("Xóa thành công")
         // window.location.reload();
+        findActivityByDate();
 
       }
     })
