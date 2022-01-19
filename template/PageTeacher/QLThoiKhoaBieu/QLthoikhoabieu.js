@@ -16,7 +16,7 @@ axios.get(host + '/api/teacher/schedule', {
           <td> ${new Date(value.start).getHours()}:${new Date(value.start).getMinutes()}-${new Date(value.end).getHours()}:${new Date(value.end).getMinutes()}</td>            
           <td> ${value.content} </td>
           <td>
-          <button    type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
+          <button    type="button" onclick= deleteMenu() class="btn btn-danger" data-toggle="modal" data-target="#deleteActivity">
             Xóa
           </button>
           </td>
@@ -61,4 +61,19 @@ function addActivity() {
     }
     window.location.reload();             
   })   
+}
+
+
+function deleteMenu() {
+  const id = document.getElementById("invisibleID").value
+  axios.delete('http://localhost:3000/api/teacher/activity/'+ id,{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+})
+  .then((rs) => {
+    console.log(rs);
+    if(rs.data.status== "ok"){
+    alert("Xóa menu thành công")
+    refreshPage();
+  }
+  })
 }

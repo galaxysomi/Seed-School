@@ -193,6 +193,7 @@
             headers: { Authorization: 'Bearer ' + localStorage.token }
         }
         ).then(rs => {
+            console.log(rs.data)
             if (rs.data.status === "ok") {
                 localStorage.setItem('token', rs.data.token);
                 window.location = "/template/index1.html"

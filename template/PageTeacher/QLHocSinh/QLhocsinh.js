@@ -25,7 +25,7 @@ axios.get(host + '/api/teacher/student', {
             <button onClick="getStudentById('${value._id}')" style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeStudent">
             Sửa
           </button>
-          <button onClick="deleteStudentByID('${value._id}')" style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent">
+          <button onClick="getStudentById('${value._id}')" style="margin-top: 50px;  margin-bottom: 50px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent">
             Xóa
           </button>
             </td>                                                                  
@@ -63,6 +63,12 @@ function getStudentById(id){
 }
 
 
+
+function refreshPage() {
+  window.location.reload();
+}
+
+
 function changeStudentById(){
   console.log(localStorage.token);
   const id = document.getElementById("invisibleID").value;
@@ -85,7 +91,14 @@ function changeStudentById(){
   },{
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(rs =>{
-    console.log(rs);
+    if(rs.data.status == 'ok'){
+      alert(rs.data.msg);
+      refreshPage()
+    }else{
+      alert(rs.data.msg);
+      refreshPage()
+    }
+  
   })
 }
 
@@ -108,18 +121,31 @@ function addStudent(){
   },{
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(rs =>{
-    console.log(rs);
+    if(rs.data.status == 'ok'){
+      alert(rs.data.msg);
+      refreshPage()
+    }else{
+      alert(rs.data.msg);
+      refreshPage()
+    }
   })
 }
 
 
 
 
-function deleteStudentByID(id){
+function deleteStudentByID(){
+  const id = document.getElementById("invisibleID").value;
   axios.delete('http://localhost:3000/api/teacher/student/'+id,{
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(rs =>{
-    console.log(rs);              
+    if(rs.data.status == "ok"){
+      alert(rs.data.msg)
+      refreshPage()
+    }else{
+      alert(rs.data.msg)
+      refreshPage()
+    }            
   })
 }
 
