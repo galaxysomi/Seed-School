@@ -24,10 +24,11 @@ axios.get(host + '/api/parent/schedule', {
 
 function getActivityByDate() {
   let activityDate = document.getElementById("activityDate").value;
-  axios.get('http://localhost:3000/api/parent/schedule/?date=' + activityDate,{
+  axios.get('http://localhost:3000/api/parent/schedule/?date=' + activityDate, {
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(data => {
-      console.log(data);
+    console.log(data)
+    if (data.data.status === "ok") {
       let activities = data.data.schedule[0].activityList;
       let info = " ";
       $.each(activities, function (index, value) {
@@ -40,8 +41,11 @@ function getActivityByDate() {
            `
       });
       $('#information').html(info);
+    } else if(data.data.msg==="cannot find schedule") {
+      $('#information').html("");
+    }
 
-    })
+  })
 }
 
 
