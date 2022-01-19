@@ -300,7 +300,7 @@
     const content = result.data.mail.content.split('\n')
     let finalContent = "";
     for (const line of content) {
-      finalContent += `<br> ${line} </br> `;
+      finalContent += '<br>' +line+ '</br>'
     }
     
     console.log(content);

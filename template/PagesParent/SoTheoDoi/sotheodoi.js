@@ -103,7 +103,6 @@ function getSoTheoDoiByDate() {
   .then((rs) => {      
     console.log(rs.data);
     if(rs.data.status== "ok"){
-        alert(rs.data.msg);
         const logbook = rs.data.logBook;
         
         let info = " ";         
