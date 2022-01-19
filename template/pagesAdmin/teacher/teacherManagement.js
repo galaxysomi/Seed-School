@@ -77,7 +77,9 @@ function deleteTeacher(id) {
 }
 
 function getTeacherById(id) {
-  axios.get('http://localhost:3000/api/admin/teacher/' + id).then(data => {
+  axios.get('http://localhost:3000/api/admin/teacher/' + id,{
+    headers: { Authorization: 'Bearer ' + localStorage.token }
+}).then(data => {
     document.getElementById("changeName").value = data.data.name;
    // document.getElementById("changeAge").value 
     document.getElementById("changeSex").value = data.data.sex;
@@ -86,9 +88,7 @@ function getTeacherById(id) {
     document.getElementById("changeNumStudent").value = data.data.numStudent;
     document.getElementById("changePassword").value = data.data.password;
     document.getElementById("invisibleID").value = id;
-  },{
-    headers: { Authorization: 'Bearer ' + localStorage.token }
-})
+  },)
 }
 
 function changeTeacherByID() {

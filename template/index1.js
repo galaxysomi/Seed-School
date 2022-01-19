@@ -12,27 +12,32 @@ axios.get(host + '/api/parent/student', {
 
     infoStudent += `
                 <div class="col-lg-4 grid-margin">
-                <div style="position: absolute;">
-                  <img style="position: relative;width: 200px;height: 200px; left: 20px;border-radius: 50%;" src="https://kenh14cdn.com/2016/photo-1-1466407298127.jpg" alt="">
+                <div style=";">
+                  <img style=";width: 240px;height: 240px; margin-top: 0px ;margin-left: 90px;border-radius: 10%;" src="https://kenh14cdn.com/2016/photo-1-1466407298127.jpg" alt="">
                 </div>
               </div>
-              <div class="col-lg-8 grid-margin " >
+              
+              <div class="col-lg-7 grid-margin style = "postion:absolute"  " style="margin-top : 20px ">             
                 <div class="card">
-                  <ul style="margin-top: 20px;">
-                    <li>Họ và tên : ${student.name} </li>
-                    <li>Ngày sinh : ${convertDateToString(student.birth)}</li>
-                    <li>Mã học sinh : ${student._id}</li>
-                    <li>Lớp : ${teacher.className}</li>                                    
-                    <li> Địa chỉ : ${result.data.parent.address} </li>                   
-                    <li>Giới tính : ${student.sex}</li>                                    
+                
+                <div class = "card-body" >
+                <h3 class="card-title" style = "margin-left : 40px" > Thông tin học sinh </h3>
+                  <ul style="margin-top: px;">
+                  <li>Họ và tên : ${student.name} </li>
+                  <li>Ngày sinh : ${convertDateToString(student.birth)}</li>
+                  <li>Mã học sinh : ${student._id}</li>
+                  <li>Lớp : ${teacher.className}</li>                                    
+                  <li> Địa chỉ : ${result.data.parent.address} </li>                   
+                  <li>Giới tính : ${student.sex}</li>                   
                   </ul>
                 </div>
+                </div>             
               </div>
               <div class="col-lg-6 grid-margin style = "postion:absolute"  " style="margin-top : 20px ">             
                 <div class="card">
                 
                 <div class = "card-body" >
-                <h3 class="card-title" style = "margin-left : 40px;" > Thông tin phụ huynh </h3>
+                <h3 class="card-title" style = "margin-left : 40px" > Thông tin phụ huynh </h3>
                   <ul style="margin-top: 20px;">
                     <li >Họ và tên : ${parent.name} </li>
                     <li >Ngày sinh : ${convertDateToString(parent.birth)}</li>
