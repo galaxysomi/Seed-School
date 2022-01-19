@@ -193,13 +193,14 @@
             headers: { Authorization: 'Bearer ' + localStorage.token }
         }
         ).then(rs => {
+            console.log(rs.data)
             if (rs.data.status === "ok") {
                 localStorage.setItem('token', rs.data.token);
                 window.location = "/template/index1.html"
                 console.log('Login OK, hello parrent')
                 console.log(localStorage.token)
-            } else {
-
+            } else if(rs.data.msg==="parent not found") {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng')
             }
         })
     }

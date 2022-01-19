@@ -71,7 +71,7 @@ axios.get(host + '/api/teacher/logbook', {
                     </tbody>
                     
                   </table>
-                  <button  style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
+                  <button  onclick="setID('${logbook.student._id}')" style="margin-top: 20px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#addsotheodoi">
                   Thêm mới
                 </button>   
                   

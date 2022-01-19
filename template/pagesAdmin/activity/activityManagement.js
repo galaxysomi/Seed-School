@@ -60,6 +60,9 @@ function findActivity() {
           <button  onClick="thongBao('${value._id}')"  type="button" class="btn btn-success" ">
             Gửi thông báo
           </button>
+          <button   type="button" class="btn btn-success" ">
+          <a href="../registerActivity/QLYregisterActivity.html?${value._id}"> Xem danh sách</a>
+          </button>
           </td>        
           </tr>            
            `;
@@ -143,10 +146,10 @@ function thongBao(id) {
   })
     .then((rs) => {
       console.log(rs);
-      if (rs.data.success) {
-        alert(rs.data.message);
+      if (rs.data.status==="ok") {
+        alert(rs.data.msg);
       } else {
-        alert(rs.data.message);
+        alert(rs.data.msg);
       }
       //refreshPage();               
     })
