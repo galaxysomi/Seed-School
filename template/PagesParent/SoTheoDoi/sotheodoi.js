@@ -179,7 +179,7 @@ function getSoTheoDoiByDate() {
                 </p>
                 <div class="table-responsive" style="position: absolute;">
                   <img id="anhDiemDanh" src="${logbook.attendancePicture}" alt="">
-                  <p>  ${logbook.attendancePicture} </p>                                         
+                                                         
                 </div>
               </div>
             </div>

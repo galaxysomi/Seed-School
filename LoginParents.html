@@ -198,8 +198,8 @@
                 window.location = "/template/index1.html"
                 console.log('Login OK, hello parrent')
                 console.log(localStorage.token)
-            } else {
-
+            } else if(rs.data.msg==="parent not found") {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng')
             }
         })
     }

@@ -8,9 +8,9 @@ axios.get(host + '/api/parent/student', {
     console.log(result.data);
     let infoStudent = " ";
     const parent = result.data.parent
-      let infoParent = " ";
-              
-      infoStudent += `
+    let infoParent = " ";
+
+    infoStudent += `
                 <div class="col-lg-4 grid-margin">
                 <div style="position: absolute;">
                   <img style="position: relative;width: 200px;height: 200px; left: 20px;border-radius: 50%;" src="https://kenh14cdn.com/2016/photo-1-1466407298127.jpg" alt="">
@@ -20,7 +20,7 @@ axios.get(host + '/api/parent/student', {
                 <div class="card">
                   <ul style="margin-top: 20px;">
                     <li>Họ và tên : ${student.name} </li>
-                    <li>Ngày sinh : ${new Date(student.birth).getDate()}/${new Date(student.birth).getMonth()+1}/${new Date(student.birth).getFullYear()}</li>
+                    <li>Ngày sinh : ${convertDateToString(student.birth)}</li>
                     <li>Mã học sinh : ${student._id}</li>
                     <li>Lớp : ${teacher.className}</li>                                    
                     <li> Địa chỉ : ${result.data.parent.address} </li>                   
@@ -35,7 +35,7 @@ axios.get(host + '/api/parent/student', {
                 <h3 class="card-title" style = "margin-left : 40px;" > Thông tin phụ huynh </h3>
                   <ul style="margin-top: 20px;">
                     <li >Họ và tên : ${parent.name} </li>
-                    <li >Ngày sinh : ${parent.birth}</li>
+                    <li >Ngày sinh : ${convertDateToString(parent.birth)}</li>
                     <li>Điện thoại :${parent.phoneNumber}</li>
                     <li>Giới tính : ${parent.sex}</li>
                     <li> Địa chỉ : ${result.data.parent.address} </li>                   
@@ -50,7 +50,7 @@ axios.get(host + '/api/parent/student', {
                 <h3 style = "margin-left : 40px;" class="card-title"  > Thông tin giáo viên </h3>
                   <ul style="margin-top: 20px;">
                     <li >Họ và tên giáo viên : ${teacher.name} </li>
-                    <li >Ngày sinh : ${teacher.birth}</li>
+                    <li >Ngày sinh : ${convertDateToString(teacher.birth)}</li>
                     <li>Điện thoại :${teacher.phoneNumber}</li>
                     <li>Giới tính : ${teacher.sex}</li>
                     <li>Lớp: ${teacher.className} </li>     
@@ -59,21 +59,26 @@ axios.get(host + '/api/parent/student', {
                 </div>             
               </div>                                                
                  `
-      $('#studentInformation').html(infoStudent);
-      
-               
-                       
+    $('#studentInformation').html(infoStudent);
+
+
+
 
   }
 })
-      
-      
-        
-              
-            
-          
-          
-              
-      
 
-         
+
+function convertDateToString(date) {
+  const d = new Date(date)
+  var curr_date = d.getDate();
+  var curr_month = d.getMonth() + 1; //Months are zero based
+  var curr_year = d.getFullYear();
+  return curr_date + "/" + curr_month + "/" + curr_year
+}
+
+
+
+
+
+
+
