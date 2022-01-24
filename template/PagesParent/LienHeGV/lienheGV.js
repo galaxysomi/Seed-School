@@ -21,6 +21,8 @@ function submitMail() {
         .then((rs) => {
             console.log(rs);
             if (rs.data.status == "ok") {
+                document.getElementById("title").value=""
+                document.getElementById("content").value=""
                 alert("Gửi thành công");
             }
             else {

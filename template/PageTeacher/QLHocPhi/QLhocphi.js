@@ -28,9 +28,9 @@ axios.get(host + '/api/teacher/tuition', {
 })
 
 function getTuitionByDate() {
-  let date = document.getElementById("date");
+  let date = document.getElementById("date").value;
   const host = 'http://localhost:3000'
-  axios.get(host + '/api/teacher/tuition?time='+date, {
+  axios.get(host + '/api/teacher/tuition?time=' + date, {
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(result => {
     if (result.data.status === 'ok') {
@@ -53,6 +53,8 @@ function getTuitionByDate() {
 
       });
       $('#tuitionTable').html(tuition);
+    } else {
+      $('#tuitionTable').html("")
     }
   })
 
@@ -63,10 +65,12 @@ function thongBaoHocPhi() {
   axios.get(host + '/api/teacher/tuition/sendnoti', {
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(result => {
-    console.log(result);
-      }
-     
     
+    console.log(result);
+    alert(result.data.msg)
+  }
+
+
   )
 
 }
@@ -77,7 +81,8 @@ function capNhatHocPhi() {
     headers: { Authorization: 'Bearer ' + localStorage.token }
   }).then(result => {
     console.log(result);
-      }
+    alert(result.data.msg)
+  }
   )
 
 }

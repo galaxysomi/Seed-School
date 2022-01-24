@@ -231,6 +231,7 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
+          <h3 id="status"></h3>
           <h3 id="title"></h3>
           <h4 id="content"></h4>
           <div>
@@ -326,6 +327,8 @@
       document.getElementById("dangKiButton").style.visibility = "visible";
       document.getElementById("huyDangKiButton").style.visibility = "visible";
 
+    } else if (result.data.msg==="mailbox for this parent not found") {
+      document.getElementById("status").innerHTML = "Không có thông báo nào"
     }
   })
 
