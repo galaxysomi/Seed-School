@@ -13,7 +13,7 @@ axios.get(host + '/api/parent/student', {
     infoStudent += `
                 <div class="col-lg-4 grid-margin">
                 <div style=";">
-                  <img style=";width: 240px;height: 240px; margin-top: 0px ;margin-left: 90px;border-radius: 10%;" src="https://kenh14cdn.com/2016/photo-1-1466407298127.jpg" alt="">
+                  <img style=";width: 240px;height: 240px; margin-top: 0px ;margin-left: 90px;border-radius: 10%;" src="${student.avatar}" alt="">
                 </div>
               </div>
               
